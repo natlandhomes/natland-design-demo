@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — Home</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#fff}a{color:#b3122f}a:hover{color:#900d25}</style>
+</helmet>
+<dc-import name="SiteHeader" active="home" hint-size="100%,96px"></dc-import>
+<main>
+  <section data-screen-label="Home / Hero" style="display: grid; grid-template-columns: {{heroCols}}; background: var(--c-dark); color: var(--c-on-dark);">
+    <div style="position: relative; overflow: hidden; min-height: {{heroImgH}};">
+      <img src="assets/hero-lobby.png" alt="Building lobby" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center; gap: {{heroGap}}; padding: {{heroPad}};">
+      <div style="display: flex; align-items: center; gap: var(--sp-4);">
+        <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-on-dark-soft); white-space: nowrap;">Real estate development</span>
+        <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--c-line-dark);"></span>
+      </div>
+      <h1 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: {{h1Size}}; line-height: 1.06; letter-spacing: -0.01em; text-wrap: balance;">Dreams know no bounds — we build!</h1>
+      <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+        <span aria-hidden="true" style="display: block; width: 64px; height: 1px; background: var(--c-line-dark);"></span>
+      </sc-if>
+      <a href="Portfolio.dc.html" style="align-self: {{btnAlign}}; display: flex; align-items: center; justify-content: center; min-width: 236px; height: 50px; padding: 0 var(--sp-6); background: var(--c-accent); border: 1px solid rgba(255, 255, 255, 0.55); color: var(--c-on-dark); text-decoration: none; font-family: var(--f-display); font-size: 17px; font-weight: var(--fw-medium); transition: background 0.2s;" style-hover="background: var(--c-accent-hover); color: #fff;">View portfolio</a>
+    </div>
+  </section>
+  <section data-screen-label="Home / About" style="background: var(--c-bg); border-bottom: 1px solid var(--c-line);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: flex; flex-direction: column; gap: var(--sp-6);">
+      <div style="display: flex; flex-direction: column; gap: var(--sp-2); max-width: 900px;">
+        <h2 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h3); line-height: 1.2; color: var(--c-ink); text-wrap: balance;">The Natland Group is a land development company.</h2>
+        <p style="margin: 0; font-size: var(--fs-lead); line-height: 1.45; color: var(--c-ink); text-wrap: pretty;">We plan projects to create safe and beautiful places where people live, work and play. We provide a full range of land development and project management services.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: {{aboutCols}}; gap: {{aboutGap}}; align-items: start;">
+        <p style="margin: 0; padding-right: {{aboutPadR}}; border-right: {{aboutBorder}}; font-size: var(--fs-lead); line-height: 1.45; color: var(--c-ink-soft); text-wrap: pretty;">Our business is founded on the principles of excellence, sustainability, and community. We combine our local knowledge with a global perspective. We are proud contributors to the communities in which we live and work.</p>
+        <p style="margin: 0; padding-top: {{legacyPadT}}; font-size: var(--fs-lead); line-height: 1.45; color: var(--c-ink-soft); text-wrap: pretty;">Each project is not just a job – it is our legacy of lasting positive impacts in the community.</p>
+      </div>
+    </div>
+  </section>
+  <sc-if value="{{showNew}}" hint-placeholder-val="{{true}}">
+    <section data-screen-label="Home / Trade" style="background: var(--c-bg);">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) var(--sp-7); display: flex; flex-direction: column; gap: var(--sp-6);">
+        <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+          <div style="display: flex; align-items: center; gap: var(--sp-4);">
+            <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-ink-soft);">International Trade &amp; Strategic Sourcing</span>
+            <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--c-line);"></span>
+          </div>
+          <h2 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h2); line-height: 1.12; color: var(--c-ink); text-wrap: balance;">International Trade &amp; Strategic Sourcing</h2>
+          <p style="margin: 0; max-width: 880px; font-size: var(--fs-lead); line-height: 1.45; color: var(--c-ink-soft); text-wrap: pretty;">We help Canadian businesses source structural steel and building materials from China, connecting them with trusted manufacturers and reliable, cost-competitive supply chains.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: {{tradeCols}}; gap: var(--sp-3);">
+          <img src="assets/trade-yard.png" alt="Structural steel being loaded for shipment" style="width: 100%; aspect-ratio: {{yardRatio}}; object-fit: cover;">
+          <img src="assets/trade-steel.png" alt="Galvanized structural steel sections" style="width: 100%; height: 100%; aspect-ratio: {{steelRatio}}; object-fit: cover;">
+        </div>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: {{iconCols}}; gap: {{iconGap}};">
+          <li style="display: flex; align-items: center; justify-content: {{iconJustify}}; gap: var(--sp-4); border-right: {{iconBorder}};">
+            <span aria-hidden="true" style="width: 34px; height: 34px; flex: none; background: var(--c-ink); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Structural steel</span>
+          </li>
+          <li style="display: flex; align-items: center; justify-content: {{iconJustify}}; gap: var(--sp-4); border-right: {{iconBorder}};">
+            <span aria-hidden="true" style="width: 34px; height: 34px; flex: none; background: var(--c-ink); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Building materials</span>
+          </li>
+          <li style="display: flex; align-items: center; justify-content: {{iconJustify}}; gap: var(--sp-4);">
+            <span aria-hidden="true" style="width: 34px; height: 34px; flex: none; background: var(--c-ink); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Strategic sourcing</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section data-screen-label="Home / Waste-to-Energy" style="background: var(--c-dark); color: var(--c-on-dark);">
+      <div style="max-width: 900px; margin: 0 auto; padding: var(--sp-section) var(--gutter) var(--sp-7); display: flex; flex-direction: column; align-items: {{wteAlign}}; gap: var(--sp-3); text-align: {{wteText}};">
+        <div style="align-self: stretch; display: flex; align-items: center; gap: var(--sp-4);">
+          <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}"><span aria-hidden="true" style="flex: 1; height: 1px; background: var(--c-line-dark);"></span></sc-if>
+          <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-on-dark-soft);">Waste-to-Energy (WTE) &amp; Sustainable Infrastructure</span>
+          <span aria-hidden="true" style="flex: 1; height: 1px; background: var(--c-line-dark);"></span>
+        </div>
+        <h2 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h2); line-height: 1.12; text-wrap: balance;">Waste-to-Energy &amp; Sustainable Infrastructure</h2>
+        <p style="margin: 0; max-width: 720px; font-size: var(--fs-lead); line-height: 1.45; color: var(--c-on-dark-soft); text-wrap: pretty;">We connect Canadian infrastructure projects with advanced waste-to-energy technologies, engineering expertise, and equipment manufacturers in China.</p>
+      </div>
+      <img src="assets/wte-panorama.png" alt="Waste-to-energy facility beside a city and mountains" style="width: 100%; aspect-ratio: {{panoRatio}}; object-fit: cover;">
+      <ol style="list-style: none; max-width: var(--max-w); margin: 0 auto; padding: {{stepsPad}}; display: grid; grid-template-columns: {{stepCols}}; gap: 0;">
+        <li style="display: flex; align-items: center; gap: var(--sp-5); padding: {{stepPad}}; border-right: {{stepBorderR}}; border-bottom: {{stepBorderB}};">
+          <span style="font-family: var(--f-display); font-size: {{numSize}}; font-weight: var(--fw-medium); line-height: 1;">01</span>
+          <span style="font-family: var(--f-display); font-size: 17px; color: var(--c-on-dark);">Feasibility &amp; planning</span>
+        </li>
+        <li style="display: flex; align-items: center; gap: var(--sp-5); padding: {{stepPad}}; border-right: {{stepBorderR}}; border-bottom: {{stepBorderB}};">
+          <span style="font-family: var(--f-display); font-size: {{numSize}}; font-weight: var(--fw-medium); line-height: 1;">02</span>
+          <span style="font-family: var(--f-display); font-size: 17px; color: var(--c-on-dark);">Technology &amp; equipment</span>
+        </li>
+        <li style="display: flex; align-items: center; gap: var(--sp-5); padding: {{stepPad}};">
+          <span style="font-family: var(--f-display); font-size: {{numSize}}; font-weight: var(--fw-medium); line-height: 1;">03</span>
+          <span style="font-family: var(--f-display); font-size: 17px; color: var(--c-on-dark);">Strategic partnerships</span>
+        </li>
+      </ol>
+    </section>
+  </sc-if>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showNewSections&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches };
+  onMq = () => this.setState({ m: this.mq.matches });
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    const m = this.state.m;
+    return {
+      desktop: !m, mobile: m,
+      showNew: this.props.showNewSections ?? true,
+      heroCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.75fr) minmax(0, 1fr)',
+      heroImgH: m ? '200px' : 'clamp(480px, 44vw, 640px)',
+      heroGap: m ? '16px' : '28px',
+      heroPad: m ? '24px var(--gutter) 28px' : 'var(--sp-8) clamp(32px, 4vw, 64px)',
+      h1Size: m ? '34px' : 'clamp(40px, 4.2vw, 60px)',
+      btnAlign: m ? 'stretch' : 'flex-start',
+      aboutCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      aboutGap: m ? '20px' : 'clamp(32px, 5vw, 72px)',
+      aboutPadR: m ? '0' : 'clamp(32px, 5vw, 72px)',
+      aboutBorder: m ? '0' : '1px solid var(--c-line)',
+      legacyPadT: m ? '0' : '12px',
+      tradeCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 2.05fr) minmax(0, 1fr)',
+      yardRatio: m ? '16 / 9' : '674 / 250',
+      steelRatio: m ? '16 / 9' : 'auto',
+      iconCols: m ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))',
+      iconGap: m ? '14px' : '0',
+      iconJustify: m ? 'flex-start' : 'center',
+      iconBorder: m ? '0' : '1px solid var(--c-line)',
+      wteAlign: m ? 'flex-start' : 'center',
+      wteText: m ? 'left' : 'center',
+      panoRatio: m ? '2 / 1' : '1104 / 212',
+      stepsPad: m ? '8px var(--gutter) 24px' : '0 var(--gutter)',
+      stepCols: m ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))',
+      stepPad: m ? '14px 0' : '24px clamp(16px, 3vw, 48px)',
+      stepBorderR: m ? '0' : '1px solid var(--c-line-dark)',
+      stepBorderB: m ? '1px solid var(--c-line-dark)' : '0',
+      numSize: m ? '22px' : '32px',
+    };
+  }
+}
+</script>
+</body>
+</html>

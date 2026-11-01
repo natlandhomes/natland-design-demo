@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="theme.css"></helmet>
+<footer data-screen-label="Footer">
+  <section data-screen-label="Get in touch" style="background: var(--c-bg); border-top: 1px solid var(--c-line);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: grid; grid-template-columns: {{cols}}; gap: {{colGap}}; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: var(--sp-5); padding-right: {{leftPad}}; border-right: {{leftBorder}};">
+        <div style="display: flex; flex-direction: column; gap: var(--sp-3);">
+          <div style="display: flex; align-items: center; gap: var(--sp-4);">
+            <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-ink-soft);">Get in touch</span>
+            <span aria-hidden="true" style="flex: 1; max-width: 160px; height: 1px; background: var(--c-line);"></span>
+          </div>
+          <h2 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h2); line-height: 1.1; color: var(--c-ink);">Get in touch</h2>
+        </div>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--sp-4);">
+          <li style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--sp-4); align-items: start;">
+            <span aria-hidden="true" style="width: 24px; height: 24px; margin-top: 1px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;"></span>
+            <span style="font-size: var(--fs-body); line-height: 1.45; color: var(--c-ink);">#130-788 Harbourside Drive,<br>North Vancouver, BC V7P 3R7</span>
+          </li>
+          <li style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--sp-4); align-items: center;">
+            <span aria-hidden="true" style="width: 22px; height: 22px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat;"></span>
+            <a href="tel:+16049731825" style="font-size: var(--fs-body); color: var(--c-ink); text-decoration: none;" style-hover="color: var(--c-accent);">+1 (604) 973-1825</a>
+          </li>
+          <li style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--sp-4); align-items: center;">
+            <span aria-hidden="true" style="width: 24px; height: 24px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat;"></span>
+            <a href="mailto:office@natlandhomes.com" style="font-size: var(--fs-body); color: var(--c-ink); text-decoration: none;" style-hover="color: var(--c-accent);">office@natlandhomes.com</a>
+          </li>
+        </ul>
+      </div>
+      <form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: var(--sp-3);">
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-3);">
+          <input type="text" name="name" placeholder="Your name *" required="" onChange="{{setName}}" style="height: var(--field-h); padding: 0 var(--sp-4); background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-small); outline: none;" style-focus="border-color: var(--c-ink);">
+          <input type="tel" name="phone" placeholder="Phone number" onChange="{{setPhone}}" style="height: var(--field-h); padding: 0 var(--sp-4); background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-small); outline: none;" style-focus="border-color: var(--c-ink);">
+        </div>
+        <input type="email" name="email" placeholder="Your e-mail *" required="" onChange="{{setEmail}}" style="height: var(--field-h); padding: 0 var(--sp-4); background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-small); outline: none;" style-focus="border-color: var(--c-ink);">
+        <textarea name="message" placeholder="How can we help you ?" rows="3" onChange="{{setMsg}}" style="padding: var(--sp-3) var(--sp-4); background: var(--c-bg); border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-small); line-height: 1.5; resize: vertical; outline: none;" style-focus="border-color: var(--c-ink);"></textarea>
+        <button type="submit" style="height: 52px; margin-top: var(--sp-2); background: var(--c-accent); color: var(--c-on-dark); border: 0; border-radius: 0; font-family: var(--f-display); font-size: 18px; font-weight: var(--fw-medium); cursor: pointer; transition: background 0.2s;" style-hover="background: var(--c-accent-hover);">Send</button>
+        <p style="margin: 0; text-align: center; font-size: 13px; color: var(--c-muted);">Send opens your email app.</p>
+      </form>
+    </div>
+  </section>
+  <div style="background: var(--c-dark); color: var(--c-on-dark);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-6) var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-4);">
+      <a href="Home.dc.html" style="display: flex;">
+        <img src="assets/natlandhomes/Natland_Logo-2024-768x139.png" alt="Natland Group" style="height: 36px; width: auto; filter: brightness(0) invert(1);">
+      </a>
+      <p style="margin: 0; font-size: 14px; color: var(--c-on-dark);">© NATLAND GROUP. All rights reserved.</p>
+    </div>
+  </div>
+  <sc-if value="{{showTop}}" hint-placeholder-val="{{false}}">
+    <button type="button" aria-label="Back to top" onClick="{{toTop}}" style="position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--c-accent); border: 0; border-radius: 50%; cursor: pointer;" style-hover="background: var(--c-accent-hover);">
+      <span aria-hidden="true" style="width: 10px; height: 10px; border-left: 2px solid var(--c-on-dark); border-top: 2px solid var(--c-on-dark); transform: translateY(3px) rotate(45deg);"></span>
+    </button>
+  </sc-if>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:640}}">
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, y: 0 };
+  f = {};
+  onMq = () => this.setState({ m: this.mq.matches });
+  onScroll = () => this.setState({ y: window.scrollY });
+  componentDidMount() {
+    this.mq.addEventListener('change', this.onMq);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+  componentWillUnmount() {
+    this.mq.removeEventListener('change', this.onMq);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+  renderVals() {
+    const m = this.state.m;
+    const set = k => e => { this.f[k] = e.target.value; };
+    return {
+      cols: m ? 'minmax(0, 1fr)' : 'minmax(0, 4fr) minmax(0, 7fr)',
+      colGap: m ? 'var(--sp-6)' : 'clamp(32px, 5vw, 72px)',
+      leftPad: m ? '0' : 'clamp(24px, 4vw, 56px)',
+      leftBorder: m ? '0' : '1px solid var(--c-line)',
+      showTop: !m && this.state.y > 400,
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      setName: set('name'), setPhone: set('phone'), setEmail: set('email'), setMsg: set('msg'),
+      submit: e => {
+        e.preventDefault();
+        const f = this.f;
+        const body = [f.msg, '', f.name, f.phone, f.email].filter(v => v !== undefined).join('\n');
+        window.location.href = 'mailto:office@natlandhomes.com?subject=' + encodeURIComponent('Website enquiry' + (f.name ? ' — ' + f.name : '')) + '&body=' + encodeURIComponent(body);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

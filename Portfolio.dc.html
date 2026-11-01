@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — Portfolio</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#fff}a{color:#b3122f}a:hover{color:#900d25}</style>
+</helmet>
+<dc-import name="SiteHeader" active="portfolio" hint-size="100%,96px"></dc-import>
+<main>
+  <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+    <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; height: clamp(540px, 46vw, 660px); background: var(--c-dark); color: var(--c-on-dark);">
+      <sc-for list="{{slides}}" as="s" hint-placeholder-count="1">
+        <img src="{{s.image}}" alt="{{s.title}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{s.pos}}; opacity: {{s.opacity}}; transition: opacity 0.8s var(--ease);">
+      </sc-for>
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 34, 64, 0.96) 0%, rgba(10, 34, 64, 0.82) 28%, rgba(10, 34, 64, 0.25) 52%, rgba(10, 34, 64, 0) 70%);"></div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 34, 64, 0.55) 0%, rgba(10, 34, 64, 0) 30%);"></div>
+      <div style="position: relative; height: 100%; max-width: var(--max-w); margin: 0 auto; padding: var(--sp-8) var(--gutter) var(--sp-6); display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-6);">
+        <div style="max-width: 440px; display: flex; flex-direction: column; gap: var(--sp-4);">
+          <div style="display: flex; align-items: center; gap: var(--sp-3);">
+            <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
+            <span aria-hidden="true" style="width: 24px; height: 3px; background: var(--c-accent);"></span>
+          </div>
+          <h1 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h1); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance;">Building stronger communities together</h1>
+          <p style="margin: var(--sp-2) 0 0; font-size: 17px; line-height: 1.55; color: var(--c-on-dark); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-6); padding-left: clamp(0px, 30%, 380px);">
+          <div style="display: grid;">
+            <sc-for list="{{slides}}" as="s" hint-placeholder-count="1">
+              <a href="{{s.href}}" style="grid-area: 1 / 1; align-self: end; display: flex; flex-direction: column; gap: var(--sp-2); color: var(--c-on-dark); text-decoration: none; opacity: {{s.opacity}}; pointer-events: {{s.events}}; transition: opacity 0.6s var(--ease);">
+                <span style="display: flex; align-items: center; gap: var(--sp-3);">
+                  <span style="font-family: var(--f-display); font-size: 22px; font-weight: var(--fw-semibold); color: var(--c-accent);">{{s.num}}</span>
+                  <span aria-hidden="true" style="width: 28px; height: 3px; background: var(--c-accent);"></span>
+                </span>
+                <span style="max-width: 260px; font-family: var(--f-display); font-size: 17px; font-weight: var(--fw-medium); line-height: 1.3;">{{s.display}}</span>
+              </a>
+            </sc-for>
+          </div>
+          <div style="display: flex; gap: var(--sp-4);">
+            <button type="button" aria-label="Previous project" onClick="{{prev}}" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.85); background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s;" style-hover="background: rgba(255, 255, 255, 0.16);">
+              <span aria-hidden="true" style="width: 20px; height: 20px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-left.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-left.svg) center / contain no-repeat;"></span>
+            </button>
+            <button type="button" aria-label="Next project" onClick="{{next}}" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.85); background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s;" style-hover="background: rgba(255, 255, 255, 0.16);">
+              <span aria-hidden="true" style="width: 20px; height: 20px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section data-screen-label="Portfolio / Grid" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-6) var(--gutter) var(--sp-section); display: flex; flex-direction: column; gap: var(--sp-6);">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: var(--sp-5); flex-wrap: wrap;">
+        <div role="tablist" style="display: flex; flex-wrap: wrap; gap: clamp(20px, 3vw, 40px);">
+          <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+            <button type="button" role="tab" onClick="{{t.select}}" style="position: relative; padding: var(--sp-2) 0; background: none; border: 0; cursor: pointer; font-family: var(--f-display); font-size: 16px; font-weight: {{t.weight}}; color: {{t.color}};" style-hover="color: var(--c-accent);">{{t.label}}<span aria-hidden="true" style="position: absolute; left: 0; bottom: -2px; height: 3px; background: var(--c-accent); width: {{t.bar}}; transition: width 0.3s var(--ease);"></span></button>
+          </sc-for>
+        </div>
+        <span style="font-family: var(--f-display); font-size: 15px; color: var(--c-muted);">{{countLabel}}</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(16px, 2vw, 24px); row-gap: clamp(24px, 3vw, 40px);">
+        <sc-for list="{{shown}}" as="p" hint-placeholder-count="9">
+          <dc-import name="ProjectCard" variant="card" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,300px"></dc-import>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+    <section data-screen-label="Portfolio / Hero (mobile)" style="background: var(--c-dark); color: var(--c-on-dark);">
+      <div style="position: relative;">
+        <img src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 62% 50%;">
+        <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(to top, var(--c-dark) 0%, rgba(12, 42, 77, 0) 100%);"></div>
+      </div>
+      <div style="position: relative; margin-top: -48px; padding: 0 var(--gutter) var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3);">
+        <div style="display: flex; align-items: center; gap: var(--sp-3);">
+          <span style="font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
+          <span aria-hidden="true" style="width: 22px; height: 3px; background: var(--c-accent);"></span>
+        </div>
+        <h1 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: 36px; line-height: 1.04; text-wrap: balance;">Building stronger communities together</h1>
+        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--c-on-dark-soft); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+      </div>
+    </section>
+    <section data-screen-label="Portfolio / List (mobile)" style="padding: var(--sp-2) var(--gutter) var(--sp-7); display: flex; flex-direction: column;">
+      <sc-for list="{{shown}}" as="p" hint-placeholder-count="10">
+        <dc-import name="ProjectCard" variant="row" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,97px"></dc-import>
+      </sc-for>
+    </section>
+  </sc-if>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+const PROJECTS = [
+  { title: 'SENIORS RESIDENTIAL & COMMERCIAL DEVELOPMENT', display: 'Seniors Residential & Commercial Development', image: 'assets/seniors.png', pos: '62% 50%', cats: ['Commercial', 'Mixed Use'], featured: true },
+  { title: '458 E 1st Street', image: 'assets/458-e-1st.png', pos: '50% 70%', cats: ['Townhouse'], featured: true },
+  { title: '7000 Williams Road', image: 'assets/natlandhomes/1-600x390.jpg', cats: ['Townhouse'] },
+  { title: '1235 Marine Drive', image: 'assets/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-01-49-600x390.jpg', cats: ['Commercial', 'Mixed Use'] },
+  { title: '3560 Bluebonnet', image: 'assets/natlandhomes/3560-Bluebonnet-002-600x390.jpg', href: 'Project-3560-Bluebonnet.dc.html', cats: ['Residential'] },
+  { title: '976 Melbourne', image: 'assets/natlandhomes/976-Melbourne-001-600x390.jpg', cats: ['Residential'] },
+  { title: '218 E 22nd Street', image: 'assets/natlandhomes/020-600x390.jpg', cats: ['Residential'] },
+  { title: '226 West 5th Street', image: 'assets/natlandhomes/triplex-600x390.jpg', cats: ['Residential'] },
+  { title: '754 East 17th Street', image: 'assets/natlandhomes/Single-family-1-600x390.jpg', cats: ['Residential'] },
+  { title: '245 West 27th Street', image: 'assets/natlandhomes/Two-single-family-house-600x390.jpg', cats: ['Townhouse'] },
+].map((p, i) => ({ ...p, num: String(i + 1).padStart(2, '0'), href: p.href || '#', pos: p.pos || '50% 50%', display: p.display || p.title }));
+const TABS = ['All Projects', 'Residential', 'Townhouse', 'Commercial', 'Mixed Use'];
+
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, tab: 'All Projects', slide: 0 };
+  onMq = () => this.setState({ m: this.mq.matches });
+  componentDidMount() {
+    this.mq.addEventListener('change', this.onMq);
+    this.timer = setInterval(() => { if (this.props.autoplay ?? true) this.go(1); }, 6000);
+  }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); clearInterval(this.timer); }
+  go = d => this.setState(s => ({ slide: (s.slide + d + this.featured().length) % this.featured().length }));
+  featured() { return PROJECTS.filter(p => p.featured); }
+  renderVals() {
+    const { tab, slide, m } = this.state;
+    const feat = this.featured();
+    const cur = feat[slide] || feat[0];
+    const shown = PROJECTS.filter(p => tab === 'All Projects' || p.cats.includes(tab)).map(p => ({ ...p, title: p.display }));
+    return {
+      desktop: !m, mobile: m,
+      slides: feat.map((p, i) => ({ ...p, opacity: i === slide ? 1 : 0, events: i === slide ? 'auto' : 'none' })),
+      slideNum: cur.num,
+      slideTitle: cur.display,
+      prev: () => { clearInterval(this.timer); this.go(-1); },
+      next: () => { clearInterval(this.timer); this.go(1); },
+      tabs: TABS.map(t => ({
+        label: t,
+        color: t === tab ? 'var(--c-accent)' : 'var(--c-ink-soft)',
+        weight: t === tab ? 600 : 400,
+        bar: t === tab ? '100%' : '0%',
+        select: () => this.setState({ tab: t }),
+      })),
+      shown,
+      countLabel: shown.length + (shown.length === 1 ? ' Project' : ' Projects'),
+    };
+  }
+}
+</script>
+</body>
+</html>

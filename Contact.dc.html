@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — Contact Us</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#f8f6f1}a{color:#8a1c2f}a:hover{color:#6e1324}</style>
+</helmet>
+<dc-import name="SiteHeader" active="contact" hint-size="100%,88px"></dc-import>
+<main>
+  <dc-import name="PageTitle" title="Contact Us" hint-size="100%,360px"></dc-import>
+  <section data-screen-label="Contact / Details" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter);">
+    <dc-import name="ContactInfo" variant="cards" hint-size="100%,300px"></dc-import>
+  </section>
+  <section data-screen-label="Contact / Map" style="background: var(--c-surface);">
+    <iframe title="Natland Group map" src="https://maps.google.com/maps?q=788%20Harbourside%20Dr%20unit130,%20North%20Vancouver,%20BC%20V7P%203R7&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" style="display: block; width: 100%; height: clamp(320px, 34vw, 480px); border: 0; filter: grayscale(0.35) contrast(1.02);"></iframe>
+  </section>
+  <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+    <section data-screen-label="Contact / Form" style="padding: var(--sp-section) var(--gutter);">
+      <div style="max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--sp-7);">
+        <dc-import name="SectionHeading" text="Get in Touch !" align="center" hint-size="100%,90px"></dc-import>
+        <form onSubmit="{{sendDesktop}}" style="display: flex; flex-direction: column; gap: var(--sp-4);">
+          <textarea name="your-message" placeholder="Your Message" rows="5" style="padding: var(--sp-4) 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-body); line-height: 1.6; resize: vertical; outline: none;"></textarea>
+          <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-6);">
+            <input type="text" name="your-name" placeholder="Your Name" style="height: var(--field-h); padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-body); outline: none;">
+            <input type="email" name="your-email" placeholder="Your Email" style="height: var(--field-h); padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: var(--fs-body); outline: none;">
+          </div>
+          <div style="margin-top: var(--sp-5); display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);">
+            <dc-import name="Button" label="LEAVE A message" variant="primary" type="submit" hint-size="100%,52px" style="width: 100%;"></dc-import>
+            <p style="margin: 0; font-size: 13px; color: var(--c-muted);">Clicking Send will open your email app</p>
+          </div>
+        </form>
+        <p style="margin: 0; padding-top: var(--sp-6); border-top: 1px solid var(--c-line); text-align: center; font-family: var(--f-display); font-size: 22px;"><a href="mailto:office@natlandhomes.com" style="color: var(--c-ink); text-decoration: none;" style-hover="color: var(--c-accent);">office@natlandhomes.com</a></p>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+    <section data-screen-label="Contact / Form (mobile)" style="background: var(--c-dark); color: var(--c-on-dark); padding: var(--sp-8) var(--gutter);">
+      <div style="display: flex; flex-direction: column; gap: var(--sp-6);">
+        <dc-import name="SectionHeading" text="Get in Touch !" align="left" hint-size="100%,80px"></dc-import>
+        <form onSubmit="{{sendMobile}}" style="display: flex; flex-direction: column; gap: var(--sp-3);">
+          <input type="text" name="your-name" placeholder="Your name *" required="" style="height: var(--field-h); padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line-dark); border-radius: 0; color: var(--c-on-dark); font-size: 16px; outline: none;">
+          <input type="tel" name="your-phone" placeholder="Phone number" style="height: var(--field-h); padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line-dark); border-radius: 0; color: var(--c-on-dark); font-size: 16px; outline: none;">
+          <input type="email" name="your-email" placeholder="Your e-mail *" required="" style="height: var(--field-h); padding: 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line-dark); border-radius: 0; color: var(--c-on-dark); font-size: 16px; outline: none;">
+          <textarea name="your-message" placeholder="How can we help you ?" rows="4" style="padding: var(--sp-4) 0; background: transparent; border: 0; border-bottom: 1px solid var(--c-line-dark); border-radius: 0; color: var(--c-on-dark); font-size: 16px; line-height: 1.6; resize: vertical; outline: none;"></textarea>
+          <div style="margin-top: var(--sp-5); display: flex; flex-direction: column; align-items: center; gap: var(--sp-3);">
+            <dc-import name="Button" label="Submit" variant="light" type="submit" hint-size="100%,52px" style="width: 100%;"></dc-import>
+            <p style="margin: 0; font-size: 13px; color: var(--c-on-dark-soft);">Clicking Send will open your email app</p>
+          </div>
+        </form>
+        <p style="margin: 0; padding-top: var(--sp-5); border-top: 1px solid var(--c-line-dark); text-align: center; font-family: var(--f-display); font-size: 20px;"><a href="mailto:office@natlandhomes.com" style="color: var(--c-on-dark); text-decoration: none;">office@natlandhomes.com</a></p>
+      </div>
+    </section>
+  </sc-if>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches };
+  onMq = () => this.setState({ m: this.mq.matches });
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  send(e) {
+    e.preventDefault();
+    const f = new FormData(e.currentTarget);
+    const name = (f.get('your-name') || '').trim();
+    const lines = [
+      f.get('your-message') || '',
+      '',
+      name && 'Name: ' + name,
+      f.get('your-phone') && 'Phone: ' + f.get('your-phone'),
+      f.get('your-email') && 'Email: ' + f.get('your-email'),
+    ].filter(l => l !== false && l !== null && l !== undefined);
+    const subject = 'Website enquiry' + (name ? ' – ' + name : '');
+    window.location.href = 'mailto:office@natlandhomes.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+  }
+  renderVals() {
+    return {
+      desktop: !this.state.m,
+      mobile: this.state.m,
+      sendDesktop: e => this.send(e),
+      sendMobile: e => this.send(e),
+    };
+  }
+}
+</script>
+</body>
+</html>
