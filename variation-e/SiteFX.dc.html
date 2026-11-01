@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="theme.css">
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</helmet>
+<div ref="{{barRef}}" aria-hidden="true" style="position: fixed; left: 0; right: 0; top: 0; z-index: 60; height: 3px; background: var(--c-accent); transform: scaleX(0); transform-origin: 0 50%; pointer-events: none;"></div>
+<div ref="{{ringRef}}" aria-hidden="true" style="position: fixed; left: 0; top: 0; z-index: 310; width: 40px; height: 40px; margin: -20px 0 0 -20px; border: 1.5px solid #fff; border-radius: 50%; mix-blend-mode: difference; pointer-events: none; display: flex; align-items: center; justify-content: center; opacity: 0; transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1), height 0.5s cubic-bezier(0.16, 1, 0.3, 1), margin 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s, border-color 0.3s, opacity 0.3s;">
+  <span ref="{{labelRef}}" style="font-family: var(--f-display); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: #fff; opacity: 0; transition: opacity 0.25s;"></span>
+</div>
+<div ref="{{dotRef}}" aria-hidden="true" style="position: fixed; left: 0; top: 0; z-index: 311; width: 6px; height: 6px; margin: -3px 0 0 -3px; border-radius: 50%; background: var(--c-accent); pointer-events: none; opacity: 0; transition: opacity 0.3s;"></div>
+<div ref="{{curtainRef}}" aria-hidden="true" style="position: fixed; inset: 0; z-index: 400; pointer-events: none;">
+  <div style="position: absolute; inset: 0; background: #b3122f;"></div>
+  <div style="position: absolute; inset: 0; background: #0c2a4d; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px;">
+    <img src="assets/logo-light.png" alt="" style="width: 200px; height: auto; opacity: 0;">
+    <span style="display: block; width: 200px; height: 2px; background: #b3122f; transform: scaleX(0); transform-origin: 0 50%;"></span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:400},&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  barRef = React.createRef(); ringRef = React.createRef(); dotRef = React.createRef();
+  labelRef = React.createRef(); curtainRef = React.createRef();
+  componentDidMount() {
+    this.reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || this.props.motion === false;
+    this.fine = matchMedia('(pointer: fine)').matches && innerWidth >= 768;
+    this.mx = innerWidth / 2; this.my = innerHeight / 2; this.rx = this.mx; this.ry = this.my;
+    this.seen = new WeakSet(); this.queue = []; this.hold = true;
+    this.io = new IntersectionObserver(this.onIO, { rootMargin: '0px 0px -10% 0px', threshold: 0.01 });
+    this.scan();
+    this.mo = new MutationObserver(() => { clearTimeout(this.scanT); this.scanT = setTimeout(() => this.scan(), 50); });
+    this.mo.observe(document.body, { childList: true, subtree: true });
+    if (this.fine && !this.reduce) this.setupCursor();
+    this.setupLenis();
+    this.onClick = this.onClick.bind(this);
+    document.addEventListener('click', this.onClick);
+    this.openCurtain();
+    this.loop = this.loop.bind(this);
+    this.raf = requestAnimationFrame(this.loop);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); this.io.disconnect(); this.mo.disconnect();
+    document.removeEventListener('click', this.onClick);
+    if (this.offMove) this.offMove();
+    if (this.lenis) this.lenis.destroy();
+  }
+  release() {
+    this.hold = false;
+    this.queue.forEach(el => this.io.observe(el)); this.queue = [];
+    document.querySelectorAll('[data-kb]').forEach(img => {
+      if (this.reduce || img.__kb) return; img.__kb = 1;
+      img.animate([{ transform: 'scale(1.18)' }, { transform: 'scale(1)' }], { duration: 2600, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'both' });
+    });
+  }
+  scan() {
+    const R = this.reduce;
+    document.querySelectorAll('[data-split],[data-reveal],[data-clip],[data-line]').forEach(el => {
+      if (this.seen.has(el)) return; this.seen.add(el);
+      if (R) return;
+      if (el.hasAttribute('data-split')) el.querySelectorAll('[data-w]').forEach(w => { w.style.transform = 'translate3d(0,110%,0)'; });
+      else if (el.hasAttribute('data-reveal')) { el.style.opacity = 0; el.style.transform = 'translate3d(0,' + (el.dataset.reveal === 'left' ? '0' : '40px') + ',0)' + (el.dataset.reveal === 'left' ? ' translateX(-32px)' : ''); }
+      else if (el.hasAttribute('data-clip')) {
+        const d = el.dataset.clip;
+        el.style.clipPath = d === 'left' ? 'inset(0 100% 0 0)' : d === 'right' ? 'inset(0 0 0 100%)' : 'inset(100% 0 0 0)';
+        const img = el.querySelector('img'); if (img) img.style.transform = 'scale(1.25)';
+      } else if (el.hasAttribute('data-line')) { el.style.transform = el.dataset.line === 'y' ? 'scaleY(0)' : 'scaleX(0)'; el.style.transformOrigin = el.dataset.line === 'y' ? '50% 0' : '0 50%'; }
+      let target = el;
+      if (el.hasAttribute('data-clip') && el.parentElement) { target = el.parentElement; (target.__clips = target.__clips || []).push(el); }
+      else (el.__self = true);
+      if (this.hold) this.queue.push(target); else this.io.observe(target);
+    });
+    document.querySelectorAll('[data-pulse]').forEach(el => {
+      if (el.__p || R) return; el.__p = 1;
+      el.animate([{ transform: 'scale(1)', opacity: 0.75 }, { transform: 'scale(3.4)', opacity: 0 }], { duration: 2000, iterations: Infinity, delay: +el.dataset.pulse || 0, easing: 'cubic-bezier(0.16,1,0.3,1)' });
+    });
+    document.querySelectorAll('[data-zoom]').forEach(el => {
+      if (el.__z) return; el.__z = 1;
+      const set = on => {
+        const img = el.querySelector('img'), ar = el.querySelector('[data-arrow]'), ul = el.querySelector('[data-uline]');
+        if (img && img.__ready !== false) { img.style.transition = 'transform 1s cubic-bezier(0.16,1,0.3,1)'; img.style.transform = on ? 'scale(1.06)' : 'scale(1)'; }
+        if (ar) { ar.style.transition = 'transform 0.5s cubic-bezier(0.16,1,0.3,1)'; ar.style.transform = on ? 'translateX(6px)' : ''; }
+        if (ul) { ul.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)'; ul.style.transformOrigin = on ? '0 50%' : '100% 50%'; ul.style.transform = on ? 'scaleX(1)' : 'scaleX(0)'; }
+      };
+      el.addEventListener('mouseenter', () => set(true));
+      el.addEventListener('mouseleave', () => set(false));
+    });
+    document.querySelectorAll('img[data-fallback]').forEach(img => {
+      if (img.__fb) return; img.__fb = 1;
+      const swap = () => { const f = img.getAttribute('data-fallback'); if (f && f.indexOf('{{') < 0 && img.getAttribute('src') !== f) img.setAttribute('src', f); };
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) swap();
+      img.addEventListener('error', swap);
+    });
+    this.parallax = [...document.querySelectorAll('[data-parallax]')];
+    this.scrubs = [...document.querySelectorAll('[data-scrub]')];
+    this.travel = [...document.querySelectorAll('[data-travel]')];
+  }
+  onIO = entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const t = en.target;
+      this.io.unobserve(t);
+      if (t.__clips) { t.__clips.forEach(c => this.play(c)); t.__clips = null; }
+      if (t.__self) { t.__self = false; this.play(t); }
+    });
+  };
+  play(el) {
+    const d = +el.dataset.delay || 0, E = 'cubic-bezier(0.16,1,0.3,1)', E2 = 'cubic-bezier(0.77,0,0.18,1)';
+    if (el.hasAttribute('data-split')) {
+      el.querySelectorAll('[data-w]').forEach((w, i) => { w.style.transition = 'transform 1.1s ' + E + ' ' + (d + i * 75) + 'ms'; w.style.transform = 'none'; });
+    } else if (el.hasAttribute('data-reveal')) {
+      el.style.transition = 'opacity 0.9s ' + E + ' ' + d + 'ms, transform 1.1s ' + E + ' ' + d + 'ms';
+      el.style.opacity = 1; el.style.transform = 'none';
+    } else if (el.hasAttribute('data-clip')) {
+      el.style.transition = 'clip-path 1.3s ' + E2 + ' ' + d + 'ms';
+      el.style.clipPath = 'inset(0 0 0 0)';
+      const img = el.querySelector('img');
+      if (img) {
+        img.__ready = false;
+        img.style.transition = 'transform 1.9s ' + E + ' ' + d + 'ms'; img.style.transform = 'scale(1)';
+        setTimeout(() => { img.__ready = true; }, d + 1300);
+      }
+    } else if (el.hasAttribute('data-line')) {
+      el.style.transition = 'transform 1.1s ' + E2 + ' ' + d + 'ms'; el.style.transform = 'none';
+    }
+  }
+  setupCursor() {
+    const st = document.createElement('style');
+    st.textContent = 'html.nl-cursor, html.nl-cursor * { cursor: none !important; }';
+    document.head.appendChild(st);
+    document.documentElement.classList.add('nl-cursor');
+    const ring = this.ringRef.current, dot = this.dotRef.current, label = this.labelRef.current;
+    let cur = null, mag = null;
+    const move = e => {
+      this.mx = e.clientX; this.my = e.clientY;
+      ring.style.opacity = 1; dot.style.opacity = 1;
+      const t = e.target instanceof Element ? e.target : null;
+      const c = t && t.closest('[data-cursor]');
+      const link = t && t.closest('a, button, input, textarea');
+      const state = c ? 'c' : link ? 'l' : '';
+      if (state !== cur) {
+        cur = state;
+        if (c) {
+          label.textContent = c.getAttribute('data-cursor');
+          Object.assign(ring.style, { width: '88px', height: '88px', margin: '-44px 0 0 -44px', backgroundColor: '#b3122f', borderColor: '#b3122f', mixBlendMode: 'normal' });
+          label.style.opacity = 1; dot.style.opacity = 0;
+        } else if (link) {
+          Object.assign(ring.style, { width: '60px', height: '60px', margin: '-30px 0 0 -30px', backgroundColor: 'transparent', borderColor: '#fff', mixBlendMode: 'difference' });
+          label.style.opacity = 0;
+        } else {
+          Object.assign(ring.style, { width: '40px', height: '40px', margin: '-20px 0 0 -20px', backgroundColor: 'transparent', borderColor: '#fff', mixBlendMode: 'difference' });
+          label.style.opacity = 0;
+        }
+      }
+      const m = t && t.closest('[data-magnetic]');
+      if (mag && mag !== m) { mag.style.transition = 'transform 0.7s cubic-bezier(0.16,1,0.3,1)'; mag.style.transform = ''; }
+      mag = m;
+      if (m) {
+        const r = m.getBoundingClientRect();
+        m.style.transition = 'transform 0.25s cubic-bezier(0.16,1,0.3,1)';
+        m.style.transform = 'translate(' + (e.clientX - r.left - r.width / 2) * 0.25 + 'px,' + (e.clientY - r.top - r.height / 2) * 0.35 + 'px)';
+      }
+    };
+    const leave = () => { ring.style.opacity = 0; dot.style.opacity = 0; };
+    addEventListener('mousemove', move, { passive: true });
+    document.addEventListener('mouseleave', leave);
+    this.offMove = () => { removeEventListener('mousemove', move); document.removeEventListener('mouseleave', leave); };
+  }
+  setupLenis() {
+    if (this.reduce || innerWidth < 768) return;
+    let tries = 0;
+    const start = () => {
+      if (!window.Lenis) { if (tries++ < 50) setTimeout(start, 100); return; }
+      this.lenis = new window.Lenis({ lerp: 0.09, smoothWheel: true });
+    };
+    start();
+  }
+  onClick(e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    const a = e.target instanceof Element && e.target.closest('a[href]');
+    if (!a || a.target === '_blank') return;
+    const href = a.getAttribute('href') || '';
+    if (!href || href[0] === '#' || /^(mailto:|tel:|https?:|javascript:)/i.test(href)) return;
+    e.preventDefault();
+    const go = () => { try { sessionStorage.setItem('nle-curtain', '1'); } catch (err) {} location.href = a.href; };
+    const c = this.curtainRef.current;
+    if (!c || this.reduce) return go();
+    const [red, navy] = c.children;
+    navy.children[0].style.opacity = 0; navy.children[1].style.transform = 'scaleX(0)';
+    c.style.visibility = 'visible'; c.style.pointerEvents = 'auto';
+    const E = 'cubic-bezier(0.76,0,0.24,1)';
+    red.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: 600, easing: E, fill: 'forwards' });
+    navy.animate([{ transform: 'translateY(100%)' }, { transform: 'translateY(0)' }], { duration: 600, delay: 100, easing: E, fill: 'forwards' }).onfinish = go;
+  }
+  openCurtain() {
+    const c = this.curtainRef.current;
+    let nav = false, seen = false;
+    try { nav = sessionStorage.getItem('nle-curtain') === '1'; sessionStorage.removeItem('nle-curtain'); seen = sessionStorage.getItem('nle-intro') === '1'; sessionStorage.setItem('nle-intro', '1'); } catch (err) {}
+    const intro = !nav && !seen && (this.props.intro ?? true);
+    const hide = () => { c.style.visibility = 'hidden'; c.style.pointerEvents = 'none'; };
+    if (!c || this.reduce || (!nav && !intro)) { if (c) hide(); this.release(); return; }
+    const [red, navy] = c.children, logo = navy.children[0], bar = navy.children[1];
+    const E = 'cubic-bezier(0.76,0,0.24,1)';
+    const lift = start => {
+      navy.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }], { duration: 900, delay: start, easing: E, fill: 'forwards' });
+      red.animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-100%)' }], { duration: 900, delay: start + 120, easing: E, fill: 'forwards' }).onfinish = hide;
+      setTimeout(() => this.release(), start + 380);
+    };
+    if (intro) {
+      logo.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 700, easing: 'cubic-bezier(0.16,1,0.3,1)', fill: 'forwards' });
+      bar.animate([{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }], { duration: 900, delay: 250, easing: E, fill: 'forwards' });
+      logo.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 300, delay: 1250, fill: 'forwards' });
+      lift(1350);
+    } else lift(80);
+  }
+  loop(now) {
+    this.raf = requestAnimationFrame(this.loop);
+    if (this.lenis) this.lenis.raf(now);
+    const y = scrollY, vh = innerHeight, H = document.documentElement.scrollHeight - vh;
+    if (this.barRef.current) this.barRef.current.style.transform = 'scaleX(' + (H > 0 ? Math.min(1, y / H) : 0).toFixed(4) + ')';
+    if (this.fine && !this.reduce) {
+      this.rx += (this.mx - this.rx) * 0.15; this.ry += (this.my - this.ry) * 0.15;
+      if (this.ringRef.current) this.ringRef.current.style.transform = 'translate3d(' + this.rx + 'px,' + this.ry + 'px,0)';
+      if (this.dotRef.current) this.dotRef.current.style.transform = 'translate3d(' + this.mx + 'px,' + this.my + 'px,0)';
+    }
+    if (this.reduce) return;
+    (this.parallax || []).forEach(el => {
+      const r = (el.parentElement || el).getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) return;
+      const s = +el.dataset.parallax || 0.1;
+      const p = (r.top + r.height / 2 - vh / 2) / vh;
+      el.style.transform = 'translate3d(0,' + (p * vh * s).toFixed(1) + 'px,0) scale(' + (1 + s * 1.6).toFixed(3) + ')';
+    });
+    (this.scrubs || []).forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      let p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.85)));
+      p = 1 - Math.pow(1 - p, 3);
+      const q = 1 - p;
+      el.style.clipPath = 'inset(' + (q * 10).toFixed(2) + '% ' + (q * 12).toFixed(2) + '% round ' + (q * 28).toFixed(1) + 'px)';
+      const img = el.querySelector('img');
+      if (img) img.style.transform = 'translate3d(' + ((0.5 - p) * 4).toFixed(2) + '%,0,0) scale(' + (1.22 - p * 0.14).toFixed(3) + ')';
+    });
+    (this.travel || []).forEach(el => {
+      const [x0, y0, cx, cy, x1, y1] = el.dataset.travel.split(',').map(Number);
+      const t = (now % 2600) / 2600, u = 1 - t;
+      el.style.left = (u * u * x0 + 2 * u * t * cx + t * t * x1).toFixed(2) + '%';
+      el.style.top = (u * u * y0 + 2 * u * t * cy + t * t * y1).toFixed(2) + '%';
+      el.style.opacity = Math.min(1, Math.min(t, u) * 6).toFixed(2);
+    });
+  }
+  renderVals() {
+    return { barRef: this.barRef, ringRef: this.ringRef, dotRef: this.dotRef, labelRef: this.labelRef, curtainRef: this.curtainRef };
+  }
+}
+</script>
+</body>
+</html>

@@ -92,6 +92,12 @@ class Component extends DCLogic {
       el.addEventListener('mouseenter', () => set(true));
       el.addEventListener('mouseleave', () => set(false));
     });
+    document.querySelectorAll('img[data-fallback]').forEach(img => {
+      if (img.__fb) return; img.__fb = 1;
+      const swap = () => { const f = img.getAttribute('data-fallback'); if (f && f.indexOf('{{') < 0 && img.getAttribute('src') !== f) img.setAttribute('src', f); };
+      if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) swap();
+      img.addEventListener('error', swap);
+    });
     this.parallax = [...document.querySelectorAll('[data-parallax]')];
     this.scrubs = [...document.querySelectorAll('[data-scrub]')];
     this.travel = [...document.querySelectorAll('[data-travel]')];

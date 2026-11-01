@@ -11,81 +11,167 @@
 <helmet>
 <title>Natland Group — Our Services</title>
 <link rel="stylesheet" href="theme.css">
-<style>body{margin:0;background:#f8f6f1}a{color:#8a1c2f}a:hover{color:#6e1324}</style>
+<style>body{margin:0;background:#fff}a{color:#b2022e}a:hover{color:#8e0224}</style>
 </helmet>
-<dc-import name="SiteHeader" active="services" hint-size="100%,88px"></dc-import>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
+<dc-import name="SiteHeader" active="services" hint-size="100%,96px"></dc-import>
 <main>
-  <dc-import name="PageTitle" title="Our Services" hint-size="100%,360px"></dc-import>
-  <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
-    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: flex; flex-direction: column; gap: var(--sp-section);">
-      <section data-screen-label="Services / Due Diligence" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 120px); align-items: center;">
-        <div style="display: flex; flex-direction: column; gap: var(--sp-6);">
-          <dc-import name="SectionHeading" text="Due Diligence" align="left" hint-size="100%,90px"></dc-import>
-          <p style="margin: 0; max-width: 440px; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft); text-wrap: pretty;">What do laws and policies permit you to do with a site? What is an appropriate market price for the land? What are the risks, and how can they be mitigated? Our team undertakes due diligence for land acquisition.</p>
-        </div>
-        <img src="../shared/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-11-12-1024x542.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-      </section>
-      <section data-screen-label="Services / Visioning" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 7vw, 120px); align-items: center;">
-        <img src="../shared/natlandhomes/976-Melbourne-008-1024x683.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-        <div style="display: flex; flex-direction: column; gap: var(--sp-6);">
-          <dc-import name="SectionHeading" text="Visioning" align="left" hint-size="100%,90px"></dc-import>
-          <p style="margin: 0; max-width: 440px; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft); text-wrap: pretty;">Designers and engineers require direction to do great work. Our skilled staff envision the possibilities for placemaking to guide land development projects. We bring placemaking dreams to reality.</p>
-        </div>
-      </section>
-      <section data-screen-label="Services / Project Management" style="display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(40px, 7vw, 120px); align-items: center;">
-        <div style="display: flex; flex-direction: column; gap: var(--sp-6);">
-          <dc-import name="SectionHeading" text="Project Management" align="left" hint-size="100%,90px"></dc-import>
-          <p style="margin: 0; max-width: 440px; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft); text-wrap: pretty;">We manage complex interdisciplinary teams to bring land development projects from first inception to the Building Permit stage. We partner with our sister company, Natcon Construction Services, to provide construction management services.</p>
-        </div>
-        <img src="../shared/natlandhomes/218-E-22nd-Street-OPT1-KITCHEN-1024x640.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-      </section>
-      <section data-screen-label="Services / Approvals" style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 7vw, 120px); align-items: center;">
-        <img src="../shared/natlandhomes/Screen-Shot-2022-02-16-at-12.06.10-1024x1024.jpg" alt="" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
-        <div style="display: flex; flex-direction: column; gap: var(--sp-6);">
-          <dc-import name="SectionHeading" text="Approvals Strategy and Advocacy" align="left" hint-size="100%,140px"></dc-import>
-          <p style="margin: 0; max-width: 440px; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft); text-wrap: pretty;">Checking boxes on a development application form is not enough to ensure that projects are approved by local government to proceed. The Natland Group draws upon decades of local knowledge to craft approval strategies to mitigate risk and earn project approval. We engage with communities, municipal staff and politicians to create successful projects.</p>
-        </div>
-      </section>
+  <section data-screen-label="Services / Intro" style="max-width: var(--max-w); margin: 0 auto; padding: {{introPad}}; display: flex; flex-direction: column; gap: 22px;">
+    <span data-line="" style="display: block; width: 36px; height: 3px; background: var(--c-accent);"></span>
+    <div style="display: grid; grid-template-columns: {{introCols}}; gap: {{introGap}}; align-items: center;">
+      <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 700; font-size: {{h1Size}}; line-height: 0.98; letter-spacing: -0.025em; color: var(--c-ink);"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Our</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Services</span></span></h1>
+      <p data-reveal="" data-delay="300" style="margin: 0; max-width: 440px; padding-left: {{introPPad}}; border-left: {{introPBorder}}; font-size: {{pSize}}; line-height: 1.55; color: var(--c-ink-soft); text-wrap: pretty;">We provide a full range of land development services, from initial analysis to approvals, helping to create great places for communities.</p>
     </div>
-  </sc-if>
-  <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
-    <div style="padding: var(--sp-7) var(--gutter) var(--sp-8); display: flex; flex-direction: column;">
-      <section data-screen-label="Services / Due Diligence (mobile)" style="display: flex; flex-direction: column; gap: var(--sp-5); padding-bottom: var(--sp-7); border-bottom: 1px solid var(--c-line);">
-        <img src="../shared/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-11-12-1536x814.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-        <dc-import name="SectionHeading" text="Due Diligence" align="left" hint-size="100%,80px"></dc-import>
-        <p style="margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft);">What do laws and policies permit you to do with a site? What is an appropriate market price for the land? What are the risks, and how can they be mitigated? Our team undertakes due diligence for land acquisition.</p>
-      </section>
-      <section data-screen-label="Services / Visioning (mobile)" style="display: flex; flex-direction: column; gap: var(--sp-5); padding: var(--sp-7) 0; border-bottom: 1px solid var(--c-line);">
-        <img src="../shared/natlandhomes/976-Melbourne-008-1536x1024.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-        <dc-import name="SectionHeading" text="Visioning" align="left" hint-size="100%,80px"></dc-import>
-        <p style="margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft);">Designers and engineers require direction to do great work. Our skilled staff envision the possibilities for placemaking to guide land development projects. We bring placemaking dreams to reality.</p>
-      </section>
-      <section data-screen-label="Services / Project Management (mobile)" style="display: flex; flex-direction: column; gap: var(--sp-5); padding: var(--sp-7) 0; border-bottom: 1px solid var(--c-line);">
-        <img src="../shared/natlandhomes/218-E-22nd-Street-OPT1-KITCHEN-1536x960.jpg" alt="" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
-        <dc-import name="SectionHeading" text="Project Management" align="left" hint-size="100%,80px"></dc-import>
-        <p style="margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft);">We manage complex interdisciplinary teams to bring land development projects from first inception to the Building Permit stage. We partner with our sister company, Natcon Construction Services, to provide construction management services.</p>
-      </section>
-      <section data-screen-label="Services / Approvals (mobile)" style="display: flex; flex-direction: column; gap: var(--sp-5); padding-top: var(--sp-7);">
-        <img src="../shared/natlandhomes/Screen-Shot-2022-02-16-at-12.06.10-1536x1534.jpg" alt="" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover;">
-        <dc-import name="SectionHeading" text="Approvals Strategy and Advocacy" align="left" hint-size="100%,120px"></dc-import>
-        <p style="margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--c-ink-soft);">Checking boxes on a development application form is not enough to ensure that projects are approved by local government to proceed. The Natland Group draws upon decades of local knowledge to craft approval strategies to mitigate risk and earn project approval. We engage with communities, municipal staff and politicians to create successful projects.</p>
-      </section>
+  </section>
+  <nav data-screen-label="Services / Index" style="position: {{navPos}}; top: 0; z-index: 20; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); display: {{tabsDisplay}}; grid-template-columns: {{tabCols}};">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+        <a href="{{t.href}}" onClick="{{t.go}}" style="position: relative; display: flex; align-items: center; gap: 14px; padding: {{tabPad}}; border-left: {{t.borderL}}; border-top: {{t.borderT}}; color: var(--c-ink); text-decoration: none; font-family: var(--f-display); font-size: {{tabSize}};">
+          <span style="font-weight: 600; color: var(--c-accent);">{{t.num}}</span>
+          <span style="font-weight: {{t.weight}};">{{t.label}}</span>
+          <span aria-hidden="true" style="position: absolute; left: {{t.barLeft}}; right: 0; bottom: -1px; height: 3px; background: var(--c-accent); transform: scaleX({{t.bar}}); transform-origin: 0 50%; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+        </a>
+      </sc-for>
     </div>
-  </sc-if>
+  </nav>
+  <section id="due-diligence" data-svc="0" data-screen-label="Services / 01 Due Diligence" style="max-width: var(--max-w); margin: 0 auto; padding: {{secPad}}; display: grid; grid-template-columns: {{colsA}}; gap: {{secGap}}; align-items: center;">
+    <div style="order: {{textOrder}}; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: flex-end; gap: 12px;">
+        <span style="position: relative; display: block; padding-bottom: 6px; font-family: var(--f-display); font-size: 16px; font-weight: 600; line-height: 1; color: var(--c-ink);">01<span data-line="" style="position: absolute; left: 0; bottom: 0; display: block; width: 100%; height: 3px; background: var(--c-accent);"></span></span>
+        <span data-line="" data-delay="200" style="display: block; width: 22px; height: 2px; margin-bottom: 12px; background: var(--c-accent);"></span>
+      </div>
+      <div style="position: relative; padding-left: {{ruleIndent}}; display: flex; flex-direction: column; gap: 16px;">
+        <span data-line="y" data-delay="250" aria-hidden="true" style="position: absolute; left: {{ruleLeft}}; top: 0; bottom: 0; display: block; width: 1px; background: var(--c-line);"></span>
+        <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.1; color: var(--c-ink); text-wrap: balance;">Due Diligence</h2>
+        <p data-reveal="" data-delay="120" style="margin: 0; font-size: {{pSize}}; line-height: 1.6; color: var(--c-ink-soft); text-wrap: pretty;">What do laws and policies permit you to do with a site? What is an appropriate market price for the land? What are the risks, and how can they be mitigated? Our team undertakes due diligence for land acquisition.</p>
+      </div>
+    </div>
+    <div data-clip="right" style="position: relative; overflow: hidden; aspect-ratio: {{imgRatio}};">
+      <div data-parallax="0.06" style="position: absolute; inset: 0;">
+        <img src="../shared/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-11-12-1024x542.jpg" data-fallback="assets/fb-due.png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+  <section id="visioning" data-svc="1" data-screen-label="Services / 02 Visioning" style="max-width: var(--max-w); margin: 0 auto; padding: {{secPad}}; display: grid; grid-template-columns: {{colsB}}; gap: {{secGap}}; align-items: center;">
+    <div data-clip="left" style="position: relative; overflow: hidden; aspect-ratio: {{imgRatio}};">
+      <div data-parallax="0.06" style="position: absolute; inset: 0;">
+        <img src="../shared/natlandhomes/976-Melbourne-008-1536x1024.jpg" data-fallback="assets/fb-vision.png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+    <div style="order: {{textOrder}}; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: flex-end; gap: 12px;">
+        <span style="position: relative; display: block; padding-bottom: 6px; font-family: var(--f-display); font-size: 16px; font-weight: 600; line-height: 1; color: var(--c-ink);">02<span data-line="" style="position: absolute; left: 0; bottom: 0; display: block; width: 100%; height: 3px; background: var(--c-accent);"></span></span>
+        <span data-line="" data-delay="200" style="display: block; width: 22px; height: 2px; margin-bottom: 12px; background: var(--c-accent);"></span>
+      </div>
+      <div style="position: relative; padding-left: {{ruleIndent}}; display: flex; flex-direction: column; gap: 16px;">
+        <span data-line="y" data-delay="250" aria-hidden="true" style="position: absolute; left: {{ruleLeft}}; top: 0; bottom: 0; display: block; width: 1px; background: var(--c-line);"></span>
+        <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.1; color: var(--c-ink); text-wrap: balance;">Visioning</h2>
+        <p data-reveal="" data-delay="120" style="margin: 0; font-size: {{pSize}}; line-height: 1.6; color: var(--c-ink-soft); text-wrap: pretty;">Designers and engineers require direction to do great work. Our skilled staff envision the possibilities for placemaking to guide land development projects. We bring placemaking dreams to reality.</p>
+      </div>
+    </div>
+  </section>
+  <section id="project-management" data-svc="2" data-screen-label="Services / 03 Project Management" style="max-width: var(--max-w); margin: 0 auto; padding: {{secPad}}; display: grid; grid-template-columns: {{colsA}}; gap: {{secGap}}; align-items: center;">
+    <div style="order: {{textOrder}}; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: flex-end; gap: 12px;">
+        <span style="position: relative; display: block; padding-bottom: 6px; font-family: var(--f-display); font-size: 16px; font-weight: 600; line-height: 1; color: var(--c-ink);">03<span data-line="" style="position: absolute; left: 0; bottom: 0; display: block; width: 100%; height: 3px; background: var(--c-accent);"></span></span>
+        <span data-line="" data-delay="200" style="display: block; width: 22px; height: 2px; margin-bottom: 12px; background: var(--c-accent);"></span>
+      </div>
+      <div style="position: relative; padding-left: {{ruleIndent}}; display: flex; flex-direction: column; gap: 16px;">
+        <span data-line="y" data-delay="250" aria-hidden="true" style="position: absolute; left: {{ruleLeft}}; top: 0; bottom: 0; display: block; width: 1px; background: var(--c-line);"></span>
+        <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.1; color: var(--c-ink); text-wrap: balance;">Project Management</h2>
+        <p data-reveal="" data-delay="120" style="margin: 0; font-size: {{pSize}}; line-height: 1.6; color: var(--c-ink-soft); text-wrap: pretty;">We manage complex interdisciplinary teams to bring land development projects from first inception to the Building Permit stage. We partner with our sister company, Natcon Construction Services, to provide construction management services.</p>
+      </div>
+    </div>
+    <div data-clip="right" style="position: relative; overflow: hidden; aspect-ratio: {{imgRatio}};">
+      <div data-parallax="0.06" style="position: absolute; inset: 0;">
+        <img src="../shared/natlandhomes/218-E-22nd-Street-OPT1-KITCHEN-1536x960.jpg" data-fallback="assets/fb-pm.png" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+  <section id="approvals" data-svc="3" data-screen-label="Services / 04 Approvals" style="max-width: var(--max-w); margin: 0 auto; padding: {{secPadLast}}; display: grid; grid-template-columns: {{colsB}}; gap: {{secGap}}; align-items: center;">
+    <div data-clip="left" style="position: relative; overflow: hidden; aspect-ratio: {{imgRatio}};">
+      <div data-parallax="0.06" style="position: absolute; inset: 0;">
+        <img src="../shared/natlandhomes/Screen-Shot-2022-02-16-at-12.06.10-1536x1534.jpg" data-fallback="assets/fb-approvals.png" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: 40% 50%;">
+      </div>
+    </div>
+    <div style="order: {{textOrder}}; display: flex; flex-direction: column; gap: 16px;">
+      <div style="display: flex; align-items: flex-end; gap: 12px;">
+        <span style="position: relative; display: block; padding-bottom: 6px; font-family: var(--f-display); font-size: 16px; font-weight: 600; line-height: 1; color: var(--c-ink);">04<span data-line="" style="position: absolute; left: 0; bottom: 0; display: block; width: 100%; height: 3px; background: var(--c-accent);"></span></span>
+        <span data-line="" data-delay="200" style="display: block; width: 22px; height: 2px; margin-bottom: 12px; background: var(--c-accent);"></span>
+      </div>
+      <div style="position: relative; padding-left: {{ruleIndent}}; display: flex; flex-direction: column; gap: 16px;">
+        <span data-line="y" data-delay="250" aria-hidden="true" style="position: absolute; left: {{ruleLeft}}; top: 0; bottom: 0; display: block; width: 1px; background: var(--c-line);"></span>
+        <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.1; color: var(--c-ink); text-wrap: balance;">Approvals Strategy and Advocacy</h2>
+        <p data-reveal="" data-delay="120" style="margin: 0; font-size: {{pSize}}; line-height: 1.6; color: var(--c-ink-soft); text-wrap: pretty;">Checking boxes on a development application form is not enough to ensure that projects are approved by local government to proceed. The Natland Group draws upon decades of local knowledge to craft approval strategies to mitigate risk and earn project approval. We engage with communities, municipal staff and politicians to create successful projects.</p>
+      </div>
+    </div>
+  </section>
 </main>
-<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+<dc-import name="SiteFooter" bar-nav="{{true}}" hint-size="100%,560px"></dc-import>
 </x-dc>
 <div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
 <script src="../switcher.js" defer></script>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const TABS = [
+  { label: 'Due Diligence', id: 'due-diligence' },
+  { label: 'Visioning', id: 'visioning' },
+  { label: 'Project Management', id: 'project-management' },
+  { label: 'Approvals Strategy and Advocacy', id: 'approvals' },
+];
 class Component extends DCLogic {
   mq = window.matchMedia('(max-width: 767px)');
-  state = { m: this.mq.matches };
+  state = { m: this.mq.matches, active: -1 };
   onMq = () => this.setState({ m: this.mq.matches });
-  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
-  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  onScroll = () => {
+    const mid = innerHeight * 0.45;
+    let a = -1;
+    document.querySelectorAll('[data-svc]').forEach(el => { if (el.getBoundingClientRect().top < mid) a = +el.dataset.svc; });
+    if (a !== this.state.active) this.setState({ active: a });
+  };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('scroll', this.onScroll, { passive: true }); this.onScroll(); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('scroll', this.onScroll); }
   renderVals() {
-    return { desktop: !this.state.m, mobile: this.state.m };
+    const { m, active } = this.state;
+    const one = 'minmax(0, 1fr)';
+    return {
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
+      introPad: m ? '24px var(--gutter) 20px' : 'clamp(36px, 4vw, 56px) var(--gutter) clamp(24px, 2.4vw, 32px)',
+      introCols: m ? one : 'auto minmax(0, 1fr)',
+      introGap: m ? '10px' : 'clamp(28px, 4vw, 56px)',
+      introPPad: m ? '0' : 'clamp(24px, 3vw, 40px)',
+      introPBorder: m ? '0' : '1px solid var(--c-line)',
+      h1Size: m ? '40px' : 'clamp(60px, 6.4vw, 96px)',
+      h2Size: m ? '22px' : 'clamp(28px, 2.6vw, 38px)',
+      pSize: m ? '14px' : '17px',
+      tabsDisplay: 'grid',
+      navPos: m ? 'relative' : 'sticky',
+      tabCols: m ? 'minmax(0, 1fr)' : 'auto auto auto minmax(0, 1fr)',
+      tabPad: m ? '10px 0' : '16px clamp(16px, 2.2vw, 32px)',
+      tabSize: m ? '14px' : '15px',
+      tabs: TABS.map((t, i) => ({
+        ...t, num: '0' + (i + 1), href: '#' + t.id,
+        borderL: !m && i > 0 ? '1px solid var(--c-line)' : '0',
+        borderT: m && i > 0 ? '1px solid var(--c-line)' : '0',
+        barLeft: !m && i > 0 ? '0' : '0',
+        weight: active === i ? 600 : 400,
+        bar: active === i ? 1 : 0,
+        go: e => {
+          e.preventDefault();
+          const el = document.getElementById(t.id);
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 70, behavior: 'smooth' });
+        },
+      })),
+      secPad: m ? '28px var(--gutter) 8px' : 'clamp(40px, 4.4vw, 64px) var(--gutter) 0',
+      secPadLast: m ? '28px var(--gutter) 40px' : 'clamp(40px, 4.4vw, 64px) var(--gutter) var(--sp-section)',
+      colsA: m ? one : 'minmax(0, 0.8fr) minmax(0, 1.2fr)',
+      colsB: m ? one : 'minmax(0, 1.2fr) minmax(0, 0.8fr)',
+      secGap: m ? '14px' : 'clamp(28px, 4vw, 56px)',
+      textOrder: m ? -1 : 0,
+      imgRatio: m ? '16 / 10' : '4 / 2.6',
+      ruleIndent: m ? '18px' : 'clamp(28px, 3vw, 44px)',
+      ruleLeft: '0',
+    };
   }
 }
 </script>

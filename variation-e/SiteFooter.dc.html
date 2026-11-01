@@ -10,6 +10,7 @@
 <x-dc>
 <helmet><link rel="stylesheet" href="theme.css"></helmet>
 <footer data-screen-label="Footer">
+<sc-if value="{{isForm}}" hint-placeholder-val="{{true}}">
   <section data-screen-label="Get in touch" style="background: var(--c-bg); border-top: 1px solid var(--c-line);">
     <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: grid; grid-template-columns: {{cols}}; gap: {{colGap}}; align-items: start;">
       <div style="display: flex; flex-direction: column; gap: var(--sp-5); padding-right: {{leftPad}}; border-right: {{leftBorder}};">
@@ -50,11 +51,57 @@
   <div style="background: var(--c-dark); color: var(--c-on-dark);">
     <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-6) var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--sp-4);">
       <a href="Home.dc.html" style="display: flex;">
-        <img src="../shared/natlandhomes/Natland_Logo-2024-768x139.png" alt="Natland Group" style="height: 36px; width: auto; filter: brightness(0) invert(1);">
+        <img src="assets/logo-light.png" alt="Natland Group" style="height: 36px; width: auto;">
       </a>
       <p style="margin: 0; font-size: 14px; color: var(--c-on-dark);">© NATLAND GROUP. All rights reserved.</p>
     </div>
   </div>
+</sc-if>
+<sc-if value="{{isColumns}}" hint-placeholder-val="{{false}}">
+  <section data-screen-label="Footer columns" style="background: var(--c-dark); color: var(--c-on-dark);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-7) var(--gutter) var(--sp-6); display: grid; grid-template-columns: {{cols2}}; gap: 0;">
+      <form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: 10px; padding: {{c1Pad}}; border-right: {{colBorder}}; border-bottom: {{colBorderB}};">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 6px;">
+          <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; white-space: nowrap;">Get in touch</span>
+          <span data-line="" style="display: block; flex: 1; height: 1px; background: var(--c-line-dark);"></span>
+        </div>
+        <input data-reveal="" type="text" name="name" placeholder="Your name *" required="" onChange="{{setName}}" style="height: 40px; padding: 0 12px; background: #fff; border: 0; border-radius: 0; color: var(--c-ink); font-size: 14px; outline: none;">
+        <input data-reveal="" data-delay="60" type="tel" name="phone" placeholder="Phone number" onChange="{{setPhone}}" style="height: 40px; padding: 0 12px; background: #fff; border: 0; border-radius: 0; color: var(--c-ink); font-size: 14px; outline: none;">
+        <input data-reveal="" data-delay="120" type="email" name="email" placeholder="Your e-mail *" required="" onChange="{{setEmail}}" style="height: 40px; padding: 0 12px; background: #fff; border: 0; border-radius: 0; color: var(--c-ink); font-size: 14px; outline: none;">
+        <textarea data-reveal="" data-delay="180" name="message" placeholder="How can we help you ?" rows="2" onChange="{{setMsg}}" style="padding: 10px 12px; background: #fff; border: 0; border-radius: 0; color: var(--c-ink); font-size: 14px; line-height: 1.5; resize: vertical; outline: none;"></textarea>
+        <button data-reveal="" data-delay="240" data-magnetic="" type="submit" style="height: 44px; margin-top: 4px; background: var(--c-accent); color: #fff; border: 0; border-radius: 0; font-family: var(--f-display); font-size: 16px; font-weight: 500; cursor: pointer; transition: background 0.3s;" style-hover="background: var(--c-accent-hover);">Send</button>
+      </form>
+      <div style="display: flex; flex-direction: column; gap: 14px; padding: {{c2Pad}};">
+        <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;">Address</span>
+        <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--c-on-dark-soft);">#130-788 Harbourside Drive<br>North Vancouver, BC V7P 3R7</p>
+        <p data-reveal="" data-delay="100" style="margin: 0; font-size: 15px; line-height: 1.7; color: var(--c-on-dark-soft);">Phone: <a href="tel:+16049731825" style="color: var(--c-on-dark-soft); text-decoration: none;">+1(604)973-1825</a><br>E-mail: <a href="mailto:office@natlandhomes.com" style="color: #fff;">office@natlandhomes.com</a></p>
+        <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid var(--c-line-dark); display: flex; flex-direction: column; gap: 12px;">
+          <nav style="display: flex; flex-wrap: wrap; gap: 8px clamp(20px, 4vw, 56px);">
+            <a href="Home.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Home</a>
+            <a href="Portfolio.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Portfolio</a>
+            <a href="OurServices.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Service</a>
+            <a href="Contact.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Contact Us</a>
+          </nav>
+          <p style="margin: 0; font-size: 13px; color: var(--c-on-dark-soft);">© NATLAND GROUP. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+<sc-if value="{{isMinimal}}" hint-placeholder-val="{{false}}">
+  <div style="background: var(--c-dark); color: var(--c-on-dark);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: 24px var(--gutter); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;">
+      <a href="Home.dc.html" style="display: flex;"><img src="assets/logo-light.png" alt="Natland Group" style="height: 34px; width: auto;"></a>
+      <nav style="display: flex; flex-wrap: wrap; gap: 8px clamp(20px, 3vw, 40px);">
+        <a href="Home.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Home</a>
+        <a href="Portfolio.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Portfolio</a>
+        <a href="OurServices.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Service</a>
+        <a href="Contact.dc.html" style="font-size: 14px; color: #fff; text-decoration: none;" style-hover="color: #ff8a98;">Contact Us</a>
+      </nav>
+      <p style="margin: 0; font-size: 13px; color: var(--c-on-dark-soft);">© NATLAND GROUP. All rights reserved.</p>
+    </div>
+  </div>
+</sc-if>
   <sc-if value="{{showTop}}" hint-placeholder-val="{{false}}">
     <button type="button" aria-label="Back to top" onClick="{{toTop}}" style="position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; background: var(--c-accent); border: 0; border-radius: 50%; cursor: pointer;" style-hover="background: var(--c-accent-hover);">
       <span aria-hidden="true" style="width: 10px; height: 10px; border-left: 2px solid var(--c-on-dark); border-top: 2px solid var(--c-on-dark); transform: translateY(3px) rotate(45deg);"></span>
@@ -62,7 +109,7 @@
   </sc-if>
 </footer>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:640}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:640},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;form&quot;,&quot;columns&quot;,&quot;minimal&quot;],&quot;default&quot;:&quot;form&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   mq = window.matchMedia('(max-width: 767px)');
   state = { m: this.mq.matches, y: 0 };
@@ -80,7 +127,14 @@ class Component extends DCLogic {
   renderVals() {
     const m = this.state.m;
     const set = k => e => { this.f[k] = e.target.value; };
+    const v = this.props.variant ?? 'form';
     return {
+      isForm: v === 'form', isColumns: v === 'columns', isMinimal: v === 'minimal',
+      cols2: m ? 'minmax(0, 1fr)' : 'minmax(0, 0.9fr) minmax(0, 1.1fr)',
+      colBorder: m ? '0' : '1px solid var(--c-line-dark)',
+      colBorderB: m ? '1px solid var(--c-line-dark)' : '0',
+      c1Pad: m ? '0 0 32px' : '0 clamp(32px, 5vw, 72px) 0 0',
+      c2Pad: m ? '28px 0 0' : '0 0 0 clamp(32px, 5vw, 72px)',
       cols: m ? 'minmax(0, 1fr)' : 'minmax(0, 4fr) minmax(0, 7fr)',
       colGap: m ? 'var(--sp-6)' : 'clamp(32px, 5vw, 72px)',
       leftPad: m ? '0' : 'clamp(24px, 4vw, 56px)',
