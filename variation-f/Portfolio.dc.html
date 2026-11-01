@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — Portfolio</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#fff}a{color:#b2022e}a:hover{color:#8e0224}</style>
+</helmet>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
+<dc-import name="SiteHeader" active="portfolio" hint-size="100%,96px"></dc-import>
+<main>
+  <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; background: var(--c-dark); color: var(--c-on-dark); min-height: {{heroMinH}};">
+    <div style="position: {{imgPos}}; top: 0; left: 0; bottom: 0; width: {{imgW}}; height: {{imgH}}; overflow: hidden;">
+      <div data-parallax="0.08" style="position: absolute; inset: 0;">
+        <img data-kb="" src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;">
+      </div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: {{heroGrad}};"></div>
+    </div>
+    <div style="position: relative; max-width: var(--max-w); margin: 0 auto; padding: {{heroPad}}; display: flex; justify-content: flex-end;">
+      <div style="width: {{panelW}}; display: flex; flex-direction: column; gap: 22px;">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <span data-reveal="" style="font-size: 13px; font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase;">Portfolio</span>
+          <span data-line="" data-delay="150" style="display: block; flex: 1; height: 1px; background: var(--c-line-dark);"></span>
+        </div>
+        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 700; font-size: {{h1Size}}; line-height: 1.06; letter-spacing: -0.01em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Seniors</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Residential</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">&amp;</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Commercial</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Development</span></span></h1>
+        <span data-line="" data-delay="400" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+        <p data-reveal="" data-delay="500" style="margin: 0; font-size: {{pSize}}; line-height: 1.55; color: var(--c-on-dark); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+      </div>
+    </div>
+  </section>
+  <section data-screen-label="Portfolio / Featured" style="max-width: var(--max-w); margin: 0 auto; padding: {{gridPad}}; display: flex; flex-direction: column; gap: {{gridGapTop}};">
+    <div style="display: grid; grid-template-columns: {{headCols}}; gap: clamp(24px, 4vw, 56px); align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <span data-line="" style="display: block; width: 40px; height: 2px; background: var(--c-accent);"></span>
+          <span style="font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-ink-soft);">Our portfolio</span>
+        </div>
+        <h2 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 700; font-size: {{h2Size}}; line-height: 1.05; letter-spacing: -0.01em; color: var(--c-ink);"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Featured</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Projects</span></span></h2>
+      </div>
+      <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+        <p data-reveal="" data-delay="150" style="margin: 0; padding-left: clamp(24px, 3vw, 40px); border-left: 1px solid var(--c-line); font-size: 17px; line-height: 1.5; color: var(--c-ink-soft); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+      </sc-if>
+    </div>
+    <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: clamp(16px, 2.4vw, 30px); row-gap: clamp(24px, 3vw, 36px);">
+        <sc-for list="{{projects}}" as="p" hint-placeholder-count="10">
+          <a href="{{p.href}}" data-zoom="" data-cursor="View" style="grid-column: span {{p.span}}; display: flex; flex-direction: column; gap: 10px; color: var(--c-ink); text-decoration: none;">
+            <div data-clip="" data-delay="{{p.delay}}" style="position: relative; overflow: hidden; aspect-ratio: {{p.ratio}}; background: var(--c-surface);">
+              <img src="{{p.image}}" alt="{{p.title}}" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{p.pos}};">
+            </div>
+            <div data-reveal="" data-delay="{{p.capDelay}}" style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 8px;">
+              <span style="font-family: var(--f-display); font-size: 16px; font-weight: var(--fw-medium); line-height: 1.3;">{{p.label}}</span>
+              <span data-arrow="" aria-hidden="true" style="width: 20px; height: 20px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;"></span>
+              <span data-uline="" aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--c-accent); transform: scaleX(0); transform-origin: 0 50%;"></span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+      <div style="display: flex; flex-direction: column;">
+        <a href="#" style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--c-line); color: var(--c-ink); text-decoration: none;">
+          <div data-clip="" style="position: relative; overflow: hidden; aspect-ratio: 2 / 1;">
+            <img src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;">
+          </div>
+          <span style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;">
+            <span style="font-family: var(--f-display); font-size: 15px; font-weight: var(--fw-medium); line-height: 1.3;">1. Seniors Residential &amp; Commercial Development</span>
+            <span aria-hidden="true" style="width: 18px; height: 18px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;"></span>
+          </span>
+        </a>
+        <sc-for list="{{rest}}" as="p" hint-placeholder-count="9">
+          <a href="{{p.href}}" data-reveal="left" style="display: grid; grid-template-columns: 120px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid var(--c-line); color: var(--c-ink); text-decoration: none;">
+            <img src="{{p.image}}" alt="{{p.title}}" loading="lazy" style="width: 120px; height: 64px; object-fit: cover; object-position: {{p.pos}};">
+            <span style="font-family: var(--f-display); font-size: 14px; font-weight: var(--fw-medium); line-height: 1.3;">{{p.label}}</span>
+            <span aria-hidden="true" style="width: 18px; height: 18px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-right.svg) center / contain no-repeat;"></span>
+          </a>
+        </sc-for>
+      </div>
+    </sc-if>
+  </section>
+</main>
+<dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const PROJECTS = [
+  { title: 'SENIORS RESIDENTIAL & COMMERCIAL DEVELOPMENT', display: 'Seniors Residential & Commercial Development', image: 'assets/seniors.png', pos: '50% 45%' },
+  { title: '458 E 1st Street', image: 'assets/458-e-1st.png', pos: '50% 60%' },
+  { title: '7000 Williams Road', image: 'assets/p-03.png' },
+  { title: '1235 Marine Drive', image: 'assets/p-04.png' },
+  { title: '3560 Bluebonnet', image: 'assets/p-05.png', href: 'Project-3560-Bluebonnet.dc.html' },
+  { title: '976 Melbourne', image: 'assets/p-06.png' },
+  { title: '218 E 22nd Street', image: 'assets/p-07.png' },
+  { title: '226 West 5th Street', image: 'assets/p-08.png' },
+  { title: '754 East 17th Street', image: 'assets/p-09.png' },
+  { title: '245 West 27th Street', image: 'assets/p-10.png' },
+].map((p, i) => {
+  const span = i === 0 ? 6 : i <= 6 ? 3 : 2;
+  const col = i === 0 ? 0 : i <= 6 ? (i - 1) % 2 : i - 7;
+  return {
+    ...p, href: p.href || '#', pos: p.pos || '50% 50%',
+    label: (i + 1) + '. ' + (p.display || p.title),
+    span, ratio: i === 0 ? '2 / 1' : i <= 6 ? '11 / 4' : '2 / 1',
+    delay: col * 140, capDelay: col * 140 + 400,
+  };
+});
+
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches };
+  onMq = () => this.setState({ m: this.mq.matches });
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    const m = this.state.m;
+    return {
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
+      desktop: !m, mobile: m,
+      heroMinH: m ? '0' : 'clamp(480px, 42vw, 600px)',
+      imgPos: m ? 'relative' : 'absolute',
+      imgW: m ? '100%' : '70%',
+      imgH: m ? '280px' : '100%',
+      heroGrad: m
+        ? 'linear-gradient(to top, #002948 0%, rgba(0,41,72,0) 35%)'
+        : 'linear-gradient(90deg, rgba(0,41,72,0) 55%, rgba(0,41,72,0.75) 80%, #002948 100%)',
+      heroPad: m ? '16px var(--gutter) 36px' : 'clamp(48px, 5vw, 80px) var(--gutter)',
+      panelW: m ? '100%' : 'min(400px, 36%)',
+      h1Size: m ? '32px' : 'clamp(36px, 3.4vw, 48px)',
+      h2Size: m ? '32px' : 'clamp(40px, 4.2vw, 58px)',
+      pSize: m ? '15px' : '16px',
+      gridPad: m ? '32px var(--gutter) 40px' : 'clamp(40px, 4vw, 56px) var(--gutter) var(--sp-section)',
+      gridGapTop: m ? '20px' : 'clamp(28px, 3vw, 40px)',
+      headCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1.25fr)',
+      projects: PROJECTS,
+      first: PROJECTS[0],
+      rest: PROJECTS.slice(1),
+    };
+  }
+}
+</script>
+</body>
+</html>

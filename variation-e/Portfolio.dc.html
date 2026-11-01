@@ -95,18 +95,19 @@
 <dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
 </x-dc>
 <div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
 <script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
 const PROJECTS = [
   { title: 'SENIORS RESIDENTIAL & COMMERCIAL DEVELOPMENT', display: 'Seniors Residential & Commercial Development', image: 'assets/seniors.png', pos: '62% 50%', cats: ['Commercial', 'Mixed Use'], featured: true },
   { title: '458 E 1st Street', image: 'assets/458-e-1st.png', pos: '50% 70%', cats: ['Townhouse'], featured: true },
-  { title: '7000 Williams Road', image: 'assets/natlandhomes/1-600x390.jpg', cats: ['Townhouse'] },
-  { title: '1235 Marine Drive', image: 'assets/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-01-49-600x390.jpg', cats: ['Commercial', 'Mixed Use'] },
-  { title: '3560 Bluebonnet', image: 'assets/natlandhomes/3560-Bluebonnet-002-600x390.jpg', href: 'Project-3560-Bluebonnet.dc.html', cats: ['Residential'] },
-  { title: '976 Melbourne', image: 'assets/natlandhomes/976-Melbourne-001-600x390.jpg', cats: ['Residential'] },
-  { title: '218 E 22nd Street', image: 'assets/natlandhomes/020-600x390.jpg', cats: ['Residential'] },
-  { title: '226 West 5th Street', image: 'assets/natlandhomes/triplex-600x390.jpg', cats: ['Residential'] },
-  { title: '754 East 17th Street', image: 'assets/natlandhomes/Single-family-1-600x390.jpg', cats: ['Residential'] },
-  { title: '245 West 27th Street', image: 'assets/natlandhomes/Two-single-family-house-600x390.jpg', cats: ['Townhouse'] },
+  { title: '7000 Williams Road', image: '../shared/natlandhomes/1-600x390.jpg', cats: ['Townhouse'] },
+  { title: '1235 Marine Drive', image: '../shared/natlandhomes/1235-Marine-Drive-Enscape_2020-10-20-13-01-49-600x390.jpg', cats: ['Commercial', 'Mixed Use'] },
+  { title: '3560 Bluebonnet', image: '../shared/natlandhomes/3560-Bluebonnet-002-600x390.jpg', href: 'Project-3560-Bluebonnet.dc.html', cats: ['Residential'] },
+  { title: '976 Melbourne', image: '../shared/natlandhomes/976-Melbourne-001-600x390.jpg', cats: ['Residential'] },
+  { title: '218 E 22nd Street', image: '../shared/natlandhomes/020-600x390.jpg', cats: ['Residential'] },
+  { title: '226 West 5th Street', image: '../shared/natlandhomes/triplex-600x390.jpg', cats: ['Residential'] },
+  { title: '754 East 17th Street', image: '../shared/natlandhomes/Single-family-1-600x390.jpg', cats: ['Residential'] },
+  { title: '245 West 27th Street', image: '../shared/natlandhomes/Two-single-family-house-600x390.jpg', cats: ['Townhouse'] },
 ].map((p, i) => ({ ...p, num: String(i + 1).padStart(2, '0'), href: p.href || '#', pos: p.pos || '50% 50%', display: p.display || p.title }));
 const TABS = ['All Projects', 'Residential', 'Townhouse', 'Commercial', 'Mixed Use'];
 

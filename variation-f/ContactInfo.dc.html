@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="theme.css"></helmet>
+<sc-if value="{{isList}}" hint-placeholder-val="{{true}}">
+  <dl style="margin: 0; display: grid; grid-template-columns: minmax(96px, max-content) minmax(0, 1fr); column-gap: var(--sp-6); row-gap: var(--sp-5); color: var(--c-on-dark);">
+    <dt style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-on-dark-soft); padding-top: 4px;">ADDRESS:</dt>
+    <dd style="margin: 0; font-size: var(--fs-small); line-height: 1.6; max-width: 300px; text-wrap: pretty;">#130-788 Harbourside Drive North Vancouver, BC V7P 3R7</dd>
+    <dt style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-on-dark-soft); padding-top: 4px;">Phone:</dt>
+    <dd style="margin: 0; font-size: var(--fs-small); line-height: 1.6;"><a href="tel:+16049731825" style="color: inherit; text-decoration: none;" style-hover="color: var(--c-on-dark-soft);">+1(604)973-1825</a></dd>
+    <dt style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-on-dark-soft); padding-top: 4px;">E-mail:</dt>
+    <dd style="margin: 0; font-size: var(--fs-small); line-height: 1.6;"><a href="mailto:office@natlandhomes.com" style="color: inherit; text-decoration: none;" style-hover="color: var(--c-on-dark-soft);">office@natlandhomes.com</a></dd>
+  </dl>
+</sc-if>
+<sc-if value="{{isCards}}" hint-placeholder-val="{{false}}">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--c-line); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line);">
+    <div style="background: var(--c-bg); padding: var(--sp-8) var(--sp-6); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--sp-4);">
+      <span aria-hidden="true" style="width: 36px; height: 36px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat;"></span>
+      <h3 style="margin: var(--sp-3) 0 0; font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-muted);">Phone </h3>
+      <p style="margin: 0; font-family: var(--f-display); font-size: 22px; line-height: var(--lh-snug); color: var(--c-ink);"><a href="tel:+16049731825" style="color: inherit; text-decoration: none;" style-hover="color: var(--c-accent);">+1 (604) 973 – 1825</a></p>
+    </div>
+    <div style="background: var(--c-bg); padding: var(--sp-8) var(--sp-6); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--sp-4);">
+      <span aria-hidden="true" style="width: 36px; height: 36px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map.svg) center / contain no-repeat;"></span>
+      <h3 style="margin: var(--sp-3) 0 0; font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-muted);">Address</h3>
+      <p style="margin: 0; max-width: 300px; font-family: var(--f-display); font-size: 22px; line-height: var(--lh-snug); color: var(--c-ink); text-wrap: balance;">#130-788 Harbourside Drive North Vancouver, BC, V7P 3R7</p>
+    </div>
+    <div style="background: var(--c-bg); padding: var(--sp-8) var(--sp-6); display: flex; flex-direction: column; align-items: center; text-align: center; gap: var(--sp-4);">
+      <span aria-hidden="true" style="width: 36px; height: 36px; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat;"></span>
+      <h3 style="margin: var(--sp-3) 0 0; font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-muted);">E-mail</h3>
+      <p style="margin: 0; font-family: var(--f-display); font-size: 22px; line-height: var(--lh-snug); color: var(--c-ink);"><a href="mailto:office@natlandhomes.com" style="color: inherit; text-decoration: none;" style-hover="color: var(--c-accent);">office@natlandhomes.com</a></p>
+    </div>
+  </div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:360},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;list&quot;,&quot;cards&quot;],&quot;default&quot;:&quot;cards&quot;,&quot;tsType&quot;:&quot;'list'|'cards'&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const v = this.props.variant ?? 'list';
+    return { isList: v === 'list', isCards: v === 'cards' };
+  }
+}
+</script>
+</body>
+</html>

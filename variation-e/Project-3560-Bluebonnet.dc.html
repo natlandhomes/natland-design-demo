@@ -15,10 +15,10 @@
 </helmet>
 <dc-import name="SiteHeader" active="none" hint-size="100%,88px"></dc-import>
 <main>
-  <dc-import name="PageTitle" title="3560 Bluebonnet" image="assets/natlandhomes/3560-BLUEBONNET_hero-scaled.jpg" hint-size="100%,600px"></dc-import>
+  <dc-import name="PageTitle" title="3560 Bluebonnet" image="../shared/natlandhomes/3560-BLUEBONNET_hero-scaled.jpg" hint-size="100%,600px"></dc-import>
   <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
     <section data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) var(--sp-9); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(40px, 6vw, 104px); align-items: center;">
-      <img src="assets/natlandhomes/3560-Bluebonnet-002.jpg" alt="3560 Bluebonnet" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
+      <img src="../shared/natlandhomes/3560-Bluebonnet-002.jpg" alt="3560 Bluebonnet" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
       <div style="display: flex; flex-direction: column; gap: var(--sp-7);">
         <p style="margin: 0; font-family: var(--f-display); font-size: clamp(19px, 1.5vw, 22px); line-height: 1.6; color: var(--c-ink); text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
         <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-line);">
@@ -32,7 +32,7 @@
   </sc-if>
   <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
     <section data-screen-label="Project / Overview (mobile)" style="padding: var(--sp-7) var(--gutter) var(--sp-7); display: flex; flex-direction: column; gap: var(--sp-6);">
-      <img src="assets/natlandhomes/3560-Bluebonnet-002.jpg" alt="3560 Bluebonnet" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
+      <img src="../shared/natlandhomes/3560-Bluebonnet-002.jpg" alt="3560 Bluebonnet" style="width: 100%; aspect-ratio: 3 / 2; object-fit: cover;">
       <p style="margin: 0; font-family: var(--f-display); font-size: 20px; line-height: 1.6;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
       <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-line);">
         <li style="display: flex; justify-content: space-between; align-items: baseline; gap: var(--sp-4); padding: var(--sp-4) 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); color: var(--c-muted);">BEDROOMS</span><span style="font-family: var(--f-display); font-size: 20px;">5</span></li>
@@ -62,8 +62,9 @@
 </sc-if>
 </x-dc>
 <div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
 <script type="text/x-dc" data-dc-script>
-const U = 'assets/natlandhomes/';
+const U = '../shared/natlandhomes/';
 const GALLERY = [
   ['3560-Bluebonnet-002-768x512.jpg', '3560-Bluebonnet-002.jpg'],
   ['3560-Bluebonnet-001-768x512.jpg', '3560-Bluebonnet-001.jpg'],

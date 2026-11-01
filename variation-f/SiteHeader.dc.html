@@ -9,10 +9,10 @@
 <body>
 <x-dc>
 <helmet><link rel="stylesheet" href="theme.css"></helmet>
-<header data-screen-label="Header" style="position: sticky; top: 0; z-index: 30; background: var(--c-bg); box-shadow: 0 1px 0 var(--c-line);">
+<header data-screen-label="Header" style="position: sticky; top: 0; z-index: 30; background: var(--c-bg); box-shadow: 0 1px 0 var(--c-line); transform: translateY({{hdrY}}); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);">
   <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: {{headerH}}; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6);">
     <a href="Home.dc.html" style="display: flex; align-items: center; flex: none;">
-      <img src="assets/natlandhomes/Natland_Logo-2024-768x139.png" alt="Natland Group" style="height: {{logoH}}; width: auto;">
+      <img src="assets/logo.png" alt="Natland Group" style="height: {{logoH}}; width: auto;">
     </a>
     <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
       <nav style="display: flex; align-items: center; gap: clamp(24px, 3.4vw, 52px);">
@@ -45,16 +45,25 @@ class Component extends DCLogic {
   mq = window.matchMedia('(max-width: 767px)');
   state = { m: this.mq.matches, open: false };
   onMq = () => this.setState({ m: this.mq.matches, open: false });
-  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
-  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  lastY = 0;
+  onScroll = () => {
+    const y = scrollY, d = y - this.lastY;
+    if (Math.abs(d) < 6) return;
+    const hide = d > 0 && y > 160 && !this.state.open;
+    if (hide !== !!this.state.hide) this.setState({ hide });
+    this.lastY = y;
+  };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('scroll', this.onScroll, { passive: true }); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('scroll', this.onScroll); }
   renderVals() {
     const a = this.props.active ?? 'home';
     const c = k => (a === k ? 'var(--c-accent)' : 'var(--c-ink)');
     return {
+      hdrY: this.state.hide ? '-101%' : '0',
       desktop: !this.state.m,
       mobile: this.state.m,
       headerH: this.state.m ? '68px' : '96px',
-      logoH: this.state.m ? '34px' : '50px',
+      logoH: this.state.m ? '36px' : '52px',
       menuOpen: this.state.m && this.state.open,
       toggle: () => this.setState(s => ({ open: !s.open })),
       isHome: a === 'home', isPortfolio: a === 'portfolio', isServices: a === 'services', isContact: a === 'contact',

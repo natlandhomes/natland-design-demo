@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="theme.css"></helmet>
+<header data-screen-label="Header" style="position: sticky; top: 0; z-index: 30; background: var(--c-bg); box-shadow: 0 1px 0 var(--c-line);">
+  <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: {{headerH}}; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6);">
+    <a href="Home.dc.html" style="display: flex; align-items: center; flex: none;">
+      <img src="../shared/natlandhomes/Natland_Logo-2024-768x139.png" alt="Natland Group" style="height: {{logoH}}; width: auto;">
+    </a>
+    <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+      <nav style="display: flex; align-items: center; gap: clamp(24px, 3.4vw, 52px);">
+        <a href="Home.dc.html" style="position: relative; padding: var(--sp-2) 0; color: {{cHome}}; text-decoration: none; font-family: var(--f-display); font-size: 16px; font-weight: var(--fw-medium);" style-hover="color: var(--c-accent);">Home<sc-if value="{{isHome}}"><span style="position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+        <a href="Portfolio.dc.html" style="position: relative; padding: var(--sp-2) 0; color: {{cPortfolio}}; text-decoration: none; font-family: var(--f-display); font-size: 16px; font-weight: var(--fw-medium);" style-hover="color: var(--c-accent);">Portfolio<sc-if value="{{isPortfolio}}"><span style="position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+        <a href="OurServices.dc.html" style="position: relative; padding: var(--sp-2) 0; color: {{cServices}}; text-decoration: none; font-family: var(--f-display); font-size: 16px; font-weight: var(--fw-medium);" style-hover="color: var(--c-accent);">Service<sc-if value="{{isServices}}"><span style="position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+        <a href="Contact.dc.html" style="position: relative; padding: var(--sp-2) 0; color: {{cContact}}; text-decoration: none; font-family: var(--f-display); font-size: 16px; font-weight: var(--fw-medium);" style-hover="color: var(--c-accent);">Contact Us<sc-if value="{{isContact}}"><span style="position: absolute; left: 0; right: 0; bottom: -6px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+      </nav>
+    </sc-if>
+    <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+      <button type="button" aria-label="Menu" onClick="{{toggle}}" style="width: 48px; height: 48px; margin-right: -12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: none; border: 0; padding: 0; cursor: pointer;">
+        <span style="display: block; width: 24px; height: 2px; background: var(--c-ink);"></span>
+        <span style="display: block; width: 24px; height: 2px; background: var(--c-ink);"></span>
+        <span style="display: block; width: 24px; height: 2px; background: var(--c-ink);"></span>
+      </button>
+    </sc-if>
+  </div>
+  <sc-if value="{{menuOpen}}" hint-placeholder-val="{{false}}">
+    <nav style="position: absolute; left: 0; right: 0; top: 100%; background: var(--c-bg); box-shadow: 0 12px 24px rgba(12, 42, 77, 0.12); display: flex; flex-direction: column; padding: var(--sp-2) var(--gutter) var(--sp-5);">
+      <a href="Home.dc.html" style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; border-bottom: 1px solid var(--c-line); color: {{cHome}}; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: var(--fw-medium);">Home<sc-if value="{{isHome}}"><span style="width: 20px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+      <a href="Portfolio.dc.html" style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; border-bottom: 1px solid var(--c-line); color: {{cPortfolio}}; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: var(--fw-medium);">Portfolio<sc-if value="{{isPortfolio}}"><span style="width: 20px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+      <a href="OurServices.dc.html" style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; border-bottom: 1px solid var(--c-line); color: {{cServices}}; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: var(--fw-medium);">Service<sc-if value="{{isServices}}"><span style="width: 20px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+      <a href="Contact.dc.html" style="display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: {{cContact}}; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: var(--fw-medium);">Contact Us<sc-if value="{{isContact}}"><span style="width: 20px; height: 3px; background: var(--c-accent);"></span></sc-if></a>
+    </nav>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:300},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;portfolio&quot;,&quot;services&quot;,&quot;contact&quot;,&quot;none&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, open: false };
+  onMq = () => this.setState({ m: this.mq.matches, open: false });
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    const a = this.props.active ?? 'home';
+    const c = k => (a === k ? 'var(--c-accent)' : 'var(--c-ink)');
+    return {
+      desktop: !this.state.m,
+      mobile: this.state.m,
+      headerH: this.state.m ? '68px' : '96px',
+      logoH: this.state.m ? '34px' : '50px',
+      menuOpen: this.state.m && this.state.open,
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      isHome: a === 'home', isPortfolio: a === 'portfolio', isServices: a === 'services', isContact: a === 'contact',
+      cHome: c('home'), cPortfolio: c('portfolio'), cServices: c('services'), cContact: c('contact'),
+    };
+  }
+}
+</script>
+</body>
+</html>
