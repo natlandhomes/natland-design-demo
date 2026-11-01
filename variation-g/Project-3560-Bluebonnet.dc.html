@@ -18,45 +18,16 @@
 <main>
   <section data-screen-label="Project / Hero" style="position: relative; overflow: hidden; height: {{heroH}}; min-height: {{heroMin}};">
     <div data-parallax="0.1" style="position: absolute; inset: 0;">
-      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{slides}}" as="s" hint-placeholder-count="0">
-        <div style="position: absolute; inset: 0; z-index: {{s.z}}; clip-path: {{s.clip}}; transition: {{s.trans}};">
-          <img loading="lazy" src="{{s.hero}}" data-fallback="{{s.fallback}}" alt="{{s.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{s.pos}}; transform: scale({{s.scale}}); transition: {{s.imgTrans}};">
-        </div>
-      </sc-for></sc-if>
+      <img data-kb="" src="assets/fb-3560-hero.png" alt="3560 Bluebonnet" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
     </div>
     <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 5; background: linear-gradient(to bottom, rgba(0, 26, 47, 0.6) 0%, rgba(0, 26, 47, 0) 22%, rgba(0, 26, 47, 0) 50%, rgba(0, 26, 47, 0.85) 90%, #001a2f 100%);"></div>
     <div data-heroout="" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;">
-      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) {{heroPadB}}; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px;">
-        <div style="display: flex; flex-direction: column; gap: 14px;">
-          <span data-reveal="" style="font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase;">Selected projects / {{curNum}}</span>
-          <div style="overflow: hidden; padding-bottom: 0.08em;">
-            <h1 ref="{{titleRef}}" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em;">{{curTitle}}</h1>
-          </div>
-          <div data-reveal="" data-delay="250" style="display: flex; padding-top: 6px;">
-            <a href="{{curHref}}" onClick="{{explore}}" data-magnetic="" style="display: flex; align-items: center; gap: 18px; height: 46px; padding: 0 22px; border: 1.5px solid #fff; color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 13px; font-weight: 600; letter-spacing: 0.22em; transition: background 0.35s, color 0.35s;" style-hover="background: #fff; color: #001a2f;">EXPLORE PROJECT<span aria-hidden="true" style="font-size: 18px; letter-spacing: 0; line-height: 1;">→</span></a>
-          </div>
-        </div>
-        <div data-reveal="" data-delay="350" style="display: flex; align-items: center; gap: 18px;">
-          <button type="button" aria-label="Previous project" onClick="{{prev}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">←</button>
-          <span style="min-width: 72px; text-align: center; font-family: var(--f-display); font-size: 15px; letter-spacing: 0.12em;">{{curNum}} / {{total}}</span>
-          <button type="button" aria-label="Next project" onClick="{{next}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">→</button>
-        </div>
-      </div>
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) {{heroPadB}}; display: flex; flex-direction: column; gap: 14px;">
+        <a href="Portfolio.dc.html" data-reveal="" style="align-self: flex-start; font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">← Portfolio</a>
+        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">3560</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Bluebonnet</span></span></h1>      </div>
     </div>
   </section>
-  <section data-screen-label="Project / Switcher" style="max-width: var(--max-w); margin: 0 auto; padding: 8px var(--gutter) 0;">
-    <div style="display: grid; grid-template-columns: {{stripCols}}; gap: clamp(12px, 3vw, 28px);">
-      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{strip}}" as="t" hint-placeholder-count="0">
-        <button type="button" onClick="{{t.select}}" data-reveal="" data-delay="{{t.delay}}" style="display: flex; flex-direction: column; gap: 10px; padding: 0; background: none; border: 0; color: #fff; text-align: left; cursor: pointer;">
-          <span style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 7; overflow: hidden; outline: {{t.outline}}; outline-offset: 0; transition: outline-color 0.3s;">
-            <img loading="lazy" src="{{t.image}}" alt="{{t.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{t.pos}}; opacity: {{t.op}}; transition: opacity 0.4s, transform 0.9s cubic-bezier(0.16,1,0.3,1);" style-hover="transform: scale(1.06);">
-          </span>
-          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: {{t.color}};">{{t.title}}</span>
-        </button>
-      </sc-for></sc-if>
-    </div>
-  </section>
-  <section ref="{{overviewRef}}" data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: start;">
+  <section data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: start;">
     <div style="display: flex; flex-direction: column; gap: 18px;">
       <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
       <p data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 400; font-size: {{leadSize}}; line-height: 1.5; text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
@@ -96,19 +67,6 @@
 <script src="../switcher.js" defer></script>
 <script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 const U = '../shared/natlandhomes/';
-const SLIDES = [
-  { title: 'Seniors Residential & Commercial Development', hero: 'assets/seniors.png', pos: '50% 45%' },
-  { title: '458 E 1st Street', hero: 'assets/458-e-1st.png', pos: '50% 60%' },
-  { title: '7000 Williams Road', hero: U + 'Williams_POV01_VERFinal-1536x1229.jpg', fallback: 'assets/p-03.png', thumb: 'assets/p-03.png' },
-  { title: '1235 Marine Drive', hero: U + '1235-Marine-Drive-Enscape_2020-10-20-13-01-49-1536x814.jpg', fallback: 'assets/p-04.png', thumb: 'assets/p-04.png' },
-  { title: '3560 Bluebonnet', hero: 'assets/fb-3560-hero.png', fallback: 'assets/fb-3560-hero.png', thumb: 'assets/p-05.png', href: '#overview', self: true },
-  { title: '976 Melbourne', hero: U + '976-Melbourne-001-1536x1024.jpg', fallback: 'assets/p-06.png', thumb: 'assets/p-06.png' },
-  { title: '218 E 22nd Street', hero: 'assets/p-07.png' },
-  { title: '226 West 5th Street', hero: 'assets/p-08.png' },
-  { title: '754 East 17th Street', hero: 'assets/p-09.png' },
-  { title: '245 West 27th Street', hero: 'assets/p-10.png' },
-].map(s => ({ ...s, fallback: s.fallback || s.hero, thumb: s.thumb || s.hero, pos: s.pos || '50% 50%', href: s.href || '#' }));
-const START = 4;
 const GALLERY = [
   ['3560-Bluebonnet-002-768x512.jpg', '3560-Bluebonnet-002.jpg'],
   ['3560-Bluebonnet-001-768x512.jpg', '3560-Bluebonnet-001.jpg'],
@@ -124,8 +82,7 @@ const pad = n => String(n).padStart(2, '0');
 
 class Component extends DCLogic {
   mq = window.matchMedia('(max-width: 767px)');
-  state = { m: this.mq.matches, i: START, prev: null, lb: null };
-  titleRef = React.createRef(); overviewRef = React.createRef();
+  state = { m: this.mq.matches, lb: null };
   onMq = () => this.setState({ m: this.mq.matches });
   onKey = e => {
     if (this.state.lb === null) return;
@@ -135,53 +92,17 @@ class Component extends DCLogic {
   };
   componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('keydown', this.onKey); }
   componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('keydown', this.onKey); }
-  lastI = START;
-  componentDidUpdate() {
-    const changed = this.lastI !== this.state.i; this.lastI = this.state.i;
-    if (changed && this.titleRef.current && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      this.titleRef.current.animate([{ transform: 'translateY(105%)' }, { transform: 'none' }], { duration: 900, easing: 'cubic-bezier(0.16,1,0.3,1)' });
-    }
-  }
-  go = i => { const n = SLIDES.length; i = (i + n) % n; if (i !== this.state.i) this.setState(s => ({ i, prev: s.i })); };
   step = d => this.setState(s => ({ lb: (s.lb + d + GALLERY.length) % GALLERY.length }));
   renderVals() {
-    const { m, i, prev, lb } = this.state, n = SLIDES.length;
-    const cur = SLIDES[i];
-    const E = 'cubic-bezier(0.77,0,0.18,1)';
-    const win = [i - 2, i - 1, i].map(k => (k + n) % n);
+    const { m, lb } = this.state;
     return {
       ready: true,
       intro: this.props.intro ?? true,
       motion: this.props.motion ?? true,
-      titleRef: this.titleRef, overviewRef: this.overviewRef,
       heroH: m ? '78vh' : '100vh',
       heroMin: m ? '520px' : '680px',
       heroPadB: m ? '28px' : 'clamp(36px, 4vw, 56px)',
       h1Size: m ? '40px' : 'clamp(52px, 5.4vw, 80px)',
-      slides: SLIDES.map((s, k) => ({
-        ...s,
-        z: k === i ? 2 : k === prev ? 1 : 0,
-        clip: k === i || k === prev ? 'inset(0 0 0 0)' : 'inset(0 0 0 100%)',
-        trans: k === i ? 'clip-path 1.2s ' + E : 'none',
-        scale: k === i ? 1 : 1.12,
-        imgTrans: k === i ? 'transform 1.8s cubic-bezier(0.16,1,0.3,1)' : 'none',
-      })),
-      curTitle: cur.title, curNum: pad(i + 1), total: pad(n), curHref: cur.href,
-      explore: e => {
-        if (!cur.self) return;
-        e.preventDefault();
-        const el = this.overviewRef.current;
-        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 40, behavior: 'smooth' });
-      },
-      prev: () => this.go(i - 1), next: () => this.go(i + 1),
-      stripCols: m ? 'repeat(3, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
-      strip: win.map((k, j) => ({
-        title: SLIDES[k].title, image: SLIDES[k].thumb, pos: SLIDES[k].pos, delay: j * 100,
-        outline: k === i ? '2px solid #c8102e' : '2px solid rgba(200,16,46,0)',
-        op: k === i ? 1 : 0.72,
-        color: k === i ? '#fff' : 'var(--c-ink-soft)',
-        select: () => this.go(k),
-      })),
       ovCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.5fr) minmax(0, 1fr)',
       leadSize: m ? '19px' : 'clamp(20px, 1.7vw, 24px)',
       galCols: m ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',

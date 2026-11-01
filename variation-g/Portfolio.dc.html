@@ -16,18 +16,44 @@
 <dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
 <dc-import name="SiteHeader" active="portfolio" hint-size="100%,0px"></dc-import>
 <main>
-  <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; min-height: {{heroMinH}}; display: flex; flex-direction: column; justify-content: flex-end;">
-    <div style="position: {{imgPos}}; top: 0; left: 0; right: 0; height: {{imgH}}; overflow: hidden;">
-      <div data-parallax="0.12" style="position: absolute; inset: 0;">
-        <img data-kb="" src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;">
-      </div>
-      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0, 26, 47, 0.5) 0%, rgba(0, 26, 47, 0) 20%, rgba(0, 26, 47, 0) 50%, rgba(0, 26, 47, 0.8) 82%, #001a2f 100%);"></div>
-      <div data-dim="0.6" aria-hidden="true" style="position: absolute; inset: 0; background: #001a2f; opacity: 0;"></div>
+  <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; height: {{heroH}}; min-height: {{heroMin}};">
+    <div data-parallax="0.04" style="position: absolute; inset: 0;">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{slides}}" as="s" hint-placeholder-count="0">
+        <div style="position: absolute; inset: 0; z-index: {{s.z}}; clip-path: {{s.clip}}; transition: {{s.trans}};">
+          <img loading="lazy" src="{{s.hero}}" data-fallback="{{s.fallback}}" alt="{{s.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{s.pos}}; transform: scale({{s.scale}}); transition: {{s.imgTrans}};">
+        </div>
+      </sc-for></sc-if>
     </div>
-    <div data-heroout="" style="position: relative; width: 100%; max-width: var(--max-w); margin: {{contentMt}} auto 0; padding: {{contentPad}}; display: flex; flex-direction: column; gap: 16px;">
-      <span data-line="" data-delay="100" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
-      <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1; letter-spacing: -0.02em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Our</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">portfolio</span></span></h1>
-      <p data-reveal="" data-delay="400" style="margin: 0; max-width: 680px; font-size: {{pSize}}; line-height: 1.55; color: var(--c-ink-soft); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+    <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 5; background: linear-gradient(to bottom, rgba(0, 26, 47, 0.6) 0%, rgba(0, 26, 47, 0) 22%, rgba(0, 26, 47, 0) 50%, rgba(0, 26, 47, 0.85) 90%, #001a2f 100%);"></div>
+    <div data-heroout="" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) {{heroPadB}}; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <span data-reveal="" style="font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase;">Our portfolio / {{curNum}}</span>
+          <div style="overflow: hidden; padding-bottom: 0.08em;">
+            <h1 ref="{{titleRef}}" style="margin: 0; max-width: 900px; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em; text-wrap: balance;">{{curTitle}}</h1>
+          </div>
+          <div data-reveal="" data-delay="250" style="display: flex; padding-top: 6px;">
+            <a href="{{curHref}}" data-magnetic="" style="display: flex; align-items: center; gap: 18px; height: 46px; padding: 0 22px; border: 1.5px solid #fff; color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 13px; font-weight: 600; letter-spacing: 0.22em; transition: background 0.35s, color 0.35s;" style-hover="background: #fff; color: #001a2f;">EXPLORE PROJECT<span aria-hidden="true" style="font-size: 18px; letter-spacing: 0; line-height: 1;">→</span></a>
+          </div>
+        </div>
+        <div data-reveal="" data-delay="350" style="display: flex; align-items: center; gap: 18px;">
+          <button type="button" aria-label="Previous project" onClick="{{prev}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">←</button>
+          <span style="min-width: 72px; text-align: center; font-family: var(--f-display); font-size: 15px; letter-spacing: 0.12em;">{{curNum}} / {{total}}</span>
+          <button type="button" aria-label="Next project" onClick="{{next}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-screen-label="Portfolio / Switcher" style="max-width: var(--max-w); margin: 0 auto; padding: 8px var(--gutter) clamp(32px, 4vw, 56px);">
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(12px, 3vw, 28px);">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{strip}}" as="t" hint-placeholder-count="0">
+        <button type="button" onClick="{{t.select}}" data-reveal="" data-delay="{{t.delay}}" style="display: flex; flex-direction: column; gap: 10px; padding: 0; background: none; border: 0; color: #fff; text-align: left; cursor: pointer;">
+          <span style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 7; overflow: hidden; outline: {{t.outline}}; outline-offset: 0; transition: outline-color 0.3s;">
+            <img loading="lazy" src="{{t.image}}" alt="{{t.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{t.pos}}; opacity: {{t.op}}; transition: opacity 0.4s, transform 0.9s cubic-bezier(0.16,1,0.3,1);" style-hover="transform: scale(1.06);">
+          </span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: {{t.color}};">{{t.title}}</span>
+        </button>
+      </sc-for></sc-if>
     </div>
   </section>
   <section data-screen-label="Portfolio / Projects" style="border-top: 1px solid var(--c-line);">
@@ -80,25 +106,80 @@ const PROJECTS = [
 // rows: 2,2,3,2 → spans on a 6-col grid
 const LAYOUT = [3, 3, 3, 3, 2, 2, 2, 3, 3];
 const ROWSTART = [0, 0, 2, 2, 4, 4, 4, 7, 7];
+const U = '../shared/natlandhomes/';
+const SLIDES = [
+  // pos = desktop crop, mpos = phone crop; tuned so each building stays as complete as possible
+  { title: 'Seniors Residential & Commercial Development', hero: 'assets/seniors.png', pos: '50% 30%', mpos: '47% 50%' },
+  { title: '458 E 1st Street', hero: 'assets/458-e-1st.png', pos: '50% 30%', mpos: '50% 50%' },
+  { title: '7000 Williams Road', hero: U + 'Williams_POV01_VERFinal-1536x1229.jpg', fallback: 'assets/p-03.png', thumb: 'assets/p-03.png', pos: '50% 40%', mpos: '12% 50%' },
+  { title: '1235 Marine Drive', hero: U + '1235-Marine-Drive-Enscape_2020-10-20-13-01-49-1536x814.jpg', fallback: 'assets/p-04.png', thumb: 'assets/p-04.png', pos: '20% 50%', mpos: '21% 50%' },
+  { title: '3560 Bluebonnet', hero: 'assets/fb-3560-hero.png', thumb: 'assets/p-05.png', href: 'Project-3560-Bluebonnet.dc.html', pos: '60% 50%', mpos: '56% 50%' },
+  { title: '976 Melbourne', hero: U + '976-Melbourne-001-1536x1024.jpg', fallback: 'assets/p-06.png', thumb: 'assets/p-06.png', pos: '50% 60%', mpos: '42% 50%' },
+  { title: '218 E 22nd Street', hero: U + '218-E-22nd-Street-exterior-1200.jpg', fallback: 'assets/p-07.png', thumb: 'assets/p-07.png', pos: '50% 20%', mpos: '45% 50%' },
+  { title: '226 West 5th Street', hero: U + '226-W-5th-exterior-1200.jpg', fallback: 'assets/p-08.png', thumb: 'assets/p-08.png', pos: '50% 30%', mpos: '60% 50%' },
+  { title: '754 East 17th Street', hero: U + '754-East-17th-exterior-1200.jpg', fallback: 'assets/p-09.png', thumb: 'assets/p-09.png', pos: '50% 50%', mpos: '12% 50%' },
+  { title: '245 West 27th Street', hero: U + '245-West-27th-exterior-1200.jpg', fallback: 'assets/p-10.png', thumb: 'assets/p-10.png', pos: '50% 40%', mpos: '10% 50%' },
+].map(s => ({ ...s, fallback: s.fallback || s.hero, thumb: s.thumb || s.hero, pos: s.pos || '50% 50%', href: s.href || '#' }));
+const AUTOPLAY_MS = 6000;
+const pad = n => String(n).padStart(2, '0');
 
 class Component extends DCLogic {
   mq = window.matchMedia('(max-width: 767px)');
-  state = { m: this.mq.matches };
+  state = { m: this.mq.matches, i: 0, prev: null };
+  titleRef = React.createRef();
   onMq = () => this.setState({ m: this.mq.matches });
-  componentDidMount() { this.mq.addEventListener('change', this.onMq); }
-  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); this.restart(); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); clearInterval(this.timer); }
+  lastI = 0;
+  componentDidUpdate() {
+    const changed = this.lastI !== this.state.i; this.lastI = this.state.i;
+    if (changed && this.titleRef.current && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.titleRef.current.animate([{ transform: 'translateY(105%)' }, { transform: 'none' }], { duration: 900, easing: 'cubic-bezier(0.16,1,0.3,1)' });
+    }
+  }
+  // Auto-advance; any manual change restarts the countdown so it never jumps right after a click.
+  restart() {
+    clearInterval(this.timer);
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || this.props.motion === false) return;
+    this.timer = setInterval(() => { if (!document.hidden) this.go(this.state.i + 1, true); }, AUTOPLAY_MS);
+  }
+  go = (i, auto) => {
+    const n = SLIDES.length; i = (i + n) % n;
+    if (i !== this.state.i) this.setState(s => ({ i, prev: s.i }));
+    if (!auto) this.restart();
+  };
   renderVals() {
-    const m = this.state.m;
+    const { m, i, prev } = this.state, n = SLIDES.length;
+    const cur = SLIDES[i];
+    const E = 'cubic-bezier(0.77,0,0.18,1)';
+    const win = [i - 2, i - 1, i].map(k => (k + n) % n);
     return {
+      ready: true,
       intro: this.props.intro ?? true,
       motion: this.props.motion ?? true,
-      heroMinH: m ? '0' : 'clamp(640px, 82vh, 860px)',
-      imgPos: m ? 'relative' : 'absolute',
-      imgH: m ? '56vh' : '82%',
-      contentMt: m ? '-80px' : '0',
-      contentPad: m ? '0 var(--gutter) 36px' : '0 var(--gutter) clamp(32px, 3vw, 44px)',
-      h1Size: m ? '48px' : 'clamp(64px, 6.4vw, 96px)',
-      pSize: m ? '15px' : '17px',
+      titleRef: this.titleRef,
+      heroH: m ? '78vh' : '100vh',
+      heroMin: m ? '520px' : '680px',
+      heroPadB: m ? '28px' : 'clamp(36px, 4vw, 56px)',
+      h1Size: m ? '36px' : 'clamp(48px, 5vw, 76px)',
+      slides: SLIDES.map((s, k) => ({
+        ...s,
+        pos: m ? s.mpos : s.pos,
+        z: k === i ? 2 : k === prev ? 1 : 0,
+        clip: k === i || k === prev ? 'inset(0 0 0 0)' : 'inset(0 0 0 100%)',
+        trans: k === i ? 'clip-path 1.2s ' + E : 'none',
+        scale: k === i ? 1 : 1.12,
+        imgTrans: k === i ? 'transform 1.8s cubic-bezier(0.16,1,0.3,1)' : 'none',
+      })),
+      curTitle: cur.title, curNum: pad(i + 1), total: pad(n), curHref: cur.href,
+      prev: () => this.go(i - 1), next: () => this.go(i + 1),
+      strip: win.map((k, j) => ({
+        title: SLIDES[k].title, image: SLIDES[k].thumb, pos: SLIDES[k].pos, delay: j * 100,
+        outline: k === i ? '2px solid #c8102e' : '2px solid rgba(200,16,46,0)',
+        op: k === i ? 1 : 0.72,
+        color: k === i ? '#fff' : 'var(--c-ink-soft)',
+        select: () => this.go(k),
+      })),
       featCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 2.6fr) minmax(0, 1fr)',
       featGap: m ? '16px' : 'clamp(24px, 3vw, 48px)',
       featTitle: m ? '20px' : 'clamp(20px, 1.8vw, 26px)',
