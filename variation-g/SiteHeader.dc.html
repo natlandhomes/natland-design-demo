@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="theme.css"></helmet>
+<header data-screen-label="Header" style="position: fixed; left: 0; right: 0; top: 0; z-index: 50; background: {{hdrBg}}; backdrop-filter: {{hdrBlur}}; -webkit-backdrop-filter: {{hdrBlur}}; border-bottom: 1px solid {{hdrLine}}; transform: translateY({{hdrY}}); transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s, border-color 0.4s;">
+  <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); height: {{headerH}}; display: flex; align-items: center; justify-content: space-between; gap: var(--sp-6); transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+    <a href="Home.dc.html" style="position: relative; z-index: 2; display: flex; align-items: center; flex: none;">
+      <img src="assets/logo-light.png" alt="Natland Group" style="height: {{logoH}}; width: auto; transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+    </a>
+    <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+      <nav style="display: flex; align-items: center;">
+        <sc-for list="{{links}}" as="l" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center;">
+            <span aria-hidden="true" style="display: {{l.divider}}; width: 1px; height: 16px; background: rgba(255, 255, 255, 0.35);"></span>
+            <a href="{{l.href}}" onMouseEnter="{{l.enter}}" onMouseLeave="{{l.leave}}" style="position: relative; display: block; padding: 8px clamp(14px, 1.8vw, 22px); color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 16px; font-weight: {{l.weight}};">{{l.label}}<span aria-hidden="true" style="position: absolute; left: clamp(14px, 1.8vw, 22px); right: clamp(14px, 1.8vw, 22px); bottom: -2px; height: 2px; background: var(--c-accent); transform: scaleX({{l.bar}}); transform-origin: {{l.origin}}; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);"></span></a>
+          </div>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+      <button type="button" aria-label="Menu" onClick="{{toggle}}" style="position: relative; z-index: 2; width: 48px; height: 48px; margin-right: -12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; background: none; border: 0; padding: 0; cursor: pointer;">
+        <span style="display: block; width: 26px; height: 2px; background: #fff; transform: {{bar1}}; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+        <span style="display: block; width: 26px; height: 2px; background: #fff; transform: {{bar2}}; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);"></span>
+      </button>
+    </sc-if>
+  </div>
+</header>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+  <nav aria-hidden="{{menuHidden}}" style="position: fixed; inset: 0; z-index: 49; background: #001a2f; clip-path: {{menuClip}}; transition: clip-path 0.8s cubic-bezier(0.76, 0, 0.24, 1); display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 96px var(--gutter) 48px;">
+    <sc-for list="{{links}}" as="l" hint-placeholder-count="4">
+      <a href="{{l.href}}" style="display: flex; align-items: baseline; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--c-line); color: #fff; text-decoration: none; opacity: {{l.mOpacity}}; transform: translateY({{l.mY}}); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) {{l.mDelay}}, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) {{l.mDelay}};">
+        <span style="font-family: var(--f-display); font-size: 14px; font-weight: 600; color: var(--c-accent);">{{l.num}}</span>
+        <span style="font-family: var(--f-display); font-size: 40px; font-weight: 600; line-height: 1.1;">{{l.label}}</span>
+      </a>
+    </sc-for>
+    <p style="margin: 32px 0 0; font-size: 14px; color: var(--c-muted);">office@natlandhomes.com · +1 (604) 973-1825</p>
+  </nav>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:300},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;portfolio&quot;,&quot;services&quot;,&quot;contact&quot;,&quot;none&quot;],&quot;default&quot;:&quot;home&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+const LINKS = [
+  { key: 'home', label: 'Home', href: 'Home.dc.html' },
+  { key: 'portfolio', label: 'Portfolio', href: 'Portfolio.dc.html' },
+  { key: 'services', label: 'Service', href: 'OurServices.dc.html' },
+  { key: 'contact', label: 'Contact Us', href: 'Contact.dc.html' },
+];
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, open: false, hide: false, solid: false, hover: null };
+  lastY = 0;
+  onMq = () => this.setState({ m: this.mq.matches, open: false });
+  onScroll = () => {
+    const y = scrollY, d = y - this.lastY;
+    const solid = y > 40;
+    if (solid !== this.state.solid) this.setState({ solid });
+    if (Math.abs(d) < 6) return;
+    const hide = d > 0 && y > 200 && !this.state.open;
+    if (hide !== this.state.hide) this.setState({ hide });
+    this.lastY = y;
+  };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('scroll', this.onScroll, { passive: true }); this.onScroll(); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const a = this.props.active ?? 'home';
+    const { m, open, hide, solid, hover } = this.state;
+    const sol = solid || open;
+    return {
+      desktop: !m, mobile: m,
+      hdrY: hide ? '-101%' : '0',
+      hdrBg: sol && !open ? 'rgba(0, 26, 47, 0.82)' : 'rgba(0, 26, 47, 0)',
+      hdrBlur: sol && !open ? 'blur(14px)' : 'none',
+      hdrLine: sol && !open ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0)',
+      headerH: m ? '68px' : solid ? '76px' : '100px',
+      logoH: m ? '34px' : solid ? '38px' : '46px',
+      toggle: () => this.setState(s => ({ open: !s.open })),
+      bar1: open ? 'translateY(4.5px) rotate(45deg)' : 'none',
+      bar2: open ? 'translateY(-4.5px) rotate(-45deg)' : 'none',
+      menuClip: open ? 'circle(150% at calc(100% - 40px) 34px)' : 'circle(0% at calc(100% - 40px) 34px)',
+      menuHidden: open ? 'false' : 'true',
+      links: LINKS.map((l, i) => {
+        const on = l.key === a, h = hover === l.key;
+        return {
+          ...l, num: '0' + (i + 1),
+          divider: i === 0 ? 'none' : 'block',
+          weight: on ? 600 : 400,
+          bar: on || h ? 1 : 0,
+          origin: h || on ? '0 50%' : '100% 50%',
+          enter: () => this.setState({ hover: l.key }),
+          leave: () => this.setState({ hover: null }),
+          mOpacity: open ? 1 : 0, mY: open ? '0' : '30px', mDelay: open ? (0.25 + i * 0.07) + 's' : '0s',
+        };
+      }),
+    };
+  }
+}
+</script>
+</body>
+</html>

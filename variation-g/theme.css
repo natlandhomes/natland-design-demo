@@ -1,0 +1,64 @@
+/* Natland Group — variation G: all-dark navy, crimson accents, cinematic full-bleed */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Figtree:wght@400;500;600&display=swap');
+
+:root {
+  --c-bg: #001a2f;
+  --c-page: #001a2f;
+  --c-surface: #04243d;
+  --c-surface-2: #072b47;
+  --c-ink: #ffffff;
+  --c-ink-soft: #c9d4df;
+  --c-muted: #8fa1b3;
+  --c-line: rgba(255, 255, 255, 0.14);
+  --c-line-strong: rgba(255, 255, 255, 0.55);
+  --c-accent: #c8102e;
+  --c-accent-hover: #a50d26;
+  --c-dark: #001a2f;
+  --c-footer: #00162a;
+  --c-on-dark: #ffffff;
+  --c-on-dark-soft: #c9d4df;
+  --c-line-dark: rgba(255, 255, 255, 0.14);
+
+  --f-display: 'Outfit', 'Helvetica Neue', Arial, sans-serif;
+  --f-body: 'Figtree', 'Helvetica Neue', Arial, sans-serif;
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-label: 12px;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --ls-label: 0.22em;
+
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-section: clamp(56px, 7vw, 104px);
+  --gutter: clamp(20px, 5vw, 64px);
+  --max-w: 1280px;
+  --field-h: 48px;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--c-bg);
+  color: var(--c-ink);
+  font-family: var(--f-body);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: #ffffff; }
+a:hover { color: #ff5a6e; }
+input, textarea, button { font: inherit; }
+input::placeholder, textarea::placeholder { color: var(--c-muted); opacity: 1; }
+::selection { background: #c8102e; color: #fff; }

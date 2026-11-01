@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — Home</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#001a2f;color:#fff}a{color:#fff}a:hover{color:#ff5a6e}</style>
+</helmet>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
+<dc-import name="SiteHeader" active="home" hint-size="100%,0px"></dc-import>
+<main>
+  <section data-screen-label="Home / Hero" style="position: relative; overflow: hidden; min-height: {{heroMinH}}; display: flex; flex-direction: column; justify-content: flex-end;">
+    <div style="position: {{imgPos}}; top: 0; left: 0; right: 0; height: {{imgH}}; overflow: hidden;">
+      <div data-parallax="0.12" style="position: absolute; inset: 0;">
+        <img data-kb="" src="assets/hero-home.png" alt="Building lobby at night" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;">
+      </div>
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0, 26, 47, 0.55) 0%, rgba(0, 26, 47, 0) 22%, rgba(0, 26, 47, 0) 45%, rgba(0, 26, 47, 0.75) 78%, #001a2f 100%);"></div>
+      <div data-dim="0.6" aria-hidden="true" style="position: absolute; inset: 0; background: #001a2f; opacity: 0;"></div>
+    </div>
+    <div data-heroout="" style="position: relative; width: 100%; max-width: var(--max-w); margin: {{contentMt}} auto 0; padding: {{contentPad}}; display: flex; flex-direction: column; gap: 18px;">
+      <span data-line="" data-delay="100" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+      <span data-reveal="" data-delay="150" style="font-size: 13px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;">Real estate development</span>
+      <h1 data-split="" style="margin: 0; max-width: 11em; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.02; letter-spacing: -0.015em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Dreams</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">know</span></span><br><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">no</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">bounds</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block; color: var(--c-accent);">—</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">we</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">build!</span></span></h1>
+      <div style="max-width: 680px; display: flex; flex-direction: column; gap: 12px; font-size: {{pSize}}; line-height: 1.55; color: var(--c-ink-soft);">
+        <p data-reveal="" data-delay="550" style="margin: 0; text-wrap: pretty;">The Natland Group is a land development company. We plan projects to create safe and beautiful places where people live, work and play. We provide a full range of land development and project management services.</p>
+        <p data-reveal="" data-delay="650" style="margin: 0; text-wrap: pretty;">Our business is founded on the principles of excellence, sustainability, and community. We combine our local knowledge with a global perspective. We are proud contributors to the communities in which we live and work.</p>
+        <p data-reveal="" data-delay="750" style="margin: 0; text-wrap: pretty;">Each project is not just a job – it is our legacy of lasting positive impacts in the community.</p>
+      </div>
+      <div data-reveal="" data-delay="850" style="display: flex; padding-top: 8px;">
+        <a href="Portfolio.dc.html" data-magnetic="" style="display: flex; align-items: center; justify-content: center; gap: 18px; height: 48px; padding: 0 28px; border: 1.5px solid #fff; color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 13px; font-weight: 600; letter-spacing: 0.2em; transition: background 0.35s, color 0.35s;" style-hover="background: #fff; color: #001a2f;">VIEW PORTFOLIO<span aria-hidden="true" style="font-size: 18px; letter-spacing: 0; line-height: 1;">→</span></a>
+      </div>
+    </div>
+    <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+      <div aria-hidden="true" style="position: absolute; right: var(--gutter); bottom: 64px; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <span style="writing-mode: vertical-rl; font-size: 11px; font-weight: 600; letter-spacing: 0.3em; color: var(--c-ink-soft);">SCROLL</span>
+        <span style="position: relative; display: block; width: 1px; height: 64px; overflow: hidden; background: rgba(255, 255, 255, 0.2);"><span data-scrollcue="" style="position: absolute; left: 0; top: 0; display: block; width: 1px; height: 24px; background: var(--c-accent);"></span></span>
+      </div>
+    </sc-if>
+  </section>
+  <section data-screen-label="Home / Trade" style="border-top: 1px solid var(--c-line);">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(40px, 4vw, 56px); display: flex; flex-direction: column; gap: clamp(28px, 3vw, 40px);">
+      <div style="display: grid; grid-template-columns: {{twoCols}}; gap: clamp(20px, 4vw, 48px); align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+          <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 500; font-size: {{h2Size}}; line-height: 1.12; text-wrap: balance;">International Trade &amp; Strategic Sourcing</h2>
+        </div>
+        <p data-reveal="" data-delay="120" style="margin: 0; padding-top: {{pTop}}; max-width: 520px; font-size: {{pSize}}; line-height: 1.55; color: var(--c-ink-soft); text-wrap: pretty;">We help Canadian businesses source structural steel and building materials from China, connecting them with trusted manufacturers and reliable, cost-competitive supply chains.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: {{imgCols}}; gap: clamp(12px, 1.6vw, 20px);">
+        <figure data-zoom="" style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div data-clip="left" style="position: relative; overflow: hidden; aspect-ratio: 16 / 9;">
+            <img src="assets/trade-steel.png" alt="Structural steel sections stacked in a yard with a forklift" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <figcaption data-reveal="" data-delay="400" style="font-size: 13px; color: var(--c-ink-soft);">Structural steel</figcaption>
+        </figure>
+        <figure data-zoom="" style="margin: 0; display: flex; flex-direction: column; gap: 10px;">
+          <div data-clip="right" data-delay="150" style="position: relative; overflow: hidden; aspect-ratio: 16 / 9;">
+            <img src="assets/trade-pipes.png" alt="Steel pipes stacked on a construction site" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <figcaption data-reveal="" data-delay="550" style="font-size: 13px; color: var(--c-ink-soft);">Building materials</figcaption>
+        </figure>
+      </div>
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: {{threeCols}};">
+        <li data-reveal="" data-delay="0" style="display: flex; align-items: center; gap: 24px; padding: {{itemPadFirst}}; border-bottom: {{itemBorderB}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">01<span data-line="" data-delay="200" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Structural steel</span>
+        </li>
+        <li data-reveal="" data-delay="120" style="display: flex; align-items: center; gap: 24px; padding: {{itemPad}}; border-left: {{itemBorderL}}; border-bottom: {{itemBorderB}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">02<span data-line="" data-delay="320" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Building materials</span>
+        </li>
+        <li data-reveal="" data-delay="240" style="display: flex; align-items: center; gap: 24px; padding: {{itemPad}}; border-left: {{itemBorderL}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">03<span data-line="" data-delay="440" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Strategic sourcing</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section data-screen-label="Home / Waste-to-Energy" style="position: relative;">
+    <div data-scrub="" style="position: relative; overflow: hidden; aspect-ratio: {{panoRatio}};">
+      <img src="assets/wte.png" alt="Waste-to-energy facility in front of a city skyline and mountains" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+      <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0, 26, 47, 0) 55%, #001a2f 100%);"></div>
+    </div>
+    <div style="position: relative; max-width: var(--max-w); margin: {{wteMt}} auto 0; padding: 0 var(--gutter) var(--sp-section); display: flex; flex-direction: column; gap: 16px;">
+      <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+      <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 500; font-size: {{h2Size}}; line-height: 1.12; text-wrap: balance;">Waste-to-Energy &amp; Sustainable Infrastructure</h2>
+      <p data-reveal="" data-delay="120" style="margin: 0; max-width: 620px; font-size: {{pSize}}; line-height: 1.55; color: var(--c-ink-soft); text-wrap: pretty;">We connect Canadian infrastructure projects with advanced waste-to-energy technologies, engineering expertise, and equipment manufacturers in China.</p>
+      <ol style="list-style: none; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: {{threeCols}};">
+        <li data-reveal="" data-delay="0" style="display: flex; align-items: center; gap: 24px; padding: {{itemPadFirst}}; border-bottom: {{itemBorderB}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">01<span data-line="" data-delay="200" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Feasibility &amp; planning</span>
+        </li>
+        <li data-reveal="" data-delay="120" style="display: flex; align-items: center; gap: 24px; padding: {{itemPad}}; border-left: {{itemBorderL}}; border-bottom: {{itemBorderB}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">02<span data-line="" data-delay="320" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Technology &amp; equipment</span>
+        </li>
+        <li data-reveal="" data-delay="240" style="display: flex; align-items: center; gap: 24px; padding: {{itemPad}}; border-left: {{itemBorderL}};">
+          <span style="position: relative; padding-bottom: 4px; font-family: var(--f-display); font-size: 24px; font-weight: 500; line-height: 1; color: var(--c-accent);">03<span data-line="" data-delay="440" style="position: absolute; left: 0; right: 0; bottom: 0; display: block; height: 2px; background: var(--c-accent);"></span></span>
+          <span style="font-family: var(--f-display); font-size: 17px;">Strategic partnerships</span>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+<dc-import name="SiteFooter" variant="form" hint-size="100%,520px"></dc-import>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches };
+  onMq = () => this.setState({ m: this.mq.matches });
+  componentDidMount() {
+    this.mq.addEventListener('change', this.onMq);
+    const cue = document.querySelector('[data-scrollcue]');
+    if (cue && !matchMedia('(prefers-reduced-motion: reduce)').matches) cue.animate([{ transform: 'translateY(-24px)' }, { transform: 'translateY(64px)' }], { duration: 1800, iterations: Infinity, easing: 'cubic-bezier(0.76,0,0.24,1)' });
+  }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); }
+  renderVals() {
+    const m = this.state.m;
+    return {
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
+      desktop: !m, mobile: m,
+      heroMinH: m ? '0' : 'max(760px, 100vh)',
+      imgPos: m ? 'relative' : 'absolute',
+      imgH: m ? '62vh' : '74%',
+      contentMt: m ? '-96px' : '0',
+      contentPad: m ? '0 var(--gutter) 48px' : '0 var(--gutter) clamp(56px, 6vw, 88px)',
+      h1Size: m ? '40px' : 'clamp(52px, 5vw, 76px)',
+      h2Size: m ? '28px' : 'clamp(30px, 2.8vw, 40px)',
+      pSize: m ? '15px' : '17px',
+      pTop: m ? '0' : '22px',
+      twoCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 0.85fr) minmax(0, 1.15fr)',
+      imgCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      threeCols: m ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))',
+      itemPad: m ? '14px 0' : '6px clamp(20px, 3vw, 44px)',
+      itemPadFirst: m ? '14px 0' : '6px clamp(20px, 3vw, 44px) 6px 0',
+      itemBorderL: m ? '0' : '1px solid var(--c-line)',
+      itemBorderB: m ? '1px solid var(--c-line)' : '0',
+      panoRatio: m ? '4 / 3' : '1138 / 326',
+      wteMt: m ? '-40px' : 'clamp(-120px, -7vw, -60px)',
+    };
+  }
+}
+</script>
+</body>
+</html>

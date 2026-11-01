@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet><link rel="stylesheet" href="theme.css"></helmet>
+<footer data-screen-label="Footer" style="background: var(--c-footer); color: #fff;">
+  <sc-if value="{{isForm}}" hint-placeholder-val="{{true}}">
+    <section data-screen-label="Get in touch" style="border-top: 1px solid var(--c-line);">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) var(--sp-7); display: grid; grid-template-columns: {{cols}}; gap: {{colGap}}; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 22px; padding-right: {{leftPad}}; border-right: {{leftBorder}};">
+          <span data-line="" style="display: block; width: 36px; height: 3px; background: var(--c-accent);"></span>
+          <h2 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(32px, 3vw, 44px); line-height: 1.05;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Get</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">in</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">touch</span></span></h2>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+            <li data-reveal="" data-delay="100" style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; align-items: start;">
+              <span aria-hidden="true" style="width: 20px; height: 20px; margin-top: 2px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/map-pin.svg) center / contain no-repeat;"></span>
+              <span style="font-size: 16px; line-height: 1.45; color: var(--c-ink-soft);">#130-788 Harbourside Drive,<br>North Vancouver, BC V7P 3R7</span>
+            </li>
+            <li data-reveal="" data-delay="180" style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; align-items: center;">
+              <span aria-hidden="true" style="width: 18px; height: 18px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/phone.svg) center / contain no-repeat;"></span>
+              <a href="tel:+16049731825" style="font-size: 16px; color: var(--c-ink-soft); text-decoration: none;" style-hover="color: #fff;">+1 (604) 973-1825</a>
+            </li>
+            <li data-reveal="" data-delay="260" style="display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 14px; align-items: center;">
+              <span aria-hidden="true" style="width: 20px; height: 20px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/mail.svg) center / contain no-repeat;"></span>
+              <a href="mailto:office@natlandhomes.com" style="font-size: 16px; color: var(--c-ink-soft); text-decoration: none;" style-hover="color: #fff;">office@natlandhomes.com</a>
+            </li>
+          </ul>
+        </div>
+        <form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: 12px;">
+          <div data-reveal="" style="display: grid; grid-template-columns: {{pairCols}}; gap: 12px;">
+            <input type="text" name="name" placeholder="Your name *" required="" onChange="{{setName}}" style="height: var(--field-h); padding: 0 14px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 15px; outline: none; transition: border-color 0.3s, background 0.3s;" style-focus="border-color: #fff; background: rgba(255,255,255,0.04);">
+            <input type="tel" name="phone" placeholder="Phone number" onChange="{{setPhone}}" style="height: var(--field-h); padding: 0 14px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 15px; outline: none; transition: border-color 0.3s, background 0.3s;" style-focus="border-color: #fff; background: rgba(255,255,255,0.04);">
+          </div>
+          <input data-reveal="" data-delay="80" type="email" name="email" placeholder="Your e-mail *" required="" onChange="{{setEmail}}" style="height: var(--field-h); padding: 0 14px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 15px; outline: none; transition: border-color 0.3s, background 0.3s;" style-focus="border-color: #fff; background: rgba(255,255,255,0.04);">
+          <textarea data-reveal="" data-delay="140" name="message" placeholder="How can we help you ?" rows="3" onChange="{{setMsg}}" style="padding: 12px 14px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 15px; line-height: 1.5; resize: vertical; outline: none; transition: border-color 0.3s, background 0.3s;" style-focus="border-color: #fff; background: rgba(255,255,255,0.04);"></textarea>
+          <div data-reveal="" data-delay="200" style="display: flex; flex-direction: column; gap: 10px;">
+            <button type="submit" data-magnetic="" style="height: 50px; margin-top: 4px; background: var(--c-accent); color: #fff; border: 0; border-radius: 0; font-family: var(--f-display); font-size: 15px; font-weight: 600; letter-spacing: 0.24em; cursor: pointer; transition: background 0.3s, letter-spacing 0.4s;" style-hover="background: var(--c-accent-hover); letter-spacing: 0.32em;">SEND</button>
+            <p style="margin: 0; text-align: center; font-size: 13px; color: var(--c-muted);">Send opens your email app.</p>
+          </div>
+        </form>
+      </div>
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);">
+        <div style="padding: 22px 0 28px; border-top: 1px solid var(--c-line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+          <a href="Home.dc.html" style="display: flex;"><img src="assets/logo-light.png" alt="Natland Group" style="height: 34px; width: auto;"></a>
+          <p style="margin: 0; font-size: 13px; color: var(--c-ink-soft);">© NATLAND GROUP. All rights reserved.</p>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{isColumns}}" hint-placeholder-val="{{false}}">
+    <section data-screen-label="Footer columns" style="border-top: 1px solid var(--c-line);">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-7) var(--gutter) var(--sp-6); display: grid; grid-template-columns: {{cols3}}; gap: 0;">
+        <form onSubmit="{{submit}}" style="display: flex; flex-direction: column; gap: 10px; padding: {{c1Pad}}; border-right: {{colBorder}};">
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px;">
+            <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;">Get in touch</span>
+            <span data-line="" style="display: block; width: 28px; height: 2px; background: var(--c-accent);"></span>
+          </div>
+          <input data-reveal="" type="text" name="name" placeholder="Your name *" required="" onChange="{{setName}}" style="height: 40px; padding: 0 12px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 14px; outline: none;" style-focus="border-color: #fff;">
+          <input data-reveal="" data-delay="60" type="tel" name="phone" placeholder="Phone number" onChange="{{setPhone}}" style="height: 40px; padding: 0 12px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 14px; outline: none;" style-focus="border-color: #fff;">
+          <input data-reveal="" data-delay="120" type="email" name="email" placeholder="Your e-mail *" required="" onChange="{{setEmail}}" style="height: 40px; padding: 0 12px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 14px; outline: none;" style-focus="border-color: #fff;">
+          <textarea data-reveal="" data-delay="180" name="message" placeholder="How can we help you ?" rows="2" onChange="{{setMsg}}" style="padding: 10px 12px; background: transparent; border: 1px solid var(--c-line-strong); border-radius: 0; color: #fff; font-size: 14px; line-height: 1.5; resize: vertical; outline: none;" style-focus="border-color: #fff;"></textarea>
+          <button data-reveal="" data-delay="240" type="submit" style="height: 42px; background: var(--c-accent); color: #fff; border: 0; border-radius: 0; font-family: var(--f-display); font-size: 15px; font-weight: 500; cursor: pointer; transition: background 0.3s;" style-hover="background: var(--c-accent-hover);">Send</button>
+        </form>
+        <div style="display: flex; flex-direction: column; gap: 14px; padding: {{c2Pad}}; border-right: {{colBorder}};">
+          <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 6px;">
+            <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;">Address</span>
+            <span data-line="" style="display: block; width: 28px; height: 2px; background: var(--c-accent);"></span>
+          </div>
+          <p data-reveal="" style="margin: 0; font-size: 15px; line-height: 1.6; color: var(--c-ink-soft);">#130-788 Harbourside Drive<br>North Vancouver, BC V7P 3R7</p>
+          <p data-reveal="" data-delay="100" style="margin: 0; font-size: 15px; line-height: 1.7; color: var(--c-ink-soft);">Phone: <a href="tel:+16049731825" style="color: var(--c-ink-soft); text-decoration: none;">+1(604)973-1825</a><br>E-mail: <a href="mailto:office@natlandhomes.com" style="color: #fff;">office@natlandhomes.com</a></p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px; padding: {{c3Pad}};">
+          <a href="Home.dc.html" style="display: flex;"><img src="assets/logo-light.png" alt="Natland Group" style="height: 40px; width: auto;"></a>
+          <nav style="display: flex; flex-direction: column; gap: 6px;">
+            <a data-reveal="" href="Home.dc.html" style="font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Home</a>
+            <a data-reveal="" data-delay="60" href="Portfolio.dc.html" style="font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Portfolio</a>
+            <a data-reveal="" data-delay="120" href="OurServices.dc.html" style="font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Service</a>
+            <a data-reveal="" data-delay="180" href="Contact.dc.html" style="font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Contact Us</a>
+          </nav>
+        </div>
+      </div>
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);">
+        <p style="margin: 0; padding: 18px 0 24px; border-top: 1px solid var(--c-line); text-align: center; font-size: 13px; color: var(--c-ink-soft);">© NATLAND GROUP. All rights reserved.</p>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{isMinimal}}" hint-placeholder-val="{{false}}">
+    <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter);">
+      <div style="padding: 28px 0 32px; border-top: 1px solid var(--c-line); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+        <a href="Home.dc.html" style="display: flex;"><img src="assets/logo-light.png" alt="Natland Group" style="height: 36px; width: auto;"></a>
+        <nav style="display: flex; flex-wrap: wrap; align-items: center;">
+          <a href="Home.dc.html" style="padding: 4px 22px 4px 0; font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Home</a>
+          <a href="Portfolio.dc.html" style="padding: 4px 22px; border-left: 1px solid rgba(255,255,255,0.35); font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Portfolio</a>
+          <a href="OurServices.dc.html" style="padding: 4px 22px; border-left: 1px solid rgba(255,255,255,0.35); font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Service</a>
+          <a href="Contact.dc.html" style="padding: 4px 0 4px 22px; border-left: 1px solid rgba(255,255,255,0.35); font-size: 15px; color: #fff; text-decoration: none;" style-hover="color: #ff5a6e;">Contact Us</a>
+        </nav>
+        <p style="margin: 0; font-size: 13px; color: var(--c-ink-soft);">© NATLAND GROUP. All rights reserved.</p>
+      </div>
+    </div>
+  </sc-if>
+  <sc-if value="{{showTop}}" hint-placeholder-val="{{false}}">
+    <button type="button" aria-label="Back to top" onClick="{{toTop}}" data-magnetic="" style="position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; background: var(--c-accent); border: 0; border-radius: 50%; cursor: pointer; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);" style-hover="background: var(--c-accent-hover);">
+      <span aria-hidden="true" style="width: 10px; height: 10px; border-left: 2px solid #fff; border-top: 2px solid #fff; transform: translateY(3px) rotate(45deg);"></span>
+    </button>
+  </sc-if>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:560},&quot;variant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;form&quot;,&quot;columns&quot;,&quot;minimal&quot;],&quot;default&quot;:&quot;form&quot;,&quot;tsType&quot;:&quot;'form'|'columns'|'minimal'&quot;}}">
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, top: false };
+  f = {};
+  onMq = () => this.setState({ m: this.mq.matches });
+  onScroll = () => { const t = scrollY > 700; if (t !== this.state.top) this.setState({ top: t }); };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('scroll', this.onScroll, { passive: true }); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('scroll', this.onScroll); }
+  renderVals() {
+    const m = this.state.m, v = this.props.variant ?? 'form';
+    const set = k => e => { this.f[k] = e.target.value; };
+    return {
+      isForm: v === 'form', isColumns: v === 'columns', isMinimal: v === 'minimal',
+      cols: m ? 'minmax(0, 1fr)' : 'minmax(0, 5fr) minmax(0, 7fr)',
+      colGap: m ? '36px' : 'clamp(40px, 5vw, 72px)',
+      leftPad: m ? '0' : 'clamp(32px, 5vw, 72px)',
+      leftBorder: m ? '0' : '1px solid var(--c-line)',
+      pairCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1fr)',
+      cols3: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.1fr) minmax(0, 1.1fr) minmax(0, 0.8fr)',
+      colBorder: m ? '0' : '1px solid var(--c-line)',
+      c1Pad: m ? '0 0 32px' : '0 clamp(24px, 3vw, 48px) 0 0',
+      c2Pad: m ? '0 0 32px' : '0 clamp(24px, 3vw, 48px)',
+      c3Pad: m ? '0 0 24px' : '0 0 0 clamp(24px, 3vw, 48px)',
+      showTop: !m && this.state.top,
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      setName: set('name'), setPhone: set('phone'), setEmail: set('email'), setMsg: set('msg'),
+      submit: e => {
+        e.preventDefault();
+        const f = this.f;
+        const body = [f.msg, '', f.name, f.phone, f.email].filter(x => x !== undefined).join('\n');
+        location.href = 'mailto:office@natlandhomes.com?subject=' + encodeURIComponent('Website enquiry' + (f.name ? ' — ' + f.name : '')) + '&body=' + encodeURIComponent(body);
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

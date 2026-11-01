@@ -2,8 +2,9 @@
 // Each variation folder has the same page files, so switching keeps the current page.
 (function () {
   var VARIANTS = [
-    { dir: 'variation-f', label: 'Variation F' },
-    { dir: 'variation-e', label: 'Variation E' },
+    { dir: 'variation-g', label: 'Demo 1' },
+    { dir: 'variation-f', label: 'Demo 2' },
+    { dir: 'variation-e', label: 'Demo 3' },
   ];
   var parts = location.pathname.split('/');
   var file = parts.pop() || 'Home.dc.html';

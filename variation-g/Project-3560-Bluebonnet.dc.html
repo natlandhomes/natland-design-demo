@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — 3560 Bluebonnet</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#001a2f;color:#fff}a{color:#fff}a:hover{color:#ff5a6e}</style>
+</helmet>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
+<dc-import name="SiteHeader" active="portfolio" hint-size="100%,0px"></dc-import>
+<main>
+  <section data-screen-label="Project / Hero" style="position: relative; overflow: hidden; height: {{heroH}}; min-height: {{heroMin}};">
+    <div data-parallax="0.1" style="position: absolute; inset: 0;">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{slides}}" as="s" hint-placeholder-count="0">
+        <div style="position: absolute; inset: 0; z-index: {{s.z}}; clip-path: {{s.clip}}; transition: {{s.trans}};">
+          <img loading="lazy" src="{{s.hero}}" data-fallback="{{s.fallback}}" alt="{{s.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{s.pos}}; transform: scale({{s.scale}}); transition: {{s.imgTrans}};">
+        </div>
+      </sc-for></sc-if>
+    </div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 5; background: linear-gradient(to bottom, rgba(0, 26, 47, 0.6) 0%, rgba(0, 26, 47, 0) 22%, rgba(0, 26, 47, 0) 50%, rgba(0, 26, 47, 0.85) 90%, #001a2f 100%);"></div>
+    <div data-heroout="" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) {{heroPadB}}; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px;">
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <span data-reveal="" style="font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase;">Selected projects / {{curNum}}</span>
+          <div style="overflow: hidden; padding-bottom: 0.08em;">
+            <h1 ref="{{titleRef}}" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em;">{{curTitle}}</h1>
+          </div>
+          <div data-reveal="" data-delay="250" style="display: flex; padding-top: 6px;">
+            <a href="{{curHref}}" onClick="{{explore}}" data-magnetic="" style="display: flex; align-items: center; gap: 18px; height: 46px; padding: 0 22px; border: 1.5px solid #fff; color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 13px; font-weight: 600; letter-spacing: 0.22em; transition: background 0.35s, color 0.35s;" style-hover="background: #fff; color: #001a2f;">EXPLORE PROJECT<span aria-hidden="true" style="font-size: 18px; letter-spacing: 0; line-height: 1;">→</span></a>
+          </div>
+        </div>
+        <div data-reveal="" data-delay="350" style="display: flex; align-items: center; gap: 18px;">
+          <button type="button" aria-label="Previous project" onClick="{{prev}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">←</button>
+          <span style="min-width: 72px; text-align: center; font-family: var(--f-display); font-size: 15px; letter-spacing: 0.12em;">{{curNum}} / {{total}}</span>
+          <button type="button" aria-label="Next project" onClick="{{next}}" data-magnetic="" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid #fff; background: transparent; color: #fff; font-size: 18px; line-height: 1; cursor: pointer; transition: background 0.3s, color 0.3s;" style-hover="background: #fff; color: #001a2f;">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section data-screen-label="Project / Switcher" style="max-width: var(--max-w); margin: 0 auto; padding: 8px var(--gutter) 0;">
+    <div style="display: grid; grid-template-columns: {{stripCols}}; gap: clamp(12px, 3vw, 28px);">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{strip}}" as="t" hint-placeholder-count="0">
+        <button type="button" onClick="{{t.select}}" data-reveal="" data-delay="{{t.delay}}" style="display: flex; flex-direction: column; gap: 10px; padding: 0; background: none; border: 0; color: #fff; text-align: left; cursor: pointer;">
+          <span style="position: relative; display: block; width: 100%; aspect-ratio: 16 / 7; overflow: hidden; outline: {{t.outline}}; outline-offset: 0; transition: outline-color 0.3s;">
+            <img loading="lazy" src="{{t.image}}" alt="{{t.title}}" style="width: 100%; height: 100%; object-fit: cover; object-position: {{t.pos}}; opacity: {{t.op}}; transition: opacity 0.4s, transform 0.9s cubic-bezier(0.16,1,0.3,1);" style-hover="transform: scale(1.06);">
+          </span>
+          <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: {{t.color}};">{{t.title}}</span>
+        </button>
+      </sc-for></sc-if>
+    </div>
+  </section>
+  <section ref="{{overviewRef}}" data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+      <p data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 400; font-size: {{leadSize}}; line-height: 1.5; text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
+    </div>
+    <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-line);">
+      <li data-reveal="" data-delay="100" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BEDROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
+      <li data-reveal="" data-delay="180" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BATHROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
+      <li data-reveal="" data-delay="260" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">SQFT</span><span style="font-family: var(--f-display); font-size: 24px;">5,610</span></li>
+      <li data-reveal="" data-delay="340" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">COMPLETION DATE</span><span style="font-family: var(--f-display); font-size: 24px;">March 2020</span></li>
+    </ul>
+  </section>
+  <section data-screen-label="Project / Gallery" style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) var(--sp-section); display: flex; flex-direction: column; align-items: center; gap: clamp(40px, 5vw, 64px);">
+    <div style="width: 100%; display: grid; grid-template-columns: {{galCols}}; gap: clamp(8px, 1vw, 12px);">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{gallery}}" as="g" hint-placeholder-count="0">
+        <button type="button" onClick="{{g.open}}" aria-label="View image" data-zoom="" data-cursor="Open" style="position: relative; display: block; padding: 0; border: 0; background: var(--c-surface); overflow: hidden; aspect-ratio: 3 / 2; cursor: zoom-in;">
+          <span data-clip="" data-delay="{{g.delay}}" style="position: absolute; inset: 0; display: block; overflow: hidden;">
+            <img src="{{g.thumb}}" data-fallback="{{g.fallback}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </span>
+        </button>
+      </sc-for></sc-if>
+    </div>
+    <a href="Portfolio.dc.html" data-magnetic="" style="display: flex; align-items: center; justify-content: center; width: 160px; height: 48px; background: var(--c-accent); color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: 500; transition: background 0.3s;" style-hover="background: var(--c-accent-hover); color: #fff;">Back</a>
+  </section>
+</main>
+<dc-import name="SiteFooter" variant="form" hint-size="100%,520px"></dc-import>
+<sc-if value="{{lightbox}}" hint-placeholder-val="{{false}}">
+  <div onClick="{{close}}" style="position: fixed; inset: 0; z-index: 200; background: rgba(0, 14, 26, 0.95); display: flex; align-items: center; justify-content: center; padding: clamp(16px, 5vw, 80px); cursor: zoom-out;">
+    <img loading="lazy" src="{{lbSrc}}" data-fallback="{{lbFallback}}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <span style="position: absolute; left: 24px; bottom: 20px; font-family: var(--f-display); font-size: 14px; letter-spacing: 0.12em; color: var(--c-ink-soft);">{{lbCount}}</span>
+    <button type="button" aria-label="Previous image" onClick="{{lbPrev}}" style="position: absolute; left: 16px; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 18px; cursor: pointer;">←</button>
+    <button type="button" aria-label="Next image" onClick="{{lbNext}}" style="position: absolute; right: 16px; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 18px; cursor: pointer;">→</button>
+    <button type="button" aria-label="Close" onClick="{{close}}" style="position: absolute; top: 16px; right: 16px; width: 48px; height: 48px; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 22px; line-height: 1; cursor: pointer;">×</button>
+  </div>
+</sc-if>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const U = '../shared/natlandhomes/';
+const SLIDES = [
+  { title: 'Seniors Residential & Commercial Development', hero: 'assets/seniors.png', pos: '50% 45%' },
+  { title: '458 E 1st Street', hero: 'assets/458-e-1st.png', pos: '50% 60%' },
+  { title: '7000 Williams Road', hero: U + 'Williams_POV01_VERFinal-1536x1229.jpg', fallback: 'assets/p-03.png', thumb: 'assets/p-03.png' },
+  { title: '1235 Marine Drive', hero: U + '1235-Marine-Drive-Enscape_2020-10-20-13-01-49-1536x814.jpg', fallback: 'assets/p-04.png', thumb: 'assets/p-04.png' },
+  { title: '3560 Bluebonnet', hero: 'assets/fb-3560-hero.png', fallback: 'assets/fb-3560-hero.png', thumb: 'assets/p-05.png', href: '#overview', self: true },
+  { title: '976 Melbourne', hero: U + '976-Melbourne-001-1536x1024.jpg', fallback: 'assets/p-06.png', thumb: 'assets/p-06.png' },
+  { title: '218 E 22nd Street', hero: 'assets/p-07.png' },
+  { title: '226 West 5th Street', hero: 'assets/p-08.png' },
+  { title: '754 East 17th Street', hero: 'assets/p-09.png' },
+  { title: '245 West 27th Street', hero: 'assets/p-10.png' },
+].map(s => ({ ...s, fallback: s.fallback || s.hero, thumb: s.thumb || s.hero, pos: s.pos || '50% 50%', href: s.href || '#' }));
+const START = 4;
+const GALLERY = [
+  ['3560-Bluebonnet-002-768x512.jpg', '3560-Bluebonnet-002.jpg'],
+  ['3560-Bluebonnet-001-768x512.jpg', '3560-Bluebonnet-001.jpg'],
+  ['3560-Bluebonnet-007-768x512.jpeg', '3560-Bluebonnet-007-scaled.jpeg'],
+  ['3560-Bluebonnet-003-768x512.jpg', '3560-Bluebonnet-003.jpg'],
+  ['3560-Bluebonnet-004-768x512.jpg', '3560-Bluebonnet-004.jpg'],
+  ['3560-Bluebonnet-008-768x512.jpeg', '3560-Bluebonnet-008-scaled.jpeg'],
+  ['3560-Bluebonnet-009-768x1152.jpeg', '3560-Bluebonnet-009-scaled.jpeg'],
+  ['3560-Bluebonnet-006-768x512.jpg', '3560-Bluebonnet-006.jpg'],
+  ['3560-Bluebonnet-010-768x512.jpeg', '3560-Bluebonnet-010-scaled.jpeg'],
+].map(([t, f], i) => ({ thumb: U + t, full: U + f, fallback: 'assets/fb-g' + (i + 1) + '.png' }));
+const pad = n => String(n).padStart(2, '0');
+
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, i: START, prev: null, lb: null };
+  titleRef = React.createRef(); overviewRef = React.createRef();
+  onMq = () => this.setState({ m: this.mq.matches });
+  onKey = e => {
+    if (this.state.lb === null) return;
+    if (e.key === 'Escape') this.setState({ lb: null });
+    if (e.key === 'ArrowRight') this.step(1);
+    if (e.key === 'ArrowLeft') this.step(-1);
+  };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('keydown', this.onKey); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('keydown', this.onKey); }
+  lastI = START;
+  componentDidUpdate() {
+    const changed = this.lastI !== this.state.i; this.lastI = this.state.i;
+    if (changed && this.titleRef.current && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      this.titleRef.current.animate([{ transform: 'translateY(105%)' }, { transform: 'none' }], { duration: 900, easing: 'cubic-bezier(0.16,1,0.3,1)' });
+    }
+  }
+  go = i => { const n = SLIDES.length; i = (i + n) % n; if (i !== this.state.i) this.setState(s => ({ i, prev: s.i })); };
+  step = d => this.setState(s => ({ lb: (s.lb + d + GALLERY.length) % GALLERY.length }));
+  renderVals() {
+    const { m, i, prev, lb } = this.state, n = SLIDES.length;
+    const cur = SLIDES[i];
+    const E = 'cubic-bezier(0.77,0,0.18,1)';
+    const win = [i - 2, i - 1, i].map(k => (k + n) % n);
+    return {
+      ready: true,
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
+      titleRef: this.titleRef, overviewRef: this.overviewRef,
+      heroH: m ? '78vh' : '100vh',
+      heroMin: m ? '520px' : '680px',
+      heroPadB: m ? '28px' : 'clamp(36px, 4vw, 56px)',
+      h1Size: m ? '40px' : 'clamp(52px, 5.4vw, 80px)',
+      slides: SLIDES.map((s, k) => ({
+        ...s,
+        z: k === i ? 2 : k === prev ? 1 : 0,
+        clip: k === i || k === prev ? 'inset(0 0 0 0)' : 'inset(0 0 0 100%)',
+        trans: k === i ? 'clip-path 1.2s ' + E : 'none',
+        scale: k === i ? 1 : 1.12,
+        imgTrans: k === i ? 'transform 1.8s cubic-bezier(0.16,1,0.3,1)' : 'none',
+      })),
+      curTitle: cur.title, curNum: pad(i + 1), total: pad(n), curHref: cur.href,
+      explore: e => {
+        if (!cur.self) return;
+        e.preventDefault();
+        const el = this.overviewRef.current;
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + scrollY - 40, behavior: 'smooth' });
+      },
+      prev: () => this.go(i - 1), next: () => this.go(i + 1),
+      stripCols: m ? 'repeat(3, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
+      strip: win.map((k, j) => ({
+        title: SLIDES[k].title, image: SLIDES[k].thumb, pos: SLIDES[k].pos, delay: j * 100,
+        outline: k === i ? '2px solid #c8102e' : '2px solid rgba(200,16,46,0)',
+        op: k === i ? 1 : 0.72,
+        color: k === i ? '#fff' : 'var(--c-ink-soft)',
+        select: () => this.go(k),
+      })),
+      ovCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.5fr) minmax(0, 1fr)',
+      leadSize: m ? '19px' : 'clamp(20px, 1.7vw, 24px)',
+      galCols: m ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
+      gallery: GALLERY.map((g, k) => ({ ...g, delay: (k % (m ? 2 : 3)) * 110, open: () => this.setState({ lb: k }) })),
+      lightbox: lb !== null,
+      lbSrc: lb !== null ? GALLERY[lb].full : '',
+      lbFallback: lb !== null ? GALLERY[lb].fallback : '',
+      lbCount: lb !== null ? pad(lb + 1) + ' / ' + pad(GALLERY.length) : '',
+      lbPrev: e => { e.stopPropagation(); this.step(-1); },
+      lbNext: e => { e.stopPropagation(); this.step(1); },
+      close: () => this.setState({ lb: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>
