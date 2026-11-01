@@ -16,22 +16,17 @@
 <dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
 <dc-import name="SiteHeader" active="portfolio" hint-size="100%,96px"></dc-import>
 <main>
-  <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; background: var(--c-dark); color: var(--c-on-dark); min-height: {{heroMinH}};">
-    <div style="position: {{imgPos}}; top: 0; left: 0; bottom: 0; width: {{imgW}}; height: {{imgH}}; overflow: hidden;">
+  <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; background: var(--c-dark); color: var(--c-on-dark); min-height: {{heroMinH}}; display: flex; align-items: {{heroAlign}};">
+    <div style="position: absolute; inset: 0; overflow: hidden;">
       <div data-parallax="0.08" style="position: absolute; inset: 0;">
-        <img data-kb="" src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;">
+        <img data-kb="" src="../shared/natlandhomes/3560-Bluebonnet-002.jpg" alt="3560 Bluebonnet" style="width: 100%; height: 100%; object-fit: cover; object-position: {{heroImgPos}};">
       </div>
       <div aria-hidden="true" style="position: absolute; inset: 0; background: {{heroGrad}};"></div>
     </div>
-    <div style="position: relative; max-width: var(--max-w); margin: 0 auto; padding: {{heroPad}}; display: flex; justify-content: flex-end;">
-      <div style="width: {{panelW}}; display: flex; flex-direction: column; gap: 22px;">
-        <div style="display: flex; align-items: center; gap: 20px;">
-          <span data-reveal="" style="font-size: 13px; font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase;">Portfolio</span>
-          <span data-line="" data-delay="150" style="display: block; flex: 1; height: 1px; background: var(--c-line-dark);"></span>
-        </div>
-        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 700; font-size: {{h1Size}}; line-height: 1.06; letter-spacing: -0.01em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Seniors</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Residential</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">&amp;</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Commercial</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Development</span></span></h1>
-        <span data-line="" data-delay="400" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
-        <p data-reveal="" data-delay="500" style="margin: 0; font-size: {{pSize}}; line-height: 1.55; color: var(--c-on-dark); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+    <div style="position: relative; width: 100%; max-width: var(--max-w); margin: 0 auto; padding: {{heroPad}};">
+      <div style="display: flex; flex-direction: column; gap: {{heroTextGap}};">
+        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 700; font-size: {{h1Size}}; line-height: 1.02; letter-spacing: -0.015em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Our</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">portfolio</span></span></h1>
+        <p data-reveal="" data-delay="400" style="margin: 0; font-family: var(--f-display); font-size: {{pSize}}; font-weight: var(--fw-medium); line-height: 1.3; color: var(--c-on-dark); text-wrap: balance;">Thoughtfully designed. Built for lasting value.</p>
       </div>
     </div>
   </section>
@@ -125,18 +120,17 @@ class Component extends DCLogic {
       intro: this.props.intro ?? true,
       motion: this.props.motion ?? true,
       desktop: !m, mobile: m,
-      heroMinH: m ? '0' : 'clamp(480px, 42vw, 600px)',
-      imgPos: m ? 'relative' : 'absolute',
-      imgW: m ? '100%' : '70%',
-      imgH: m ? '280px' : '100%',
+      heroMinH: m ? '360px' : 'clamp(400px, 34vw, 520px)',
+      heroAlign: m ? 'flex-end' : 'center',
+      heroImgPos: m ? '62% 50%' : '50% 22%',
       heroGrad: m
-        ? 'linear-gradient(to top, #002948 0%, rgba(0,41,72,0) 35%)'
-        : 'linear-gradient(90deg, rgba(0,41,72,0) 55%, rgba(0,41,72,0.75) 80%, #002948 100%)',
-      heroPad: m ? '16px var(--gutter) 36px' : 'clamp(48px, 5vw, 80px) var(--gutter)',
-      panelW: m ? '100%' : 'min(400px, 36%)',
-      h1Size: m ? '32px' : 'clamp(36px, 3.4vw, 48px)',
+        ? 'linear-gradient(to top, rgba(0,20,36,0.85) 0%, rgba(0,20,36,0.35) 55%, rgba(0,20,36,0.1) 100%)'
+        : 'linear-gradient(90deg, rgba(0,20,36,0.72) 0%, rgba(0,20,36,0.45) 38%, rgba(0,20,36,0) 62%)',
+      heroPad: m ? '0 var(--gutter) 32px' : 'clamp(48px, 5vw, 80px) var(--gutter)',
+      heroTextGap: m ? '10px' : '14px',
+      h1Size: m ? '44px' : 'clamp(56px, 6vw, 88px)',
       h2Size: m ? '32px' : 'clamp(40px, 4.2vw, 58px)',
-      pSize: m ? '15px' : '16px',
+      pSize: m ? '20px' : 'clamp(22px, 2.2vw, 32px)',
       gridPad: m ? '32px var(--gutter) 40px' : 'clamp(40px, 4vw, 56px) var(--gutter) var(--sp-section)',
       gridGapTop: m ? '20px' : 'clamp(28px, 3vw, 40px)',
       headCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1fr) minmax(0, 1.25fr)',
