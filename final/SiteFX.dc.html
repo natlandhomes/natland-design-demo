@@ -201,6 +201,8 @@ class Component extends DCLogic {
   }
   openCurtain() {
     const c = this.curtainRef.current;
+    // the curtain is on screen now (or not needed): drop the page's early navy cover
+    document.documentElement.classList.remove('nl-cover');
     let nav = false, seen = false;
     try { nav = sessionStorage.getItem('nlfinal-curtain') === '1'; sessionStorage.removeItem('nlfinal-curtain'); seen = sessionStorage.getItem('nlfinal-intro') === '1'; sessionStorage.setItem('nlfinal-intro', '1'); } catch (err) {}
     const intro = !nav && !seen && (this.props.intro ?? true);

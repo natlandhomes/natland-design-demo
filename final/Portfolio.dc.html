@@ -4,6 +4,21 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+// Keep the screen navy from the previous page's curtain until SiteFX mounts its own curtain (no white flash).
+(function () {
+  try {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (sessionStorage.getItem('nlfinal-curtain') !== '1' && sessionStorage.getItem('nlfinal-intro') === '1') return;
+    var d = document.documentElement;
+    d.classList.add('nl-cover');
+    var s = document.createElement('style');
+    s.textContent = 'html.nl-cover{background:#0c2a4d}html.nl-cover::after{content:"";position:fixed;inset:0;z-index:399;background:#0c2a4d}';
+    document.head.appendChild(s);
+    setTimeout(function () { d.classList.remove('nl-cover'); }, 6000);
+  } catch (e) {}
+})();
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
