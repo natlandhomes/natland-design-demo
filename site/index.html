@@ -27,7 +27,7 @@
   <link rel="preload" href="assets/fonts/Outfit-latin-core.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Figtree-latin-core.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/avif" imagesrcset="assets/img/home/hero-lobby-25951191-w400.avif 400w, assets/img/home/hero-lobby-25951191-w800.avif 800w, assets/img/home/hero-lobby-25951191-w1200.avif 1200w, assets/img/home/hero-lobby-25951191-w1470.avif 1470w" imagesizes="(max-width: 767px) 100vw, 64vw" fetchpriority="high">
-  <link rel="stylesheet" href="assets/css/main.css?v=9ca4b8cf1d">
+  <link rel="stylesheet" href="assets/css/main.css?v=a17878e3c1">
   <script>
   // Before the first paint: .fx enables the motion start states (not with reduced motion), and
   // .nl-cover keeps the screen navy while the page transition curtain is up — arriving from
@@ -126,42 +126,48 @@
 
   <section class="trade" aria-labelledby="trade-title">
     <div class="container">
-      <div class="trade__head">
-        <div class="eyebrow">
-          <span class="rule" data-line aria-hidden="true"></span>
-          <span class="eyebrow__text" data-reveal data-delay="100">Canada · China</span>
-        </div>
-        <h2 id="trade-title" data-split>International Trade<br>&amp; Strategic Sourcing</h2>
-      </div>
       <div class="trade__grid">
         <div class="trade__intro">
+          <div class="trade__head">
+            <div class="eyebrow">
+              <span class="rule" data-line aria-hidden="true"></span>
+              <span class="eyebrow__text" data-reveal data-delay="100">Canada · China</span>
+            </div>
+            <h2 id="trade-title" data-split>International Trade<br>&amp; Strategic Sourcing</h2>
+          </div>
           <p data-reveal>We help Canadian businesses source structural steel and building materials from China, connecting them with trusted manufacturers and reliable, cost-competitive supply chains.</p>
-          <ul class="trade__list">
+          <!-- The three items: stacked here on phones, a row under both columns on computers. -->
+          <ul class="trade__list trade__list--stacked">
             <li data-reveal data-delay="100"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Structural steel</li>
             <li data-reveal data-delay="200"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Building materials</li>
             <li data-reveal data-delay="300"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>Strategic sourcing</li>
           </ul>
           <figure class="trade__closeup" data-zoom>
-            <div class="cover" data-clip="left"><picture><source type="image/avif" srcset="assets/img/home/structural-steel-2-9baf48ae-w400.avif 400w, assets/img/home/structural-steel-2-9baf48ae-w800.avif 800w, assets/img/home/structural-steel-2-9baf48ae-w1200.avif 1200w" sizes="(max-width: 767px) 100vw, 400px"><source type="image/webp" srcset="assets/img/home/structural-steel-2-9baf48ae-w400.webp 400w, assets/img/home/structural-steel-2-9baf48ae-w800.webp 800w, assets/img/home/structural-steel-2-9baf48ae-w1200.webp 1200w" sizes="(max-width: 767px) 100vw, 400px"><img src="assets/img/home/structural-steel-2-9baf48ae-w800.jpg" srcset="assets/img/home/structural-steel-2-9baf48ae-w800.jpg 800w" sizes="(max-width: 767px) 100vw, 400px" width="1774" height="887" alt="Structural steel beams in a fabrication hall" loading="lazy" decoding="async"></picture></div>
+            <div class="cover" data-clip="left"><picture><source type="image/avif" srcset="assets/img/home/structural-steel-hall-375b3f07-w400.avif 400w, assets/img/home/structural-steel-hall-375b3f07-w800.avif 800w, assets/img/home/structural-steel-hall-375b3f07-w1200.avif 1200w" sizes="(max-width: 767px) 100vw, 400px"><source type="image/webp" srcset="assets/img/home/structural-steel-hall-375b3f07-w400.webp 400w, assets/img/home/structural-steel-hall-375b3f07-w800.webp 800w, assets/img/home/structural-steel-hall-375b3f07-w1200.webp 1200w" sizes="(max-width: 767px) 100vw, 400px"><img src="assets/img/home/structural-steel-hall-375b3f07-w800.jpg" srcset="assets/img/home/structural-steel-hall-375b3f07-w800.jpg 800w" sizes="(max-width: 767px) 100vw, 400px" width="1777" height="885" alt="Structural steel beams in a fabrication hall" loading="lazy" decoding="async"></picture></div>
             <figcaption data-reveal data-delay="300">Structural steel</figcaption>
           </figure>
         </div>
         <!-- The map is the "sky": the yard photo below fades up into it, so they read as one picture. -->
         <figure class="trade__visual">
           <div class="trade-map" data-reveal>
-            <picture><source type="image/avif" srcset="assets/img/home/trade-map-clean-04de9db2-w400.avif 400w, assets/img/home/trade-map-clean-04de9db2-w800.avif 800w, assets/img/home/trade-map-clean-04de9db2-w1120.avif 1120w" sizes="(max-width: 767px) 100vw, 66vw"><source type="image/webp" srcset="assets/img/home/trade-map-clean-04de9db2-w400.webp 400w, assets/img/home/trade-map-clean-04de9db2-w800.webp 800w, assets/img/home/trade-map-clean-04de9db2-w1120.webp 1120w" sizes="(max-width: 767px) 100vw, 66vw"><img src="assets/img/home/trade-map-clean-04de9db2-w1120.jpg" srcset="assets/img/home/trade-map-clean-04de9db2-w800.jpg 800w, assets/img/home/trade-map-clean-04de9db2-w1120.jpg 1120w" sizes="(max-width: 767px) 100vw, 66vw" width="1120" height="410" alt="World map showing the trade route between Canada and China" loading="lazy" decoding="async"></picture>
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M 22.3 70.5 Q 49.5 22 77.3 79.8"/></svg>
-            <span class="trade-map__pin" style="left: 22.3%; top: 70.5%" aria-hidden="true"><span data-pulse="0"></span><span></span></span>
-            <span class="trade-map__pin" style="left: 77.3%; top: 79.8%" aria-hidden="true"><span data-pulse="1000"></span><span></span></span>
-            <span class="trade-map__traveller" data-travel="22.3,70.5,49.5,22,77.3,79.8" data-travel-ms="4200" data-travel-offset="0" aria-hidden="true"></span>
-            <span class="trade-map__traveller" data-travel="77.3,79.8,49.5,22,22.3,70.5" data-travel-ms="4200" data-travel-offset="2100" aria-hidden="true"></span>
-            <span class="trade-map__label" style="left: 22.3%; top: 50%" data-reveal data-delay="400" aria-hidden="true">Canada</span>
-            <span class="trade-map__label" style="left: 77.3%; top: 59%" data-reveal data-delay="550" aria-hidden="true">China</span>
+            <img src="assets/img/home/trade-world-4ecf8b8c.svg" width="1600" height="759" alt="World map showing the trade route between Canada and China" loading="lazy" decoding="async">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M 19.2 36.3 Q 47.8 -20.1 76.4 51.9"/></svg>
+            <span class="trade-map__pin" style="left: 19.2%; top: 36.3%" aria-hidden="true"><span data-pulse="0"></span><span></span></span>
+            <span class="trade-map__pin" style="left: 76.4%; top: 51.9%" aria-hidden="true"><span data-pulse="1000"></span><span></span></span>
+            <span class="trade-map__traveller" data-travel="19.2,36.3,47.8,-20.1,76.4,51.9" data-travel-ms="4200" data-travel-offset="0" aria-hidden="true"></span>
+            <span class="trade-map__traveller" data-travel="76.4,51.9,47.8,-20.1,19.2,36.3" data-travel-ms="4200" data-travel-offset="2100" aria-hidden="true"></span>
+            <span class="trade-map__label" style="left: 19.2%; top: 36.3%" data-reveal data-delay="400" aria-hidden="true">Canada</span>
+            <span class="trade-map__label" style="left: 76.4%; top: 51.9%" data-reveal data-delay="550" aria-hidden="true">China</span>
           </div>
           <div class="trade__yard cover" data-clip="up" data-delay="150"><picture><source type="image/avif" srcset="assets/img/home/structural-steel-1-ebfa90b0-w400.avif 400w, assets/img/home/structural-steel-1-ebfa90b0-w800.avif 800w, assets/img/home/structural-steel-1-ebfa90b0-w1200.avif 1200w, assets/img/home/structural-steel-1-ebfa90b0-w1536.avif 1536w" sizes="(max-width: 767px) 100vw, 66vw"><source type="image/webp" srcset="assets/img/home/structural-steel-1-ebfa90b0-w400.webp 400w, assets/img/home/structural-steel-1-ebfa90b0-w800.webp 800w, assets/img/home/structural-steel-1-ebfa90b0-w1200.webp 1200w, assets/img/home/structural-steel-1-ebfa90b0-w1536.webp 1536w" sizes="(max-width: 767px) 100vw, 66vw"><img src="assets/img/home/structural-steel-1-ebfa90b0-w1536.jpg" srcset="assets/img/home/structural-steel-1-ebfa90b0-w800.jpg 800w, assets/img/home/structural-steel-1-ebfa90b0-w1536.jpg 1536w" sizes="(max-width: 767px) 100vw, 66vw" width="1536" height="1024" alt="Galvanized structural steel being unloaded from a shipping container" loading="lazy" decoding="async"></picture></div>
           <figcaption data-reveal data-delay="300">Building materials — sourced in China, delivered to Canada</figcaption>
         </figure>
       </div>
+      <ul class="trade__list trade__list--row">
+            <li data-reveal data-delay="100"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>Structural steel</li>
+            <li data-reveal data-delay="200"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="3" x2="21" y1="22" y2="22"/><line x1="6" x2="6" y1="18" y2="11"/><line x1="10" x2="10" y1="18" y2="11"/><line x1="14" x2="14" y1="18" y2="11"/><line x1="18" x2="18" y1="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>Building materials</li>
+            <li data-reveal data-delay="300"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><path d="m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7"/><path d="m7.5 4.27 9 5.15"/></svg>Strategic sourcing</li>
+      </ul>
     </div>
   </section>
 
