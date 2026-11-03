@@ -42,7 +42,7 @@
   <section data-screen-label="Project / Gallery" style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) var(--sp-section); display: flex; flex-direction: column; align-items: center; gap: clamp(40px, 5vw, 64px);">
     <div style="width: 100%; display: grid; grid-template-columns: {{galCols}}; gap: clamp(8px, 1vw, 12px);">
       <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{gallery}}" as="g" hint-placeholder-count="0">
-        <button type="button" onClick="{{g.open}}" aria-label="View image" data-zoom="" data-cursor="Open" style="grid-column: {{g.span}}; position: relative; display: block; padding: 0; border: 0; background: var(--c-surface); overflow: hidden; aspect-ratio: 3 / 2; cursor: zoom-in;">
+        <button type="button" onClick="{{g.open}}" aria-label="View image" data-zoom="" style="grid-column: {{g.span}}; position: relative; display: block; padding: 0; border: 0; background: var(--c-surface); overflow: hidden; aspect-ratio: 3 / 2; cursor: zoom-in;">
           <span data-clip="" data-delay="{{g.delay}}" style="position: absolute; inset: 0; display: block; overflow: hidden;">
             <img src="{{g.thumb}}" data-fallback="{{g.fallback}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
           </span>

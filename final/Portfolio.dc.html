@@ -13,26 +13,29 @@
 <link rel="stylesheet" href="theme.css">
 <style>body{margin:0;background:#fff}a{color:#b3122f}a:hover{color:#900d25}</style>
 </helmet>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
 <dc-import name="SiteHeader" active="portfolio" hint-size="100%,96px"></dc-import>
 <main>
   <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
     <section data-screen-label="Portfolio / Hero" style="position: relative; overflow: hidden; height: clamp(540px, 46vw, 660px); background: var(--c-dark); color: var(--c-on-dark);">
+      <div data-kb="" style="position: absolute; inset: 0;">
       <sc-for list="{{slides}}" as="s" hint-placeholder-count="1">
         <img src="{{s.image}}" alt="{{s.title}}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{s.pos}}; opacity: {{s.opacity}}; transition: opacity 0.8s var(--ease);">
       </sc-for>
+      </div>
       <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 34, 64, 0.96) 0%, rgba(10, 34, 64, 0.82) 28%, rgba(10, 34, 64, 0.25) 52%, rgba(10, 34, 64, 0) 70%);"></div>
       <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 34, 64, 0.55) 0%, rgba(10, 34, 64, 0) 30%);"></div>
       <div style="position: relative; height: 100%; max-width: var(--max-w); margin: 0 auto; padding: var(--sp-8) var(--gutter) var(--sp-6); display: flex; flex-direction: column; justify-content: space-between; gap: var(--sp-6);">
         <div style="max-width: 440px; display: flex; flex-direction: column; gap: var(--sp-4);">
           <div style="display: flex; align-items: center; gap: var(--sp-3);">
-            <span style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
-            <span aria-hidden="true" style="width: 24px; height: 3px; background: var(--c-accent);"></span>
+            <span data-reveal="" style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
+            <span data-line="" data-delay="150" aria-hidden="true" style="width: 24px; height: 3px; background: var(--c-accent);"></span>
           </div>
-          <h1 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h1); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance;">Building stronger communities together</h1>
-          <p style="margin: var(--sp-2) 0 0; font-size: 17px; line-height: 1.55; color: var(--c-on-dark); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+          <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: var(--fs-h1); line-height: 1.02; letter-spacing: -0.01em; text-wrap: balance;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Building</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">stronger</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">communities</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">together</span></span></h1>
+          <p data-reveal="" data-delay="400" style="margin: var(--sp-2) 0 0; font-size: 17px; line-height: 1.55; color: var(--c-on-dark); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
         </div>
         <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-6); padding-left: clamp(0px, 30%, 380px);">
-          <div style="display: grid;">
+          <div data-reveal="" data-delay="550" style="display: grid;">
             <sc-for list="{{slides}}" as="s" hint-placeholder-count="1">
               <a href="{{s.href}}" style="grid-area: 1 / 1; align-self: end; display: flex; flex-direction: column; gap: var(--sp-2); color: var(--c-on-dark); text-decoration: none; opacity: {{s.opacity}}; pointer-events: {{s.events}}; transition: opacity 0.6s var(--ease);">
                 <span style="display: flex; align-items: center; gap: var(--sp-3);">
@@ -43,7 +46,7 @@
               </a>
             </sc-for>
           </div>
-          <div style="display: flex; gap: var(--sp-4);">
+          <div data-reveal="" data-delay="650" style="display: flex; gap: var(--sp-4);">
             <button type="button" aria-label="Previous project" onClick="{{prev}}" style="width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.85); background: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.2s;" style-hover="background: rgba(255, 255, 255, 0.16);">
               <span aria-hidden="true" style="width: 20px; height: 20px; background: #fff; -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-left.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/arrow-left.svg) center / contain no-repeat;"></span>
             </button>
@@ -57,7 +60,9 @@
     <section data-screen-label="Portfolio / Grid" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: flex; flex-direction: column;">
       <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: clamp(16px, 2vw, 24px); row-gap: clamp(24px, 3vw, 40px);">
         <sc-for list="{{shown}}" as="p" hint-placeholder-count="9">
-          <dc-import name="ProjectCard" variant="card" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,300px"></dc-import>
+          <div data-reveal="" data-delay="{{p.delay}}">
+            <dc-import name="ProjectCard" variant="card" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,300px"></dc-import>
+          </div>
         </sc-for>
       </div>
     </section>
@@ -65,21 +70,23 @@
   <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
     <section data-screen-label="Portfolio / Hero (mobile)" style="background: var(--c-dark); color: var(--c-on-dark);">
       <div style="position: relative;">
-        <img src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 62% 50%;">
+        <img data-kb="" src="assets/seniors.png" alt="SENIORS RESIDENTIAL &amp; COMMERCIAL DEVELOPMENT" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 62% 50%;">
         <div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 0; height: 40%; background: linear-gradient(to top, var(--c-dark) 0%, rgba(12, 42, 77, 0) 100%);"></div>
       </div>
       <div style="position: relative; margin-top: -48px; padding: 0 var(--gutter) var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-3);">
         <div style="display: flex; align-items: center; gap: var(--sp-3);">
-          <span style="font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
-          <span aria-hidden="true" style="width: 22px; height: 3px; background: var(--c-accent);"></span>
+          <span data-reveal="" style="font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.08em; text-transform: uppercase;">Portfolio</span>
+          <span data-line="" data-delay="150" aria-hidden="true" style="width: 22px; height: 3px; background: var(--c-accent);"></span>
         </div>
-        <h1 style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: 36px; line-height: 1.04; text-wrap: balance;">Building stronger communities together</h1>
-        <p style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--c-on-dark-soft); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
+        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: 36px; line-height: 1.04; text-wrap: balance;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Building</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">stronger</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">communities</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">together</span></span></h1>
+        <p data-reveal="" data-delay="350" style="margin: 0; font-size: 15px; line-height: 1.55; color: var(--c-on-dark-soft); text-wrap: pretty;">Our portfolio features a variety of land development projects at different scales: single family, duplex, townhouse and commercial-multifamily residential mixed use. We are trusted for our commitment to high-quality, sustainable projects that fit community context.</p>
       </div>
     </section>
     <section data-screen-label="Portfolio / List (mobile)" style="padding: var(--sp-2) var(--gutter) var(--sp-7); display: flex; flex-direction: column;">
       <sc-for list="{{shown}}" as="p" hint-placeholder-count="10">
-        <dc-import name="ProjectCard" variant="row" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,97px"></dc-import>
+        <div data-reveal="">
+          <dc-import name="ProjectCard" variant="row" num="{{p.num}}" title="{{p.title}}" href="{{p.href}}" image="{{p.image}}" pos="{{p.pos}}" hint-size="100%,97px"></dc-import>
+        </div>
       </sc-for>
     </section>
   </sc-if>
@@ -87,7 +94,7 @@
 <dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
 </x-dc>
 <div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
-<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;autoplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 const PROJECTS = [
   { title: 'SENIORS RESIDENTIAL & COMMERCIAL DEVELOPMENT', display: 'Seniors Residential & Commercial Development', image: 'assets/seniors.png', pos: '62% 50%', cats: ['Commercial', 'Mixed Use'], featured: true },
   { title: '458 E 1st Street', image: 'assets/458-e-1st.png', pos: '50% 70%', cats: ['Townhouse'], featured: true },
@@ -115,8 +122,10 @@ class Component extends DCLogic {
     const { slide, m } = this.state;
     const feat = this.featured();
     const cur = feat[slide] || feat[0];
-    const shown = PROJECTS.map(p => ({ ...p, title: p.display }));
+    const shown = PROJECTS.map((p, i) => ({ ...p, title: p.display, delay: (i % 3) * 120 }));
     return {
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
       desktop: !m, mobile: m,
       slides: feat.map((p, i) => ({ ...p, opacity: i === slide ? 1 : 0, events: i === slide ? 'auto' : 'none' })),
       slideNum: cur.num,
