@@ -72,32 +72,35 @@
 
   <section data-screen-label="03 Home / Trade" style="background: var(--c-bg); overflow: hidden;">
     <div style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) {{tradePadB}}; display: flex; flex-direction: column; gap: {{tradeGap}};">
-      <div style="display: flex; flex-direction: column; gap: 18px;">
-        <div style="display: flex; align-items: center; gap: var(--sp-4);">
-          <span data-line="" aria-hidden="true" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
-          <span data-reveal="" data-delay="100" style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-ink-soft);">Canada · China</span>
-        </div>
-        <h2 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: {{tradeH2}}; line-height: 1.02; letter-spacing: -0.015em; text-transform: uppercase; color: var(--c-ink);"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">International</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Trade</span></span><br><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">&amp;</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Strategic</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Sourcing</span></span></h2>
-      </div>
       <div style="display: grid; grid-template-columns: {{tradeCols}}; gap: {{tradeColGap}}; align-items: stretch;">
-        <div style="display: flex; flex-direction: column; gap: 28px; padding-top: {{tradeTextPadT}}; min-height: 0;">
+        <!-- container-type: the heading's size follows this column's width (cqi) -->
+        <div style="display: flex; flex-direction: column; gap: 28px; min-height: 0; container-type: inline-size;">
+          <div style="display: flex; flex-direction: column; gap: 18px;">
+            <div style="display: flex; align-items: center; gap: var(--sp-4);">
+              <span data-line="" aria-hidden="true" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+              <span data-reveal="" data-delay="100" style="font-size: var(--fs-label); font-weight: var(--fw-semibold); letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--c-ink-soft);">Canada · China</span>
+            </div>
+            <h2 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: var(--fw-semibold); font-size: {{tradeH2}}; line-height: 1.02; letter-spacing: -0.015em; text-transform: uppercase; color: var(--c-ink);"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">International</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Trade</span></span><br><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">&amp;</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Strategic</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Sourcing</span></span></h2>
+          </div>
           <p data-reveal="" style="margin: 0; font-size: var(--fs-text); line-height: var(--lh-text); color: var(--c-ink-soft); text-wrap: pretty;">We help Canadian businesses source structural steel and building materials from China, connecting them with trusted manufacturers and reliable, cost-competitive supply chains.</p>
-          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--c-line);">
-            <li data-reveal="" data-delay="100" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
-              <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat;"></span>
-              <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Structural steel</span>
-            </li>
-            <li data-reveal="" data-delay="200" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
-              <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat;"></span>
-              <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Building materials</span>
-            </li>
-            <li data-reveal="" data-delay="300" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
-              <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat;"></span>
-              <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Strategic sourcing</span>
-            </li>
-          </ul>
+          <sc-if value="{{mobile}}" hint-placeholder-val="{{false}}">
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; border-top: 1px solid var(--c-line);">
+              <li data-reveal="" data-delay="100" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
+                <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat;"></span>
+                <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Structural steel</span>
+              </li>
+              <li data-reveal="" data-delay="200" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
+                <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat;"></span>
+                <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Building materials</span>
+              </li>
+              <li data-reveal="" data-delay="300" style="display: flex; align-items: center; gap: var(--sp-4); padding: 14px 0; border-bottom: 1px solid var(--c-line);">
+                <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat;"></span>
+                <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Strategic sourcing</span>
+              </li>
+            </ul>
+          </sc-if>
           <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
-            <figure data-zoom="" style="flex: 1; min-height: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 10px;">
+            <figure data-zoom="" style="flex: 1; min-height: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
               <div data-clip="left" style="position: relative; flex: 1; min-height: 200px; overflow: hidden;">
                 <img src="assets/trade-steel.png" alt="Galvanized structural steel sections" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
               </div>
@@ -108,7 +111,7 @@
         <figure style="position: relative; margin: {{visualMargin}}; display: flex; flex-direction: column;">
           <!-- the map is the "sky": the yard photo below fades up into it, so they read as one picture -->
           <div data-reveal="" style="position: relative; z-index: 2; aspect-ratio: 1120 / 410;">
-            <img src="assets/trade-map-clean.webp" alt="World map showing the trade route between Canada and China" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 55%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 55%, transparent 100%); mask-composite: intersect;">
+            <img src="assets/trade-map-clean.webp" alt="World map showing the trade route between Canada and China" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); mask-composite: intersect;">
             <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;">
               <path d="M 22.3 70.5 Q 49.5 22 77.3 79.8" fill="none" stroke="#0c2a4d" stroke-opacity="0.28" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
             </svg>
@@ -116,13 +119,13 @@
               <span aria-hidden="true" style="position: absolute; left: 77.3%; top: 79.8%; width: 14px; height: 14px; margin: -7px 0 0 -7px;"><span data-pulse="1000" style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px #fff;"></span></span>
               <span aria-hidden="true" data-travel="22.3,70.5,49.5,22,77.3,79.8" data-travel-ms="4200" data-travel-offset="0" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
               <span aria-hidden="true" data-travel="77.3,79.8,49.5,22,22.3,70.5" data-travel-ms="4200" data-travel-offset="2100" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
-            <span data-reveal="" data-delay="400" style="position: absolute; left: 22.3%; top: 50%; transform: translateX(-50%); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">Canada</span>
-            <span data-reveal="" data-delay="550" style="position: absolute; left: 77.3%; top: 59%; transform: translateX(-50%); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">China</span>
+            <span data-reveal="" data-delay="400" style="position: absolute; left: 22.3%; top: 70.5%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">Canada</span>
+            <span data-reveal="" data-delay="550" style="position: absolute; left: 77.3%; top: 79.8%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">China</span>
           </div>
-          <div data-clip="up" data-delay="150" style="position: relative; z-index: 1; flex: 1 0 auto; margin-top: {{photoOverlap}}; aspect-ratio: 1536 / 1024; overflow: hidden;">
+          <div data-clip="up" data-delay="150" style="position: relative; z-index: 1; flex: 1 0 auto; margin-top: {{photoOverlap}}; aspect-ratio: {{photoRatio}}; overflow: hidden;">
             <picture>
               <source type="image/webp" srcset="assets/trade-yard-hd-800.webp 800w, assets/trade-yard-hd.webp 1536w" sizes="(max-width: 767px) 100vw, 60vw">
-              <img src="assets/trade-steel-1.jpg" alt="Galvanized structural steel being unloaded from a shipping container" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12.5%, #000 25%); mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 12.5%, #000 25%);">
+              <img src="assets/trade-steel-1.jpg" alt="Galvanized structural steel being unloaded from a shipping container" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: {{photoPos}}; -webkit-mask-image: {{photoFade}}; mask-image: {{photoFade}};">
             </picture>
           </div>
           <figcaption data-reveal="" data-delay="300" style="margin-top: 10px; padding: {{visualCapPad}}; font-size: 13px; color: var(--c-muted);">Building materials — sourced in China, delivered to Canada</figcaption>
@@ -136,6 +139,22 @@
           </figure>
         </sc-if>
       </div>
+      <sc-if value="{{desktop}}" hint-placeholder-val="{{true}}">
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line);">
+          <li data-reveal="" data-delay="100" style="display: flex; align-items: center; justify-content: center; gap: var(--sp-4); padding: 18px var(--sp-4);">
+            <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/layers.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Structural steel</span>
+          </li>
+          <li data-reveal="" data-delay="200" style="display: flex; align-items: center; justify-content: center; gap: var(--sp-4); padding: 18px var(--sp-4); border-left: 1px solid var(--c-line);">
+            <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/landmark.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Building materials</span>
+          </li>
+          <li data-reveal="" data-delay="300" style="display: flex; align-items: center; justify-content: center; gap: var(--sp-4); padding: 18px var(--sp-4); border-left: 1px solid var(--c-line);">
+            <span aria-hidden="true" style="width: 26px; height: 26px; flex: none; background: var(--c-accent); -webkit-mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat; mask: url(https://unpkg.com/lucide-static@0.460.0/icons/package.svg) center / contain no-repeat;"></span>
+            <span style="font-family: var(--f-display); font-size: 18px; color: var(--c-ink);">Strategic sourcing</span>
+          </li>
+        </ul>
+      </sc-if>
     </div>
   </section>
 
@@ -203,14 +222,24 @@ class Component extends DCLogic {
       quotePadL: m ? '20px' : '28px',
       quoteSize: m ? '20px' : 'clamp(22px, 1.9vw, 26px)',
       tradePadB: m ? '40px' : 'var(--sp-section)',
-      tradeGap: m ? '28px' : 'clamp(40px, 4.5vw, 64px)',
-      tradeCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 4fr) minmax(0, 8fr)',
-      tradeColGap: m ? '32px' : 'clamp(32px, 5vw, 80px)',
-      tradeTextPadT: m ? '0' : 'clamp(16px, 2vw, 32px)',
+      // Desktop: heading + text beside the map, steel photo beside the yard photo (both end on the
+      // same line), the three services in one row underneath.
+      tradeGap: m ? '28px' : 'clamp(32px, 3.5vw, 48px)',
+      tradeCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 5fr) minmax(0, 7fr)',
+      tradeColGap: m ? '32px' : 'clamp(32px, 4vw, 56px)',
       visualMargin: m ? '0 calc(var(--gutter) * -1)' : '0 calc(var(--gutter) * -1) 0 0',
-      photoOverlap: '-16.5%',
+      // The map is the sky over the yard photo: the photo starts at 85% of the map's height (5.5% of
+      // the width), below both pins, and fades up into it.
+      photoOverlap: m ? '-9%' : '-5.5%',
+      photoRatio: m ? '1536 / 909' : '2 / 1',
+      photoPos: m ? '50% 100%' : '50% 90%',
+      mapFadeFrom: m ? '75%' : '85%',
+      photoFade: m ? 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 10%, #000 20%)' : 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 8%, #000 15%)',
+      // Country labels sit centred over their pin, this far above its centre (a % of the map's
+      // height would crowd the pin on phones). `translate` survives the reveal's `transform: none`.
+      labelLift: m ? '16px' : '26px',
       visualCapPad: m ? '0 var(--gutter)' : '0',
-      tradeH2: m ? '34px' : 'clamp(44px, 5.6vw, 84px)',
+      tradeH2: m ? '34px' : 'clamp(22px, 8.5cqi, 48px)', // 8.5cqi: the longest line fills ~96% of the column
       wteAlign: m ? 'flex-start' : 'center',
       wteText: m ? 'left' : 'center',
       panoRatio: m ? '2 / 1' : '1104 / 212',
