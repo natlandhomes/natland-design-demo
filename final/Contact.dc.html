@@ -60,14 +60,11 @@
       </li>
     </ul>
   </section>
-  <section data-screen-label="Contact / Form + Location" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: grid; grid-template-columns: {{bodyCols}}; gap: clamp(32px, 5vw, 72px); align-items: start;">
+  <section data-screen-label="Contact / Form + Location" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter); display: grid; grid-template-columns: {{bodyCols}}; gap: clamp(32px, 5vw, 72px); align-items: stretch;">
     <form onSubmit="{{send}}" style="display: flex; flex-direction: column; gap: 14px; padding-right: {{formPadR}}; border-right: {{formBorder}};">
-      <div style="display: flex; align-items: center; gap: 14px;">
-        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-ink-soft); white-space: nowrap;">Send a message</span>
-        <span data-line="" style="display: block; flex: 1; height: 1px; background: var(--c-line);"></span>
-      </div>
+      <span data-line="" aria-hidden="true" style="display: block; width: 40px; height: 3px; margin-bottom: 4px; background: var(--c-accent);"></span>
       <h2 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.05; color: var(--c-ink);"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Get</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">in</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">touch</span></span></h2>
-      <p data-reveal="" data-delay="150" style="margin: -4px 0 4px; font-size: var(--fs-text); line-height: var(--lh-text); color: var(--c-ink-soft);">Send us a message and we’ll get back to you as soon as possible.</p>
+      <p data-reveal="" data-delay="150" style="margin: -4px 0 4px; font-size: var(--fs-text); line-height: var(--lh-text); color: var(--c-ink-soft); text-wrap: pretty;">Send us a message and we’ll get back to you as soon as possible.</p>
       <label data-reveal="" data-delay="200" style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: var(--c-ink);">Your message
         <textarea name="your-message" rows="3" style="padding: 10px 12px; background: #fff; border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: 15px; font-weight: 400; line-height: 1.5; resize: vertical; outline: none; transition: border-color 0.25s;" style-focus="border-color: var(--c-ink);"></textarea>
       </label>
@@ -78,17 +75,14 @@
         <input type="email" name="your-email" required="" style="height: 44px; padding: 0 12px; background: #fff; border: 1px solid var(--c-line); border-radius: 0; color: var(--c-ink); font-size: 15px; font-weight: 400; outline: none; transition: border-color 0.25s;" style-focus="border-color: var(--c-ink);">
       </label>
       <div data-reveal="" data-delay="380" style="display: flex; flex-direction: column; gap: 10px; padding-top: 4px;">
-        <button type="submit" data-magnetic="" style="height: 50px; background: var(--c-accent); color: #fff; border: 0; border-radius: 0; font-family: var(--f-display); font-size: 17px; font-weight: 500; cursor: pointer; transition: background 0.3s;" style-hover="background: var(--c-dark);">Send</button>
+        <button type="submit" data-magnetic="" style="height: 54px; background: var(--c-accent); color: #fff; border: 0; border-radius: 0; font-family: var(--f-display); font-size: 17px; font-weight: 500; cursor: pointer; transition: background 0.3s;" style-hover="background: var(--c-dark);">Send</button>
         <p style="margin: 0; font-size: 13px; line-height: 1.6; color: var(--c-muted);">Clicking Send will open your email app<br>Or email us directly at <a href="mailto:office@natlandhomes.com" style="color: var(--c-accent); font-weight: 600;">office@natlandhomes.com</a></p>
       </div>
     </form>
     <div style="display: flex; flex-direction: column; gap: 14px;">
-      <div style="display: flex; align-items: center; gap: 14px;">
-        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--c-ink-soft); white-space: nowrap;">Our location</span>
-        <span data-line="" style="display: block; flex: 1; height: 1px; background: var(--c-line);"></span>
-      </div>
-      <h3 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h3Size}}; line-height: 1.1; color: var(--c-ink);">North Vancouver</h3>
-      <div data-clip="" style="position: relative; overflow: hidden; aspect-ratio: 4 / 3.2; background: var(--c-surface);">
+      <span data-line="" aria-hidden="true" style="display: block; width: 40px; height: 3px; margin-bottom: 4px; background: var(--c-accent);"></span>
+      <h2 data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h2Size}}; line-height: 1.05; color: var(--c-ink);">North Vancouver</h2>
+      <div data-clip="" style="position: relative; overflow: hidden; flex: {{mapFlex}}; min-height: 320px; aspect-ratio: {{mapRatio}}; background: var(--c-surface);">
         <iframe title="Natland Group location map" src="https://maps.google.com/maps?q=788%20Harbourside%20Dr%20unit130,%20North%20Vancouver,%20BC%20V7P%203R7&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(0.3) saturate(0.8);"></iframe>
       </div>
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 12px; color: var(--c-muted);">
@@ -132,6 +126,8 @@ class Component extends DCLogic {
       h2Size: m ? '28px' : 'clamp(32px, 2.8vw, 40px)',
       h3Size: m ? '22px' : 'clamp(24px, 2vw, 30px)',
       pSize: m ? '15px' : '17px',
+      mapFlex: m ? 'none' : '1',
+      mapRatio: m ? '4 / 3.2' : 'auto',
       stripPad: m ? '8px var(--gutter)' : '28px var(--gutter)',
       stripCols: m ? 'minmax(0, 1fr)' : 'repeat(3, minmax(0, 1fr))',
       itemPadFirst: m ? '14px 0' : '4px clamp(20px, 3vw, 40px) 4px 0',
