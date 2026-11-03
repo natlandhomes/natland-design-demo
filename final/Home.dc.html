@@ -110,17 +110,17 @@
         </div>
         <figure style="position: relative; margin: {{visualMargin}}; display: flex; flex-direction: column;">
           <!-- the map is the "sky": the yard photo below fades up into it, so they read as one picture -->
-          <div data-reveal="" style="position: relative; z-index: 2; aspect-ratio: 1120 / 410;">
-            <img src="assets/trade-map-clean.webp" alt="World map showing the trade route between Canada and China" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); mask-composite: intersect;">
+          <div data-reveal="" style="position: relative; z-index: 2; aspect-ratio: 1600 / 759;">
+            <img src="assets/trade-world.svg" alt="World map showing the trade route between Canada and China" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, #000 {{mapFadeFrom}}, transparent 100%); mask-composite: intersect;">
             <svg aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;">
-              <path d="M 22.3 70.5 Q 49.5 22 77.3 79.8" fill="none" stroke="#0c2a4d" stroke-opacity="0.28" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
+              <path d="M 19.2 36.3 Q 47.8 -20.1 76.4 51.9" fill="none" stroke="#0c2a4d" stroke-opacity="0.28" stroke-width="1.4" stroke-dasharray="2 6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
             </svg>
-              <span aria-hidden="true" style="position: absolute; left: 22.3%; top: 70.5%; width: 14px; height: 14px; margin: -7px 0 0 -7px;"><span data-pulse="0" style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px #fff;"></span></span>
-              <span aria-hidden="true" style="position: absolute; left: 77.3%; top: 79.8%; width: 14px; height: 14px; margin: -7px 0 0 -7px;"><span data-pulse="1000" style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px #fff;"></span></span>
-              <span aria-hidden="true" data-travel="22.3,70.5,49.5,22,77.3,79.8" data-travel-ms="4200" data-travel-offset="0" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
-              <span aria-hidden="true" data-travel="77.3,79.8,49.5,22,22.3,70.5" data-travel-ms="4200" data-travel-offset="2100" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
-            <span data-reveal="" data-delay="400" style="position: absolute; left: 22.3%; top: 70.5%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">Canada</span>
-            <span data-reveal="" data-delay="550" style="position: absolute; left: 77.3%; top: 79.8%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">China</span>
+              <span aria-hidden="true" style="position: absolute; left: 19.2%; top: 36.3%; width: 14px; height: 14px; margin: -7px 0 0 -7px;"><span data-pulse="0" style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px #fff;"></span></span>
+              <span aria-hidden="true" style="position: absolute; left: 76.4%; top: 51.9%; width: 14px; height: 14px; margin: -7px 0 0 -7px;"><span data-pulse="1000" style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent);"></span><span style="position: absolute; inset: 0; border-radius: 50%; background: var(--c-accent); box-shadow: 0 0 0 3px #fff;"></span></span>
+              <span aria-hidden="true" data-travel="19.2,36.3,47.8,-20.1,76.4,51.9" data-travel-ms="4200" data-travel-offset="0" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
+              <span aria-hidden="true" data-travel="76.4,51.9,47.8,-20.1,19.2,36.3" data-travel-ms="4200" data-travel-offset="2100" style="position: absolute; left: 0; top: 0; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 3px var(--c-accent), 0 0 16px 4px rgba(179, 18, 47, 0.5); opacity: 0;"></span>
+            <span data-reveal="" data-delay="400" style="position: absolute; left: 19.2%; top: 36.3%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">Canada</span>
+            <span data-reveal="" data-delay="550" style="position: absolute; left: 76.4%; top: 51.9%; translate: -50% calc(-100% - {{labelLift}}); font-size: 12px; font-weight: var(--fw-semibold); letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink);">China</span>
           </div>
           <div data-clip="up" data-delay="150" style="position: relative; z-index: 1; flex: 1 0 auto; margin-top: {{photoOverlap}}; aspect-ratio: {{photoRatio}}; overflow: hidden;">
             <picture>
@@ -228,13 +228,15 @@ class Component extends DCLogic {
       tradeCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 5fr) minmax(0, 7fr)',
       tradeColGap: m ? '32px' : 'clamp(32px, 4vw, 56px)',
       visualMargin: m ? '0 calc(var(--gutter) * -1)' : '0 calc(var(--gutter) * -1) 0 0',
-      // The map is the sky over the yard photo: the photo starts at 85% of the map's height (5.5% of
-      // the width), below both pins, and fades up into it.
-      photoOverlap: m ? '-9%' : '-5.5%',
-      photoRatio: m ? '1536 / 909' : '2 / 1',
-      photoPos: m ? '50% 100%' : '50% 90%',
-      mapFadeFrom: m ? '75%' : '85%',
-      photoFade: m ? 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 10%, #000 20%)' : 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 8%, #000 15%)',
+      // The world map (trade-world.svg, 1600 x 759) is the sky over the yard photo: the photo starts
+      // 10% of the width up into the map (79% of its height, well below both pins) and fades up into
+      // it, so the southern continents still show. Its box is a little shorter than 3:2 (the top of
+      // the photo, faded anyway, is cropped; object-position keeps the bottom).
+      photoOverlap: '-10%',
+      photoRatio: '1536 / 940',
+      photoPos: '50% 100%',
+      mapFadeFrom: '80%',
+      photoFade: 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 10%, #000 22%)',
       // Country labels sit centred over their pin, this far above its centre (a % of the map's
       // height would crowd the pin on phones). `translate` survives the reveal's `transform: none`.
       labelLift: m ? '16px' : '26px',
