@@ -298,12 +298,17 @@ html.nl-cover, .nl-cover body { background: var(--c-dark); }
   font: 600 clamp(22px, 8.5cqi, 48px)/1.02 var(--f-display); letter-spacing: -0.015em; text-transform: uppercase;
 }
 .trade__list li { display: flex; align-items: center; gap: var(--sp-4); font: 400 18px/1.4 var(--f-display); }
-.trade__list svg { width: 26px; height: 26px; color: var(--c-accent); }
-.trade__list--stacked { display: none; border-top: 1px solid var(--c-line); }
-.trade__list--stacked li { padding: 14px 0; border-bottom: 1px solid var(--c-line); }
-.trade__list--row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--c-line); border-bottom: 1px solid var(--c-line); }
-.trade__list--row li { justify-content: center; padding: 18px var(--sp-4); }
-.trade__list--row li + li { border-left: 1px solid var(--c-line); }
+.trade__list svg {
+  width: 48px; height: 48px; padding: 12px; border-radius: 50%;
+  background: var(--c-surface); color: var(--c-accent); overflow: visible;
+}
+.trade__list--stacked { display: none; }
+.trade__list--stacked li { padding: 12px 0; }
+.trade__list--stacked li + li { border-top: 1px solid var(--c-line); }
+/* Computers: the three items in a row under both columns, no rules: each icon in a soft round
+   badge (like the Contact page's contact strip), centred in its third. */
+.trade__list--row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-6); padding-top: var(--sp-2); }
+.trade__list--row li { justify-content: center; }
 .trade__closeup { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 10px; }
 .trade__closeup .cover { flex: 1; min-height: 200px; }
 .trade figcaption { font-size: 13px; color: var(--c-muted); }
@@ -516,14 +521,6 @@ html.nl-cover, .nl-cover body { background: var(--c-dark); }
 .field-error:empty { display: none; }
 .form .btn { width: 100%; margin-top: var(--sp-2); }
 .form__note { font-size: 13px; text-align: center; color: var(--c-muted); }
-.form--labelled { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-.form--labelled label { font-size: 13px; font-weight: 600; }
-.form--labelled input { height: 44px; padding: 0 12px; }
-.form--labelled textarea { min-height: 0; padding: 10px 12px; }
-.form--labelled .btn { margin-top: 4px; }
-.form--labelled .btn:hover, .form--labelled .btn:focus-visible { background: var(--c-dark); }
-.form--labelled .form__note { line-height: 1.6; text-align: left; }
-.form--labelled .form__note a { font-weight: 600; }
 
 /* ---------- Lightbox ---------- */
 .lightbox { position: fixed; inset: 0; z-index: 200; display: none; color: var(--c-on-dark); }

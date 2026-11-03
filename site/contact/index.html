@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="preload" href="../assets/fonts/Outfit-latin-core.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/Figtree-latin-core.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/main.css?v=a17878e3c1">
+  <link rel="stylesheet" href="../assets/css/main.css?v=d7e29ab22b">
   <script>
   // Before the first paint: .fx enables the motion start states (not with reduced motion), and
   // .nl-cover keeps the screen navy while the page transition curtain is up — arriving from
@@ -89,13 +89,14 @@
       <span class="rule" data-line aria-hidden="true"></span>
       <h2 id="contact-form-title" data-split>Get in Touch !</h2>
       <p class="contact-form__intro" data-reveal data-delay="150">Send us a message and we’ll get back to you as soon as possible.</p>
-      <form class="form form--labelled" data-mailto data-to="office@natlandhomes.com" data-subject="Website enquiry" novalidate aria-labelledby="contact-form-title">
-        <div class="field" data-reveal data-delay="200"><label for="f2-your-message">Your message</label><textarea id="f2-your-message" name="your-message" rows="3" aria-describedby="f2-your-message-err"></textarea><span class="field-error" id="f2-your-message-err" aria-live="polite"></span></div>
-        <div class="field" data-reveal data-delay="260"><label for="f2-your-name">Your name (required)</label><input id="f2-your-name" type="text" name="your-name" aria-describedby="f2-your-name-err" required autocomplete="name"><span class="field-error" id="f2-your-name-err" aria-live="polite"></span></div>
-        <div class="field" data-reveal data-delay="320"><label for="f2-your-email">Your email (required)</label><input id="f2-your-email" type="email" name="your-email" aria-describedby="f2-your-email-err" required autocomplete="email"><span class="field-error" id="f2-your-email-err" aria-live="polite"></span></div>
-        <div class="field" data-reveal data-delay="380"><button class="btn" type="submit">Send</button>
-          <p class="form__note">Clicking Send will open your email app<br>Or email us directly at <a href="mailto:office@natlandhomes.com">office@natlandhomes.com</a></p></div>
-      </form>
+      <div data-reveal data-delay="200"><form class="form" data-mailto data-to="office@natlandhomes.com" data-subject="Website enquiry" novalidate>
+        <div class="field"><label class="visually-hidden" for="f1-your-name">Your name (required)</label><input id="f1-your-name" type="text" name="your-name" placeholder="Your name *" aria-describedby="f1-your-name-err" required autocomplete="name"><span class="field-error" id="f1-your-name-err" aria-live="polite"></span></div>
+        <div class="field"><label class="visually-hidden" for="f1-your-phone">Phone number</label><input id="f1-your-phone" type="tel" name="your-phone" placeholder="Phone number" aria-describedby="f1-your-phone-err" autocomplete="tel"><span class="field-error" id="f1-your-phone-err" aria-live="polite"></span></div>
+        <div class="field field--full"><label class="visually-hidden" for="f1-your-email">Your e-mail (required)</label><input id="f1-your-email" type="email" name="your-email" placeholder="Your e-mail *" aria-describedby="f1-your-email-err" required autocomplete="email"><span class="field-error" id="f1-your-email-err" aria-live="polite"></span></div>
+        <div class="field field--full"><label class="visually-hidden" for="f1-your-message">How can we help you?</label><textarea id="f1-your-message" name="your-message" rows="3" placeholder="How can we help you ?" aria-describedby="f1-your-message-err"></textarea><span class="field-error" id="f1-your-message-err" aria-live="polite"></span></div>
+        <div class="field--full"><button class="btn" type="submit">Send</button></div>
+        <p class="form__note field--full">Clicking Send will open your email app</p>
+      </form></div>
     </section>
     <section class="contact-location" aria-labelledby="contact-location-title">
       <span class="rule" data-line aria-hidden="true"></span>
