@@ -29,6 +29,8 @@
   --fs-lead: clamp(18px, 1.5vw, 21px);
   --fs-body: 17px;
   --fs-small: 15px;
+  --fs-text: 17px;      /* body paragraphs on every page; 15px on phones */
+  --lh-text: 1.55;
   --fs-label: 13px;
   --fw-light: 300;
   --fw-regular: 400;
@@ -59,6 +61,8 @@
   --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
   --dur: 0.5s;
 }
+
+@media (max-width: 767px) { :root { --fs-text: 15px; } }
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }

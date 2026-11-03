@@ -252,7 +252,9 @@ class Component extends DCLogic {
     });
     (this.travel || []).forEach(el => {
       const [x0, y0, cx, cy, x1, y1] = el.dataset.travel.split(',').map(Number);
-      const t = (now % 2600) / 2600, u = 1 - t;
+      // data-travel-ms = loop length, data-travel-offset = phase shift (lets two dots fly opposite ways out of step)
+      const dur = +el.dataset.travelMs || 2600, off = +el.dataset.travelOffset || 0;
+      const t = ((now + off) % dur) / dur, u = 1 - t;
       el.style.left = (u * u * x0 + 2 * u * t * cx + t * t * x1).toFixed(2) + '%';
       el.style.top = (u * u * y0 + 2 * u * t * cy + t * t * y1).toFixed(2) + '%';
       el.style.opacity = Math.min(1, Math.min(t, u) * 6).toFixed(2);

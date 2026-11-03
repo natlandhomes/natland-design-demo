@@ -42,16 +42,16 @@
         <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">3560</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Bluebonnet</span></span></h1>      </div>
     </div>
   </section>
-  <section data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: start;">
+  <section data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: center;">
     <div style="display: flex; flex-direction: column; gap: 18px;">
       <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
-      <p data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 400; font-size: {{leadSize}}; line-height: 1.5; text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
+      <p data-reveal="" style="margin: 0; max-width: 560px; font-size: var(--fs-text); line-height: var(--lh-text); color: var(--c-ink-soft); text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
     </div>
     <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-line);">
-      <li data-reveal="" data-delay="100" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BEDROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
-      <li data-reveal="" data-delay="180" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BATHROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
-      <li data-reveal="" data-delay="260" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">SQFT</span><span style="font-family: var(--f-display); font-size: 24px;">5,610</span></li>
-      <li data-reveal="" data-delay="340" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">COMPLETION DATE</span><span style="font-family: var(--f-display); font-size: 24px;">March 2020</span></li>
+      <li data-reveal="" data-delay="100" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BEDROOMS</span><span style="font-family: var(--f-display); font-size: {{specSize}};">5</span></li>
+      <li data-reveal="" data-delay="180" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BATHROOMS</span><span style="font-family: var(--f-display); font-size: {{specSize}};">5</span></li>
+      <li data-reveal="" data-delay="260" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">SQFT</span><span style="font-family: var(--f-display); font-size: {{specSize}};">5,610</span></li>
+      <li data-reveal="" data-delay="340" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">COMPLETION DATE</span><span style="font-family: var(--f-display); font-size: {{specSize}};">March 2020</span></li>
     </ul>
   </section>
   <section data-screen-label="Project / Gallery" style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) var(--sp-section); display: flex; flex-direction: column; align-items: center; gap: clamp(40px, 5vw, 64px);">
@@ -118,7 +118,7 @@ class Component extends DCLogic {
       heroPadB: m ? '28px' : 'clamp(36px, 4vw, 56px)',
       h1Size: m ? '40px' : 'clamp(52px, 5.4vw, 80px)',
       ovCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.5fr) minmax(0, 1fr)',
-      leadSize: m ? '19px' : 'clamp(20px, 1.7vw, 24px)',
+      specSize: m ? '18px' : '20px',
       galCols: m ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
       gallery: GALLERY.map((g, k) => ({ ...g, delay: (k % (m ? 2 : 3)) * 110, span: m && GALLERY.length % 2 && k === GALLERY.length - 1 ? 'span 2' : 'auto', open: () => this.setState({ lb: k }) })),
       lightbox: lb !== null,
