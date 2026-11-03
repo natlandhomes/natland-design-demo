@@ -2,6 +2,7 @@
 // Each variation folder has the same page files, so switching keeps the current page.
 (function () {
   var VARIANTS = [
+    { dir: 'final', label: 'Final' },
     { dir: 'variation-g', label: 'Demo 1' },
     { dir: 'variation-f', label: 'Demo 2' },
     { dir: 'variation-e', label: 'Demo 3' },

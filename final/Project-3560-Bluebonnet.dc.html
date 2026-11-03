@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Natland Group — 3560 Bluebonnet</title>
+<link rel="stylesheet" href="theme.css">
+<style>body{margin:0;background:#fff}a{color:#b3122f}a:hover{color:#900d25}</style>
+</helmet>
+<dc-import name="SiteFX" intro="{{intro}}" motion="{{motion}}" hint-size="0px,0px"></dc-import>
+<dc-import name="SiteHeader" active="portfolio" hint-size="100%,96px"></dc-import>
+<main>
+  <section data-screen-label="Project / Hero" style="position: relative; overflow: hidden; height: {{heroH}}; min-height: {{heroMin}}; max-height: 820px; background: var(--c-dark); color: var(--c-on-dark);">
+    <div data-parallax="0.1" style="position: absolute; inset: 0;">
+      <img data-kb="" src="assets/fb-3560-hero.png" alt="3560 Bluebonnet" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%;">
+    </div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; z-index: 5; background: linear-gradient(to bottom, rgba(12, 42, 77, 0) 45%, rgba(12, 42, 77, 0.55) 72%, rgba(12, 42, 77, 0.88) 100%);"></div>
+    <div data-heroout="" style="position: absolute; left: 0; right: 0; bottom: 0; z-index: 6;">
+      <div style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) {{heroPadB}}; display: flex; flex-direction: column; gap: 14px;">
+        <a href="Portfolio.dc.html" data-reveal="" style="align-self: flex-start; font-size: 13px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--c-on-dark); text-decoration: none;" style-hover="color: var(--c-on-dark-soft);">← Portfolio</a>
+        <h1 data-split="" style="margin: 0; font-family: var(--f-display); font-weight: 600; font-size: {{h1Size}}; line-height: 1.04; letter-spacing: -0.015em;"><span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">3560</span></span> <span style="display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em;"><span data-w="" style="display: inline-block;">Bluebonnet</span></span></h1>      </div>
+    </div>
+  </section>
+  <section data-screen-label="Project / Overview" style="max-width: var(--max-w); margin: 0 auto; padding: var(--sp-section) var(--gutter) clamp(36px, 4vw, 56px); display: grid; grid-template-columns: {{ovCols}}; gap: clamp(28px, 5vw, 80px); align-items: start;">
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <span data-line="" style="display: block; width: 40px; height: 3px; background: var(--c-accent);"></span>
+      <p data-reveal="" style="margin: 0; font-family: var(--f-display); font-weight: 400; font-size: {{leadSize}}; line-height: 1.5; text-wrap: pretty;">This house is in the prestigious Edgemont Area. Interior design combines functionality and aesthetics. Exceptional materials and fine workmanship are found throughout this remarkable home. Luxurious interior of this home includes Gaggenau appliances, Marble countertops, drop ceilings with hidden LED lights and many more.</p>
+    </div>
+    <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--c-line);">
+      <li data-reveal="" data-delay="100" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BEDROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
+      <li data-reveal="" data-delay="180" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">BATHROOMS</span><span style="font-family: var(--f-display); font-size: 24px;">5</span></li>
+      <li data-reveal="" data-delay="260" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">SQFT</span><span style="font-family: var(--f-display); font-size: 24px;">5,610</span></li>
+      <li data-reveal="" data-delay="340" style="display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--c-line);"><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.22em; color: var(--c-muted);">COMPLETION DATE</span><span style="font-family: var(--f-display); font-size: 24px;">March 2020</span></li>
+    </ul>
+  </section>
+  <section data-screen-label="Project / Gallery" style="max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter) var(--sp-section); display: flex; flex-direction: column; align-items: center; gap: clamp(40px, 5vw, 64px);">
+    <div style="width: 100%; display: grid; grid-template-columns: {{galCols}}; gap: clamp(8px, 1vw, 12px);">
+      <sc-if value="{{ready}}" hint-placeholder-val="{{false}}"><sc-for list="{{gallery}}" as="g" hint-placeholder-count="0">
+        <button type="button" onClick="{{g.open}}" aria-label="View image" data-zoom="" data-cursor="Open" style="grid-column: {{g.span}}; position: relative; display: block; padding: 0; border: 0; background: var(--c-surface); overflow: hidden; aspect-ratio: 3 / 2; cursor: zoom-in;">
+          <span data-clip="" data-delay="{{g.delay}}" style="position: absolute; inset: 0; display: block; overflow: hidden;">
+            <img src="{{g.thumb}}" data-fallback="{{g.fallback}}" alt="" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+          </span>
+        </button>
+      </sc-for></sc-if>
+    </div>
+    <a href="Portfolio.dc.html" data-magnetic="" style="display: flex; align-items: center; justify-content: center; width: 160px; height: 48px; background: var(--c-accent); color: #fff; text-decoration: none; font-family: var(--f-display); font-size: 18px; font-weight: 500; transition: background 0.3s;" style-hover="background: var(--c-accent-hover); color: #fff;">Back</a>
+  </section>
+</main>
+<dc-import name="SiteFooter" variant="form" hint-size="100%,520px"></dc-import>
+<sc-if value="{{lightbox}}" hint-placeholder-val="{{false}}">
+  <div onClick="{{close}}" style="position: fixed; inset: 0; z-index: 200; background: rgba(8, 24, 44, 0.95); display: flex; align-items: center; justify-content: center; padding: clamp(16px, 5vw, 80px); cursor: zoom-out;">
+    <img loading="lazy" src="{{lbSrc}}" data-fallback="{{lbFallback}}" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+    <span style="position: absolute; left: 24px; bottom: 20px; font-family: var(--f-display); font-size: 14px; letter-spacing: 0.12em; color: rgba(255, 255, 255, 0.7);">{{lbCount}}</span>
+    <button type="button" aria-label="Previous image" onClick="{{lbPrev}}" style="position: absolute; left: 16px; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 18px; cursor: pointer;">←</button>
+    <button type="button" aria-label="Next image" onClick="{{lbNext}}" style="position: absolute; right: 16px; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 18px; cursor: pointer;">→</button>
+    <button type="button" aria-label="Close" onClick="{{close}}" style="position: absolute; top: 16px; right: 16px; width: 48px; height: 48px; background: none; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 22px; line-height: 1; cursor: pointer;">×</button>
+  </div>
+</sc-if>
+</x-dc>
+<div aria-hidden="true" style="position: fixed; right: 6px; bottom: 4px; z-index: 1000; pointer-events: none; padding: 3px 8px; background: rgba(12, 42, 77, 0.82); color: #fff; font: 500 11px/1.4 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.02em; border-radius: 3px;">Design preview – not the live site</div>
+<script src="../switcher.js" defer></script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;intro&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+const U = '../shared/natlandhomes/';
+const GALLERY = [
+  ['3560-Bluebonnet-002-768x512.jpg', '3560-Bluebonnet-002.jpg'],
+  ['3560-Bluebonnet-001-768x512.jpg', '3560-Bluebonnet-001.jpg'],
+  ['3560-Bluebonnet-007-768x512.jpeg', '3560-Bluebonnet-007-scaled.jpeg'],
+  ['3560-Bluebonnet-003-768x512.jpg', '3560-Bluebonnet-003.jpg'],
+  ['3560-Bluebonnet-004-768x512.jpg', '3560-Bluebonnet-004.jpg'],
+  ['3560-Bluebonnet-008-768x512.jpeg', '3560-Bluebonnet-008-scaled.jpeg'],
+  ['3560-Bluebonnet-009-768x1152.jpeg', '3560-Bluebonnet-009-scaled.jpeg'],
+  ['3560-Bluebonnet-006-768x512.jpg', '3560-Bluebonnet-006.jpg'],
+  ['3560-Bluebonnet-010-768x512.jpeg', '3560-Bluebonnet-010-scaled.jpeg'],
+].map(([t, f], i) => ({ thumb: U + t, full: U + f, fallback: 'assets/fb-g' + (i + 1) + '.png' }));
+const pad = n => String(n).padStart(2, '0');
+
+class Component extends DCLogic {
+  mq = window.matchMedia('(max-width: 767px)');
+  state = { m: this.mq.matches, lb: null };
+  onMq = () => this.setState({ m: this.mq.matches });
+  onKey = e => {
+    if (this.state.lb === null) return;
+    if (e.key === 'Escape') this.setState({ lb: null });
+    if (e.key === 'ArrowRight') this.step(1);
+    if (e.key === 'ArrowLeft') this.step(-1);
+  };
+  componentDidMount() { this.mq.addEventListener('change', this.onMq); addEventListener('keydown', this.onKey); }
+  componentWillUnmount() { this.mq.removeEventListener('change', this.onMq); removeEventListener('keydown', this.onKey); }
+  step = d => this.setState(s => ({ lb: (s.lb + d + GALLERY.length) % GALLERY.length }));
+  renderVals() {
+    const { m, lb } = this.state;
+    return {
+      ready: true,
+      intro: this.props.intro ?? true,
+      motion: this.props.motion ?? true,
+      heroH: m ? '62vh' : 'calc(100vh - 96px)',
+      heroMin: m ? '400px' : '560px',
+      heroPadB: m ? '28px' : 'clamp(36px, 4vw, 56px)',
+      h1Size: m ? '40px' : 'clamp(52px, 5.4vw, 80px)',
+      ovCols: m ? 'minmax(0, 1fr)' : 'minmax(0, 1.5fr) minmax(0, 1fr)',
+      leadSize: m ? '19px' : 'clamp(20px, 1.7vw, 24px)',
+      galCols: m ? 'repeat(2, minmax(0, 1fr))' : 'repeat(3, minmax(0, 1fr))',
+      gallery: GALLERY.map((g, k) => ({ ...g, delay: (k % (m ? 2 : 3)) * 110, span: m && GALLERY.length % 2 && k === GALLERY.length - 1 ? 'span 2' : 'auto', open: () => this.setState({ lb: k }) })),
+      lightbox: lb !== null,
+      lbSrc: lb !== null ? GALLERY[lb].full : '',
+      lbFallback: lb !== null ? GALLERY[lb].fallback : '',
+      lbCount: lb !== null ? pad(lb + 1) + ' / ' + pad(GALLERY.length) : '',
+      lbPrev: e => { e.stopPropagation(); this.step(-1); },
+      lbNext: e => { e.stopPropagation(); this.step(1); },
+      close: () => this.setState({ lb: null }),
+    };
+  }
+}
+</script>
+</body>
+</html>
