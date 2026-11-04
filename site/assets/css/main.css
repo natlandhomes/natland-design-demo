@@ -635,6 +635,7 @@ html.lenis, html.lenis body { height: auto; }
   .cards { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
   .card--featured { display: block; }
   .card a { display: grid; grid-template-columns: 104px minmax(0, 1fr) auto; gap: var(--sp-4); align-items: center; padding: var(--sp-3) 0; border-bottom: 1px solid var(--c-line); }
+  .card:last-child a { border-bottom: 0; } /* the footer's top rule follows */
   .card__media { width: 104px; height: 72px; aspect-ratio: auto; }
   .card__meta { display: contents; }
   .card__title { padding-top: 0; font-size: 15px; line-height: 1.3; }
